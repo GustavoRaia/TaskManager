@@ -1,0 +1,8 @@
+.header {
+    position: absolute;
+    margin-top: -92vh;
+    width: 95vw;
+    padding-left: 5%;
+    background-color: #1215284e;
+    display: none;
+}

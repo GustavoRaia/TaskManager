@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+div {
+    font-family: 'Nunito';
+    font-size: 20pt;
+    user-select: none;
+    align-items: center;
+}
+
+#block {
+    font-size: 50pt;
+    display: none;
+}
+
+p:hover {
+    color: blueviolet;
+}

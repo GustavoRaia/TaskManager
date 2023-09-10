@@ -1,0 +1,19 @@
+.inicio {
+    position: absolute;
+    margin-top: -50vh;
+    width: 95vw;
+    padding-left: 1%;
+}
+
+.inicio p {
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 40vh;
+}
+
+.inicio #block {
+    display: block;
+}
+.inicio #none {
+    display: none;
+}
