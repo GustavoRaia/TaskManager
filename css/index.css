@@ -1,0 +1,166 @@
+/* CSS Body */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+#body {
+    background-color: rgb(14, 16, 27);
+    color: white;
+    font-family: 'Nunito';
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+/* CSS Header */
+
+#header {
+    width: 90vw;
+    height: 6vh;
+    background-color: #1215284e;
+    display: flex;
+    justify-content: space-evenly;
+    display: none;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
+    user-select: none;
+}
+
+#relogio-header {
+    width: 6vw;
+    height: 2vh;
+    margin-top: 1.4vh;
+    font-size: 20pt;
+}
+
+#info {
+    width: 15vw;
+    height: 5.5vh;
+    display: flex;
+    justify-content: center;
+    column-gap: 3vh;
+}
+
+#info img {
+    height: 40px;
+}
+
+.card-header {
+    width: 50px;
+    margin-top: 12px;
+}
+
+.card-header:hover {
+    transform: scale(1.10);
+    transition-duration: 0.1s;
+}
+
+
+
+/* CSS Relógio */
+
+#div-relogio {
+    font-size: 50pt;
+    height: 10vh;
+    width: 13vw;
+    margin-top: 40vh;
+    user-select: none;
+}
+
+#div-relogio:hover, #relogio-header:hover{
+    color: blueviolet;
+    transform: scale(1.05);
+    transition-duration: 0.4s;
+}
+
+
+
+/* CSS Opções de Escolha */
+
+#bloco {
+    margin-top: 20vh;
+    width: 40%;
+    height: 40vh;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: #1215284e;
+    display: none;
+}
+
+#bloco img{
+    width: 8vw;
+}
+
+.titulo{
+    margin-top: 4%;
+    font-size: 2pc;
+}
+
+.opcao{
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 26%;
+    height: 19.3vh;
+    box-shadow: 0 0 3px black;
+    border-radius: 10px;
+}
+
+.opcao img {
+    width: 150px;
+    padding: 11.5%;
+    user-select: none;
+}
+
+.btn-despertador:hover, .btn-temporizador:hover, .btn-cronometro:hover {
+    background-color: rgba(70, 71, 80, 0.238);
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}
+
+#txt-despertador, #txt-temporizador, #txt-cronometro{
+    margin-top: 2.8vh;
+    font-size: 1.8pc;
+    display: none;
+}
+.btn-despertador:hover ~ #txt-despertador, .btn-temporizador:hover ~ #txt-temporizador, .btn-cronometro:hover ~ #txt-cronometro{
+    display: inline-block;
+}
+
+.opcaoTexto {
+    margin-top: 35%;
+    font-weight: bold;
+}
+
+
+
+/* CSS Div Escolhinda  */
+
+#div-despertador, #div-temporizador, #div-cronometro {
+    background-color: #1215284e;
+    margin-top: 20vh;
+    height: 45vh;
+    width: 30vw;
+    box-shadow: 0 0 5px black;
+    display: none;
+}
+
+.btn-voltar {
+    width: 2vw;
+    height: 4vh;
+    user-select: none;
+    margin: 5%;
+}
+
+.btn-voltar:hover {
+    transform: scale(1.10);
+    transition-duration: 0.1s;
+}
+
+.btn-voltar img{
+    width: 2vw;
+}

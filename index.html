@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/index.css">
+        <script src="./js/relogio.js" defer></script>
+        <title>Temporizador</title>
+    </head>
+
+    <body id="body">
+
+        <header id="header">
+            <div id="relogio-header"></div>
+            <div id="info">
+                <div class="card-header"><img src="./imagem/github.png" alt=""></div>
+                <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
+                <div class="card-header" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
+                <div class="card-header"><img src="./imagem/alarme.png" alt=""></div>
+            </div>
+        </header>
+
+        <div id="div-relogio" onclick="mostra()"></div>
+
+        <div id="bloco">
+            <div class="titulo">
+                Escolha uma opção
+            </div>
+
+            <div class="opcao btn-despertador" onclick="despertador()">
+                <img src="imagem/despertador.png"/>
+            </div>
+
+            <div class="opcao btn-temporizador" onclick="temporizador()">
+                <img src="./imagem/relogio.png"/>
+            </div>
+
+            <div class="opcao btn-cronometro" onclick="cronometro()">
+                <img src="./imagem/cronometro.png"/>
+            </div>
+
+            <div id="txt-despertador">
+                Despertador
+            </div>
+            <div id="txt-temporizador">
+                Temporizador
+            </div>
+            <div id="txt-cronometro">
+                Cronômetro
+            </div>
+        </div>
+
+        <div id="div-despertador">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+        </div>
+
+        <div id="div-temporizador">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+        </div>
+        
+        <div id="div-cronometro">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+        </div>
+
+    </body>
+</html>
