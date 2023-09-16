@@ -105,7 +105,6 @@
     margin-left: 5%;
     margin-top: 5%;
     width: 26%;
-    height: 19.3vh;
     box-shadow: 0 0 3px black;
     border-radius: 10px;
 }
@@ -141,19 +140,21 @@
 /* CSS Div Escolhinda  */
 
 #div-despertador, #div-temporizador, #div-cronometro {
+    text-align: center;
     background-color: #1215284e;
     margin-top: 20vh;
     height: 45vh;
     width: 30vw;
     box-shadow: 0 0 5px black;
     display: none;
+    user-select: none;
 }
 
 .btn-voltar {
     width: 2vw;
     height: 4vh;
     user-select: none;
-    margin: 5%;
+    margin: 5%; 
 }
 
 .btn-voltar:hover {
@@ -164,3 +165,99 @@
 .btn-voltar img{
     width: 2vw;
 }
+
+
+
+/* CSS Div Cronômetro */
+
+#cronometro-tempo {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 25vw;
+    font-size: 50pt;
+}
+
+#botoes-cronometro {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    column-gap: 5%;
+}
+
+.btn-func-cronometro {
+    width: 5vw;
+    height: 5vh;
+    box-shadow: 0 0 5px black;
+    border-radius: 5%;
+    font-size: 19pt;
+    padding-top: 5%;
+}
+
+.btn-func-cronometro:hover {
+    background-color: rgba(70, 71, 80, 0.238);
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}
+
+.span-milissegundos {
+    font-size: 15pt;
+}
+
+/* CSS Relógio */
+
+.clock {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+    border: 0.5px solid black;
+    box-shadow: 0 0 25px black;  
+    position: relative;
+    color: white;
+}
+
+.number {
+    font-size: 1.2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.number-1 {
+    transform: rotate(30deg);
+}
+.number-2 {
+    transform: rotate(60deg);
+}
+.number-3 {
+    transform: rotate(90deg);
+}
+.number-4 {
+    transform: rotate(120deg);
+}
+.number-5 {
+    transform: rotate(150deg);
+}
+.number-6 {
+    transform: rotate(180deg);
+}
+.number-7 {
+    transform: rotate(210deg);
+}
+.number-8 {
+    transform: rotate(240deg);
+}
+.number-9 {
+    transform: rotate(270deg);
+}
+.number-10 {
+    transform: rotate(300deg);
+}
+.number-11 {
+    transform: rotate(330deg);
+}
+

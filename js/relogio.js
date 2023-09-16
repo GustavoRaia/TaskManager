@@ -47,7 +47,7 @@ function modo() {
 }
 
 function volta() {
-    // Dar um jeito de pegar a div atual que foi clicada
+    // Dar um jeito de pegar a div atual que foi clicada    
     document.getElementById('div-despertador').style.display = "none"
     document.getElementById('div-temporizador').style.display = "none"
     document.getElementById('div-cronometro').style.display = "none"

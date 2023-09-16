@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/index.css">
         <script src="./js/relogio.js" defer></script>
+        <script src="./js/cronometro.js" defer></script>
         <title>Temporizador</title>
     </head>
 
@@ -13,7 +14,7 @@
         <header id="header">
             <div id="relogio-header"></div>
             <div id="info">
-                <div class="card-header"><img src="./imagem/github.png" alt=""></div>
+                <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
                 <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
                 <div class="card-header" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
                 <div class="card-header"><img src="./imagem/alarme.png" alt=""></div>
@@ -54,6 +55,25 @@
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
             </div>
+
+            <div class="clock">
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+                <div class="second-hand"></div>
+
+                <div class="number number-1">1</div>
+                <div class="number number-2">2</div>
+                <div class="number number-3">3</div>
+                <div class="number number-4">4</div>
+                <div class="number number-5">5</div>
+                <div class="number number-6">6</div>
+                <div class="number number-7">7</div>
+                <div class="number number-8">8</div>
+                <div class="number number-9">9</div>
+                <div class="number number-10">10</div>
+                <div class="number number-11">11</div>
+                <div class="number number-12">12</div>
+            </div>
         </div>
 
         <div id="div-temporizador">
@@ -66,6 +86,17 @@
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
             </div>
+
+            <div id="cronometro-tempo">
+                00:00:00.<span class="span-milissegundos">00</span>
+            </div>
+
+            <div id="botoes-cronometro">
+                <div id="iniciar_cronometro" class="btn-func-cronometro">Iniciar</div>
+                <div id="pausar_cronometro" class="btn-func-cronometro">Parar</div>
+                <div id="zerar_cronometro" class="btn-func-cronometro">Zerar</div>
+            </div>
+
         </div>
 
     </body>
