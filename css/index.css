@@ -205,6 +205,8 @@
     font-size: 15pt;
 }
 
+
+
 /* CSS Relógio */
 
 .clock {
@@ -285,6 +287,10 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     background-color: rgb(14, 16, 27);
     border-radius: 5px;
+}
+
+.adicionar-alarme img {
+    width: 2.5vw;
 }
 
 .alarme:hover, .adicionar-alarme:hover {

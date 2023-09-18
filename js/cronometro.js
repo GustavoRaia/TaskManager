@@ -65,7 +65,7 @@ zerarButton.addEventListener('click', function () {
     segundos = 0;
     minutos = 0;
     horas = 0;
-    cronometroElement.innerHTML = '00:00:00.';
+    cronometroElement.innerHTML = '00:00:00 ';
     milissegundosElement.innerHTML = '00';
     iniciarButton.disabled = false;
 });
