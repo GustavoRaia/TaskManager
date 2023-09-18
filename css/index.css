@@ -170,7 +170,7 @@
 
 /* CSS Div Cronômetro */
 
-#cronometro-tempo {
+#span-smh {
     margin: 0 auto;
     margin-top: 10%;
     width: 25vw;
@@ -287,6 +287,16 @@
     border-radius: 5px;
 }
 
-.alarme:hover {
+.alarme:hover, .adicionar-alarme:hover {
     transform: scale(1.04);
+}
+
+.adicionar-alarme {
+    margin: 0 auto;
+    margin-top: 3vh;
+    width: 17vw;
+    height: 8vh;
+    background-color: rgba(14, 16, 27, 0.393);
+    border-radius: 10px;
+    border: 2px dashed rgba(255, 255, 255, 0.423);
 }
