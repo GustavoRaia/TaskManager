@@ -53,3 +53,12 @@ function volta() {
     document.getElementById('div-cronometro').style.display = "none"
     document.getElementById('bloco').style.display = "block"
 }
+
+function mostraAlarmes () {
+    var div_alarmes = document.getElementById('div-alarmes')
+    if(div_alarmes.style.display == "block") {
+        div_alarmes.style.display = "none"
+    } else {
+        div_alarmes.style.display = "block"
+    }
+}

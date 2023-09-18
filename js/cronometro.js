@@ -15,13 +15,13 @@ function formatarTempo(h, m, s, ms) {
 
 function iniciar_cronometro() {
     milissegundos++;
-    if (milissegundos === 100) {
+    if (milissegundos === 90) {
         milissegundos = 0;
         segundos++;
-        if (segundos === 60) {
+        if (segundos === 59) {
             segundos = 0;
             minutos++;
-            if (minutos === 60) {
+            if (minutos === 59) {
                 minutos = 0;
                 horas++;
             }

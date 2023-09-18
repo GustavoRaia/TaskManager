@@ -201,7 +201,7 @@
     transition-duration: 0.1s;
 }
 
-.span-milissegundos {
+#span-milissegundos {
     font-size: 15pt;
 }
 
@@ -261,3 +261,32 @@
     transform: rotate(330deg);
 }
 
+
+
+/* CSS Alarmes */
+
+#div-alarmes {
+    position: absolute;
+    background-color: #1215284e;
+    width: 20vw;
+    height: 89vh;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);   
+    margin-left: 80vw;
+    margin-top: 10.2vh;
+    display: none;
+    border-top-left-radius: 10px;
+}
+
+.alarme {
+    margin: 0 auto;
+    margin-top: 3vh;
+    width: 17vw;
+    height: 8vh;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
+    background-color: rgb(14, 16, 27);
+    border-radius: 5px;
+}
+
+.alarme:hover {
+    transform: scale(1.04);
+}
