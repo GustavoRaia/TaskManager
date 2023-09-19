@@ -6,13 +6,14 @@
         <link rel="stylesheet" href="./css/index.css">
         <script src="./js/relogio.js" defer></script>
         <script src="./js/cronometro.js" defer></script>
-        <title>Temporizador</title>
+        <script src="./js/temporizador.js" defer></script>
+        <title>Task Manager</title>
     </head>
 
     <body id="body">
 
         <header id="header">
-            <div id="relogio-header"></div>
+                <div id="relogio-header"></div>
             <div id="info">
                 <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
                 <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
@@ -80,6 +81,14 @@
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
             </div>
+
+            <span id="span-temp">00:01:03</span>
+
+            <div class="botoes-func-container">
+                <div id="iniciar_temporizador" class="btn-func">Iniciar</div>
+                <div id="pausar_temporizador" class="btn-func">Parar</div>
+                <div id="zerar_temporizador" class="btn-func">Zerar</div>
+            </div>
         </div>
         
         <div id="div-cronometro">
@@ -87,14 +96,12 @@
                 <img src="./imagem/voltar.png" alt="">
             </div>
 
-            <div id="cronometro-tempo">
-                <span id="span-smh">00:00:00</span><span id="span-milissegundos"> 00</span>
-            </div>
+            <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
             
-            <div id="botoes-cronometro">
-                <div id="iniciar_cronometro" class="btn-func-cronometro">Iniciar</div>
-                <div id="pausar_cronometro" class="btn-func-cronometro">Parar</div>
-                <div id="zerar_cronometro" class="btn-func-cronometro">Zerar</div>
+            <div class="botoes-func-container">
+                <div id="iniciar_cronometro" class="btn-func">Iniciar</div>
+                <div id="pausar_cronometro" class="btn-func">Parar</div>
+                <div id="zerar_cronometro" class="btn-func">Zerar</div>
             </div>
         </div>
 
@@ -107,5 +114,6 @@
                 <img src="./imagem/botao-adicionar.png" alt="">
             </div>
         </div>
+
     </body>
 </html>

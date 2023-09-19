@@ -28,10 +28,14 @@
 }
 
 #relogio-header {
-    width: 6vw;
-    height: 2vh;
-    margin-top: 1.4vh;
     font-size: 20pt;
+    margin-top: 1.4vh;
+}
+
+#relogio-header:hover {
+    color: blueviolet;
+    transform: scale(1.05);
+    transition-duration: 0.5s;
 }
 
 #info {
@@ -68,7 +72,7 @@
     user-select: none;
 }
 
-#div-relogio:hover, #relogio-header:hover{
+#div-relogio:hover {
     color: blueviolet;
     transform: scale(1.05);
     transition-duration: 0.4s;
@@ -170,14 +174,14 @@
 
 /* CSS Div Cronômetro */
 
-#span-smh {
+#span-smh, #span-temp {
     margin: 0 auto;
     margin-top: 10%;
     width: 25vw;
     font-size: 50pt;
 }
 
-#botoes-cronometro {
+.botoes-func-container {
     margin: 0 auto;
     margin-top: 10%;
     width: 20vw;
@@ -186,7 +190,7 @@
     column-gap: 5%;
 }
 
-.btn-func-cronometro {
+.btn-func {
     width: 5vw;
     height: 5vh;
     box-shadow: 0 0 5px black;
@@ -195,7 +199,7 @@
     padding-top: 5%;
 }
 
-.btn-func-cronometro:hover {
+.btn-func:hover {
     background-color: rgba(70, 71, 80, 0.238);
     transform: scale(1.05);
     transition-duration: 0.1s;

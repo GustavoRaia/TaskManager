@@ -4,7 +4,13 @@ function atualizarRelogio() {
     const minutos = agora.getMinutes().toString().padStart(2, '0');
     const segundos = agora.getSeconds().toString().padStart(2, '0');
 
+    const dia = agora.getDay().toString();
+    const mes = agora.getMonth().toString();
+    const ano = agora.getFullYear().toString();
+
     const relogio = `${horas}:${minutos}:${segundos}`;
+    const data = `${dia}/${mes}/${ano}`
+
     document.getElementById('div-relogio').textContent = relogio;
     document.getElementById('relogio-header').textContent = relogio;
 }
