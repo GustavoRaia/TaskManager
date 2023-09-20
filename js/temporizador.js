@@ -2,7 +2,7 @@ let temporizador_display;
 
 let horasT = 0;
 let minutosT = 0;
-let segundosT = 3;
+let segundosT = 20;
 
 const temporizadorElement = document.getElementById('span-temp');
 
@@ -22,7 +22,10 @@ function iniciar_temporizadorr() {
   } else {
 
     if (horasT < 1 && minutosT < 1) {
-      temporizadorElement.style.color = "red"
+      temporizadorElement.style.color = "yellow"
+      if (segundosT < 11) {
+        temporizadorElement.style.color = "red"
+      }
     }
 
     if (segundosT === 0) {

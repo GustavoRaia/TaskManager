@@ -300,7 +300,7 @@
     text-align: center;
 }
 
-#input-despertador:hover {
+#input-despertador:hover, #input-titulo-despertador:hover {
     transform: scale(1.04);
     transition-duration: 0.2s;
 }
@@ -316,6 +316,19 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     font-size: 15pt;
     text-align: center;
+}
+
+#adicionar-despertador {
+    height: 5vh;
+    border-radius: 5%;
+    font-size: 19pt;
+    background-color:  rgba(14, 16, 27, 0.393);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
+    border: 1px solid transparent;
+    color: white;
+    font-family: 'Nunito';
+    padding-bottom: 4.5vh;
+    margin-top: 3vh;
 }
 
 
@@ -345,6 +358,19 @@
     font-size: 20pt;
     padding-left: 1vw;
     padding-top: 1.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-lata-lixo {
+    width: 30px;
+    position: absolute;
+    margin-left: 13.4vw;
+    margin-top: 1.3vh;
+}
+
+#span-titulo-alarme {
+    font-size: 15pt;
 }
 
 .adicionar-alarme img {
@@ -352,7 +378,8 @@
 }
 
 .alarme:hover,
-.adicionar-alarme:hover {
+.adicionar-alarme:hover,
+.img-lata-lixo:hover {
     transform: scale(1.04);
 }
 
