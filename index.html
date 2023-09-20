@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/index.css">
-        <script src="./js/relogio.js" defer></script>
-        <script src="./js/cronometro.js" defer></script>
-        <script src="./js/temporizador.js" defer></script>
-        <title>Task Manager</title>
-    </head>
 
-    <body id="body">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/relogio.js" defer></script>
+    <script src="./js/despertador.js" defer></script>
+    <script src="./js/cronometro.js" defer></script>
+    <script src="./js/temporizador.js" defer></script>
+    <title>Task Manager</title>
+</head>
 
-        <header id="header">
-                <div id="relogio-header"></div>
-            <div id="info">
-                <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
-                <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
-                <div class="card-header" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
-                <div class="card-header" onclick="mostraAlarmes()"><img src="./imagem/alarme.png" alt=""></div>
-            </div>
-        </header>
+<body id="body">
 
-        <div id="div-relogio" onclick="mostra()"></div>
+    <header id="header">
+        <div id="relogio-header"></div>
+        <div id="info">
+            <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
+            <div class="card-header"><a href="./teste.html"><img src="./imagem/calendario.png" alt=""></a></div>
+            <div class="card-header" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
+            <div class="card-header" onclick="mostraAlarmes()"><img src="./imagem/alarme.png" alt=""></div>
+        </div>
+    </header>
 
-        <div id="bloco">
-            <div class="titulo">
-                Escolha uma opção
-            </div>
+    <div id="div-relogio" onclick="mostra()"></div>
 
-            <div class="opcao btn-despertador" onclick="despertador()">
-                <img src="imagem/despertador.png"/>
-            </div>
-
-            <div class="opcao btn-temporizador" onclick="temporizador()">
-                <img src="./imagem/relogio.png"/>
-            </div>
-
-            <div class="opcao btn-cronometro" onclick="cronometro()">
-                <img src="./imagem/cronometro.png"/>
-            </div>
-
-            <div id="txt-despertador">
-                Despertador
-            </div>
-            <div id="txt-temporizador">
-                Temporizador
-            </div>
-            <div id="txt-cronometro">
-                Cronômetro
-            </div>
+    <div id="bloco">
+        <div class="titulo">
+            Escolha uma opção
         </div>
 
-        <div id="div-despertador">
-            <div onclick="volta()" class="btn-voltar">
-                <img src="./imagem/voltar.png" alt="">
+        <div class="opcao btn-despertador" onclick="despertador()">
+            <img src="imagem/despertador.png" />
+        </div>
+
+        <div class="opcao btn-temporizador" onclick="temporizador()">
+            <img src="./imagem/relogio.png" />
+        </div>
+
+        <div class="opcao btn-cronometro" onclick="cronometro()">
+            <img src="./imagem/cronometro.png" />
+        </div>
+
+        <div id="txt-despertador">
+            Despertador
+        </div>
+        <div id="txt-temporizador">
+            Temporizador
+        </div>
+        <div id="txt-cronometro">
+            Cronômetro
+        </div>
+    </div>
+
+    <div id="div-despertador">
+        <div onclick="volta()" class="btn-voltar">
+            <img src="./imagem/voltar.png" alt="">
+        </div>
+
+        <input type="time" id="input-despertador" required>
+        <input type="text" id="input-titulo-despertador" placeholder="Título" maxlength="30" required>
+
+        <div class="botoes-func-container">
+
+            <label for="despertador" aria-placeholder=""></label>
+            <div name="despertador" id="adicionar-despertador" class="btn-func" onclick="cadastrarAlarme()">Adicionar</div>
+
+            <!-- <div class="clock">
             </div>
 
-            <div class="clock">
                 <div class="hour-hand"></div>
                 <div class="minute-hand"></div>
                 <div class="second-hand"></div>
@@ -73,16 +85,16 @@
                 <div class="number number-9">9</div>
                 <div class="number number-10">10</div>
                 <div class="number number-11">11</div>
-                <div class="number number-12">12</div>
-            </div>
+                <div class="number number-12">12</div> -->
         </div>
+    </div>
 
         <div id="div-temporizador">
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
             </div>
 
-            <span id="span-temp">00:01:03</span>
+            <span id="span-temp">00:00:03</span>
 
             <div class="botoes-func-container">
                 <div id="iniciar_temporizador" class="btn-func">Iniciar</div>
@@ -90,14 +102,14 @@
                 <div id="zerar_temporizador" class="btn-func">Zerar</div>
             </div>
         </div>
-        
+
         <div id="div-cronometro">
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
             </div>
 
             <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
-            
+
             <div class="botoes-func-container">
                 <div id="iniciar_cronometro" class="btn-func">Iniciar</div>
                 <div id="pausar_cronometro" class="btn-func">Parar</div>
@@ -105,15 +117,21 @@
             </div>
         </div>
 
-        <div id="div-alarmes">
-            <div class="alarme"></div>
+        <div id="div-alarmes" onload="exibeInfo()">
+            <!-- <div class="alarme"></div>
             <div class="alarme"></div>
             <div class="alarme"></div>
             <div class="alarme"></div>
             <div class="adicionar-alarme">
                 <img src="./imagem/botao-adicionar.png" alt="">
-            </div>
+            </div> -->
+            <ul id="listaAlarmes"></ul>
         </div>
 
-    </body>
+        <audio id="audio" preload="auto" autoplay="false">
+            <source src="./audio/Loud_Alarm_Clock_Buzzer-Muk1984-493547174.mp3" type="audio/mpeg">
+        </audio>
+
+</body>
+
 </html>
