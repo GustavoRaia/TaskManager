@@ -44,24 +44,24 @@ function cronometro() {
 // -------------------------------------------------
 
 function modo() {
-    const fundo = document.getElementById('body')
-    if(fundo.style.backgroundColor == "rgb(255, 255, 255)") {
-        fundo.style.backgroundColor = "rgb(14, 16, 27)"
-        document.getElementById('titulo').style.color = "white"
-        document.getElementById('txt-despertador').style.color = "white"
-        document.getElementById('txt-cronometro').style.color = "white"
-        document.getElementById('txt-temporizador').style.color = "white"
+    const fundo = document.getElementById('body');
+    if (fundo.style.backgroundColor === "rgb(255, 255, 255)") {
+        fundo.style.backgroundColor = "rgb(14, 16, 27)";
+        document.getElementById('titulo').style.color = "white";
+        document.getElementById('txt-despertador').style.color = "white";
+        document.getElementById('txt-cronometro').style.color = "white";
+        document.getElementById('txt-temporizador').style.color = "white";
     } else {
-        fundo.style.backgroundColor = "rgb(255, 255, 255)"
-        document.getElementById('titulo').style.color = "black"
-        document.getElementById('txt-despertador').style.color = "black"
-        document.getElementById('txt-cronometro').style.color = "black"
-        document.getElementById('txt-temporizador').style.color = "black"
+        fundo.style.backgroundColor = "rgb(255, 255, 255)";
+        document.getElementById('titulo').style.color = "black";
+        document.getElementById('txt-despertador').style.color = "black";
+        document.getElementById('txt-cronometro').style.color = "black";
+        document.getElementById('txt-temporizador').style.color = "black";
     }
 }
 
 function volta() {
-    // Dar um jeito de pegar a div atual que foi clicada    
+    // Dar um jeito de pegar a div atual que foi clicada
     document.getElementById('div-despertador').style.display = "none"
     document.getElementById('div-temporizador').style.display = "none"
     document.getElementById('div-cronometro').style.display = "none"
