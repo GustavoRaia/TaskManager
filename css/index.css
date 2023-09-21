@@ -102,6 +102,7 @@
 .titulo {
     margin-top: 4%;
     font-size: 2pc;
+    color: white;
 }
 
 .opcao {
@@ -133,6 +134,7 @@
     margin-top: 2.8vh;
     font-size: 1.8pc;
     display: none;
+    color: white;
 }
 
 .btn-despertador:hover~#txt-despertador,
