@@ -1,3 +1,5 @@
+// import { cadastrarAlarme, excluirAlarme, verificaAlarme } from './despertador.js';
+
 function atualizarRelogio() {
     const agora = new Date();
     const horas = agora.getHours().toString().padStart(2, '0');

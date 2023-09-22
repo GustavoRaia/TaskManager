@@ -298,6 +298,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     font-size: 25pt;
     text-align: center;
+    font-family: 'Nunito';
 }
 
 #input-despertador:hover, #input-titulo-despertador:hover {

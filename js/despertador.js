@@ -1,4 +1,6 @@
-var conta = 0;
+var conta = 0; // Q
+var alarmes_ativos = [] // Array de Alarmes Ativos
+var teste_lixo = 0 // Valor cumulativo para 
 
 function cadastrarAlarme() {
     if (conta >= 5) {
@@ -10,14 +12,18 @@ function cadastrarAlarme() {
         var input_despertador = document.getElementById('input-despertador').value;
         var input_titulo_despertador = document.getElementById('input-titulo-despertador').value;
 
-        var novoAlarme = document.createElement('div');
+        alarmes_ativos.push({
+            horario_alarme: input_despertador,
+            titulo_alarme: input_titulo_despertador,
+        })
 
-        novoAlarme.innerHTML = "<div class='alarme'>" + 
-                                    input_despertador + "<br/> <div id='span-titulo-alarme'>" + 
-                                    input_titulo_despertador + "</div>" + 
-                                    "<img onclick='excluirAlarme()' class='img-lata-lixo' src='../imagem/lata-de-lixo.png' alt=''>" +
-                                "</div>"
-        
+        var novoAlarme = document.createElement('div');
+        novoAlarme.innerHTML = "<div class='alarme'>" +
+            input_despertador + "<br/> <div id='span-titulo-alarme'>" +
+            input_titulo_despertador + "</div>" +
+            "<img onclick='excluirAlarme()' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
+            "</div>"
+
 
         var listaAlarmes = document.getElementById('listaAlarmes');
         listaAlarmes.appendChild(novoAlarme);
@@ -30,5 +36,34 @@ function cadastrarAlarme() {
 }
 
 function excluirAlarme() {
-    window.alert("Funcionalidade lata de lixo");
+    var cu = document.querySelector();
+    window.alert(cu);
+
+    conta--
 }
+
+function verificaAlarme() {
+    const tempo_agora = new Date();
+    const horas_agora = tempo_agora.getHours().toString().padStart(2, '0');
+    const minutos_agora = tempo_agora.getMinutes().toString().padStart(2, '0');
+    const segundos_agora = tempo_agora.getSeconds().toString().padStart(2, '0')
+    const relogio_agora = `${horas_agora}:${minutos_agora}`;
+
+    var i = 0;
+    for (i in alarmes_ativos) {
+        var horar = alarmes_ativos[i].horario_alarme;
+
+        if (relogio_agora == horar && segundos_agora<5) {
+            var audio = document.getElementById('audio');
+            audio.play();
+
+            setTimeout(function() {
+                audio.pause();
+                audio.currentTime = 0;
+              }, 5000);
+        }
+    }
+
+}
+
+setInterval(verificaAlarme, 1000);
