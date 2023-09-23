@@ -93,13 +93,14 @@
     font-weight: bold;
     background-color: #1215284e;
     display: none;
+    color: white;
 }
 
 #bloco img {
     width: 8vw;
 }
 
-.titulo {
+#titulo {
     margin-top: 4%;
     font-size: 2pc;
 }
@@ -146,6 +147,36 @@
     font-weight: bold;
 }
 
+.input-temporizador {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    width: 4vw;
+    height: 7vh;
+    background-color: rgba(70, 71, 80, 0.238);
+    color: white;
+    font: 'Nunito';
+    font-size: 40pt;
+    text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+#div-inputs-temporizador {
+    margin: 0 auto;
+    margin-top: 10%;
+    width: 25vw;
+    font-size: 50pt;
+}
+
 
 
 /* CSS Div Escolhinda  */
@@ -189,6 +220,10 @@
     margin-top: 10%;
     width: 25vw;
     font-size: 50pt;
+}
+
+#span-temp {
+    display: none;
 }
 
 .botoes-func-container {
@@ -328,7 +363,7 @@
     border: 1px solid transparent;
     color: white;
     font-family: 'Nunito';
-    padding-bottom: 4.5vh;
+    padding-bottom: 5vh;
     margin-top: 3vh;
 }
 

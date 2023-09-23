@@ -12,6 +12,10 @@ function cadastrarAlarme() {
         var input_despertador = document.getElementById('input-despertador').value;
         var input_titulo_despertador = document.getElementById('input-titulo-despertador').value;
 
+        if(input_despertador == "" || input_titulo_despertador == "") {
+            return;
+        }
+
         alarmes_ativos.push({
             horario_alarme: input_despertador,
             titulo_alarme: input_titulo_despertador,
@@ -67,3 +71,14 @@ function verificaAlarme() {
 }
 
 setInterval(verificaAlarme, 1000);
+
+function validarFormulario() {
+    var inputDespertador = document.getElementById("input-despertador").value;
+    var inputTituloDespertador = document.getElementById("input-titulo-despertador").value;
+
+    if (inputDespertador.trim() === "" || inputTituloDespertador.trim() === "") {
+        return false;
+    }
+
+    cadastrarAlarme();
+}

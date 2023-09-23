@@ -27,16 +27,16 @@
     <div id="div-relogio" onclick="mostra()"></div>
 
     <div id="bloco">
-        <div class="titulo">
+        <div id="titulo">
             Escolha uma opção
         </div>
 
         <div class="opcao btn-despertador" onclick="despertador()">
-            <img src="imagem/despertador.png" />
+            <img src="./imagem/despertador.png" />
         </div>
 
         <div class="opcao btn-temporizador" onclick="temporizador()">
-            <img src="./imagem/relogio.png" />
+            <img src="./imagem/relogio.png " />
         </div>
 
         <div class="opcao btn-cronometro" onclick="cronometro()">
@@ -61,34 +61,15 @@
 
         <form action="">
             <input type="time" id="input-despertador" name="input-despertador" required>
-            <input type="text" id="input-titulo-despertador" name="input-titulo-despertador" placeholder="Título" maxlength="25" required>
+            <input type="text" id="input-titulo-despertador" name="input-titulo-despertador" placeholder="Título"
+                maxlength="25" required>
+
+            <div class="botoes-func-container">
+                <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func"
+                    onclick="cadastrarAlarme()">
+            </div>
         </form>
 
-        <div class="botoes-func-container">
-            <!-- <div name="despertador" id="adicionar-despertador" class="btn-func" onclick="cadastrarAlarme()">Adicionar</div> -->
-            <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func"
-                onclick="cadastrarAlarme()">
-
-            <!-- <div class="clock">
-            </div>
-
-                <div class="hour-hand"></div>
-                <div class="minute-hand"></div>
-                <div class="second-hand"></div>
-
-                <div class="number number-1">1</div>
-                <div class="number number-2">2</div>
-                <div class="number number-3">3</div>
-                <div class="number number-4">4</div>
-                <div class="number number-5">5</div>
-                <div class="number number-6">6</div>
-                <div class="number number-7">7</div>
-                <div class="number number-8">8</div>
-                <div class="number number-9">9</div>
-                <div class="number number-10">10</div>
-                <div class="number number-11">11</div>
-                <div class="number number-12">12</div> -->
-        </div>
     </div>
 
     <div id="div-temporizador">
@@ -96,7 +77,12 @@
             <img src="./imagem/voltar.png" alt="">
         </div>
 
-        <span id="span-temp">00:00:20</span>
+        <span id="span-temp"></span>
+        <div id="div-inputs-temporizador">
+            <input id="horas-temporizador" class="input-temporizador" type="number" max="23" min="0" maxlength="2">
+            <input id="minutos-temporizador" class="input-temporizador" type="number" max="59" min="0" maxlength="2">
+            <input id="segundos-temporizador" class="input-temporizador" type="number" max="59" min="1" maxlength="2">            
+        </div>
 
         <div class="botoes-func-container">
             <div id="iniciar_temporizador" class="btn-func">Iniciar</div>
@@ -126,6 +112,26 @@
     <audio id="audio" preload="auto" autoplay="false">
         <source src="./audio/Loud_Alarm_Clock_Buzzer-Muk1984-493547174.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- <div class="clock">
+            </div>
+
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+                <div class="second-hand"></div>
+
+                <div class="number number-1">1</div>
+                <div class="number number-2">2</div>
+                <div class="number number-3">3</div>
+                <div class="number number-4">4</div>
+                <div class="number number-5">5</div>
+                <div class="number number-6">6</div>
+                <div class="number number-7">7</div>
+                <div class="number number-8">8</div>
+                <div class="number number-9">9</div>
+                <div class="number number-10">10</div>
+                <div class="number number-11">11</div>
+                <div class="number number-12">12</div> -->
 
 </body>
 
