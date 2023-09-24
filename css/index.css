@@ -11,6 +11,19 @@
     justify-content: center;
 }
 
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 
 
 /* CSS Header */
@@ -160,19 +173,26 @@
     text-align: center;
 }
 
-input[type=number]::-webkit-inner-spin-button { 
-    -webkit-appearance: none;
-    
+#confirmar-valor {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2vh;
+    width: 14vw;
+    font-size: 12pt;
+    height: 2vh;
+    box-shadow: 0 0 5px black;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
-input[type=number] { 
-   -moz-appearance: textfield;
-   appearance: textfield;
 
+#confirmar-valor:hover {
+    transform: scale(1.05);
+    transition-duration: 0.1s;
 }
 
 #div-inputs-temporizador {
     margin: 0 auto;
-    margin-top: 10%;
     width: 25vw;
     font-size: 50pt;
 }
@@ -217,7 +237,6 @@ input[type=number] {
 #span-smh,
 #span-temp {
     margin: 0 auto;
-    margin-top: 10%;
     width: 25vw;
     font-size: 50pt;
 }
@@ -336,7 +355,8 @@ input[type=number] {
     font-family: 'Nunito';
 }
 
-#input-despertador:hover, #input-titulo-despertador:hover {
+#input-despertador:hover,
+#input-titulo-despertador:hover {
     transform: scale(1.04);
     transition-duration: 0.2s;
 }
@@ -358,7 +378,7 @@ input[type=number] {
     height: 5vh;
     border-radius: 5%;
     font-size: 19pt;
-    background-color:  rgba(14, 16, 27, 0.393);
+    background-color: rgba(14, 16, 27, 0.393);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     border: 1px solid transparent;
     color: white;

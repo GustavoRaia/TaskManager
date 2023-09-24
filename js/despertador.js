@@ -57,14 +57,14 @@ function verificaAlarme() {
     for (i in alarmes_ativos) {
         var horar = alarmes_ativos[i].horario_alarme;
 
-        if (relogio_agora == horar && segundos_agora<5) {
+        if (relogio_agora == horar && segundos_agora<20) {
             var audio = document.getElementById('audio');
             audio.play();
 
             setTimeout(function() {
                 audio.pause();
                 audio.currentTime = 0;
-              }, 5000);
+              }, 20000);
         }
     }
 
@@ -76,7 +76,7 @@ function validarFormulario() {
     var inputDespertador = document.getElementById("input-despertador").value;
     var inputTituloDespertador = document.getElementById("input-titulo-despertador").value;
 
-    if (inputDespertador.trim() === "" || inputTituloDespertador.trim() === "") {
+    if (inputDespertador === "" || inputTituloDespertador === "") {
         return false;
     }
 

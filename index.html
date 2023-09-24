@@ -77,11 +77,13 @@
             <img src="./imagem/voltar.png" alt="">
         </div>
 
+
         <span id="span-temp"></span>
         <div id="div-inputs-temporizador">
-            <input id="horas-temporizador" class="input-temporizador" type="number" max="23" min="0" maxlength="2">
-            <input id="minutos-temporizador" class="input-temporizador" type="number" max="59" min="0" maxlength="2">
-            <input id="segundos-temporizador" class="input-temporizador" type="number" max="59" min="1" maxlength="2">            
+            <input id="horas-temporizador" class="input-temporizador" type="number" max="23" min="0" maxlength="2" placeholder="h" required>
+            <input id="minutos-temporizador" class="input-temporizador" type="number" max="59" min="0" maxlength="2" placeholder="m" required>
+            <input id="segundos-temporizador" class="input-temporizador" type="number" max="59" min="1" maxlength="2" placeholder="s" required>
+            <div id="confirmar-valor">Confirmar</div>
         </div>
 
         <div class="botoes-func-container">
@@ -110,7 +112,7 @@
     </div>
 
     <audio id="audio" preload="auto" autoplay="false">
-        <source src="./audio/Loud_Alarm_Clock_Buzzer-Muk1984-493547174.mp3" type="audio/mpeg">
+        <source src="./audio/mixkit-marimba-ringtone-1359.wav" type="audio/mpeg">
     </audio>
 
     <!-- <div class="clock">
