@@ -1,66 +1,79 @@
+// Função de formatar e atualizar relógio
 function atualizarRelogio() {
     const agora = new Date();
     const horas = agora.getHours().toString().padStart(2, '0');
     const minutos = agora.getMinutes().toString().padStart(2, '0');
     const segundos = agora.getSeconds().toString().padStart(2, '0');
 
+    const relogio = `${horas}:${minutos}:${segundos}`;
     const dia = agora.getDay().toString();
     const mes = agora.getMonth().toString();
     const ano = agora.getFullYear().toString();
-
-    const relogio = `${horas}:${minutos}:${segundos}`;
     const data = `${dia}/${mes}/${ano}`
 
-    document.getElementById('div-relogio').textContent = relogio;
-    document.getElementById('relogio-header').textContent = relogio;
+    document.getElementById('div-relogio').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial
+    document.getElementById('relogio-header').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div presente na header
 }
 
-setInterval(atualizarRelogio, 1000);
-
+setInterval(atualizarRelogio, 1000); // Atualiza o relógio a cada segundo
 atualizarRelogio();
 
+
+var div_header = document.getElementById('header'); // Pega o valor do id 'header'
+var div_bloco = document.getElementById('bloco'); // Pega o valor do id 'bloco'
+
+// Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra() {
-    document.getElementById('header').style.display = "block";
-    document.getElementById('header').style.display = "flex";
-    document.getElementById('bloco').style.display = "block";
+    div_header.style.display = "block";
+    div_header.style.display = "flex";
+    div_bloco.style.display = "block";
     document.getElementById('div-relogio').style.display = "none";
 }
 
+// Muda os displays ao evento de clicar no botão de despertador
 function despertador() {
-    document.getElementById('bloco').style.display = "none";
+    div_bloco.style.display = "none";
     document.getElementById('div-despertador').style.display = "block";
 }
 
 function temporizador() {
-    document.getElementById('bloco').style.display = "none";
+    div_bloco.style.display = "none";
     document.getElementById('div-temporizador').style.display = "block";
 }
 
 function cronometro() {
-    document.getElementById('bloco').style.display = "none";
+    div_bloco.style.display = "none";
     document.getElementById('div-cronometro').style.display = "block";
 }
 
+
+
+
+
+
+// CRIAR OUTRO ARQUIVO JS PARA AS FUNÇÕES ABAIXO
 // -------------------------------------------------
 
+// Função de Modo Claro/Escuro
 function modo() {
     const fundo = document.getElementById('body')
     if(fundo.style.backgroundColor == "rgb(255, 255, 255)") {
         fundo.style.backgroundColor = "rgb(14, 16, 27)";
-        document.getElementById('bloco').style.color = "white";
+        div_bloco.style.color = "white";
     } else {
         fundo.style.backgroundColor = "rgb(255, 255, 255)";
-        document.getElementById('bloco').style.color = "black";
+        div_bloco.style.color = "black";
 
     }
 }
+
 
 function volta() {
     // Dar um jeito de pegar a div atual que foi clicada    
     document.getElementById('div-despertador').style.display = "none";
     document.getElementById('div-temporizador').style.display = "none";
     document.getElementById('div-cronometro').style.display = "none";
-    document.getElementById('bloco').style.display = "block";
+    div_bloco.style.display = "block";
 }
 
 function mostraAlarmes () {

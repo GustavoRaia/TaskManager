@@ -9,6 +9,7 @@ const pegarValor = document.getElementById('confirmar-valor');
 const inputsHorarios = document.getElementById('div-inputs-temporizador');
 
 var audio = document.getElementById('audio');
+audio.pause();
 
 function formatarTempoT(h, m, s) {
   return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
