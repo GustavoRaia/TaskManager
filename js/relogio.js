@@ -57,6 +57,7 @@ function cronometro() {
 // Função de Modo Claro/Escuro
 function modo() {
     const fundo = document.getElementById('body');
+    var teste234 = document.getElementsByClassName('cor2').document.getElementById(1);
 
     // var inex = 0;
     // var lista_kudus = []

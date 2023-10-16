@@ -1,6 +1,7 @@
 var qtd_alarmes = 0; // Q
-var alarmes_ativos = [] // Array de Alarmes Ativos
-var teste_lixo = 0 // Valor cumulativo para 
+var alarmes_ativos = []; // Array de Alarmes Ativos
+var teste_lixo = 0; // Valor cumulativo para 
+var vezes_clicado = 0;
 
 var audio = document.getElementById('audio');
 var bloco_span = document.getElementById('span-alarme');
@@ -45,46 +46,60 @@ function cadastrarAlarme() {
 function excluirAlarme() {
     window.alert("Botão Excluir Alarme Clicado.");
 
-    qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
+    // qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
 }
 
 function verificaAlarme() {
     const tempo_agora = new Date();
     const horas_agora = tempo_agora.getHours().toString().padStart(2, '0');
     const minutos_agora = tempo_agora.getMinutes().toString().padStart(2, '0');
-    const segundos_agora = tempo_agora.getSeconds().toString().padStart(2, '0')
+    const segundos_agora = tempo_agora.getSeconds().toString().padStart(2, '0');
     const relogio_agora = `${horas_agora}:${minutos_agora}`;
 
     var i = 0;
     for (i in alarmes_ativos) {
-        var horar = alarmes_ativos[i].horario_alarme; //Pega o valor
-        var titul = alarmes_ativos[i].titulo_alarme;
+        var horar = alarmes_ativos[i].horario_alarme; //Pega o valor do horario cadastrado.
+        var titul = alarmes_ativos[i].titulo_alarme; // Pega o valor do título do alarme cadastrado.
 
-        if (relogio_agora == horar && segundos_agora < 20) {
+        if (relogio_agora == horar && segundos_agora < 20 && vezes_clicado == 0) {
 
             bloco_span.style.display = "block"; // Aparece a div de alarme do respectivo horário (hh:mm:00)
 
             if (segundos_agora < 1) {
-                var horario_span_alarme = document.createElement('div');
-                horario_span_alarme.innerHTML = "<div id='horario-span-alarme'>" + horar + "</div>";
 
-                var titulo_span_alarme = document.createElement('div');
-                titulo_span_alarme.innerHTML = "<div id='titulo-span-alarme'>" + titul + "</div>";
+                console.log(horar);
+                console.log(titul);
+                console.log(i);
+                console.log(alarmes_ativos[i].horario_alarme);
+                console.log(alarmes_ativos[i].titulo_alarme);
+                console.log("");
 
-                var botao_span_alarme = document.createElement('div');
-                botao_span_alarme.innerHTML = "<div id='botao-span-alarme' class='sombra1 borda3' onclick='para_alarme()'>" + "Parar" + "</div>";
+                if(bloco_span.textContent == "") {
+                    var horario_span_alarme = document.createElement('div');
+                    horario_span_alarme.innerHTML = "<div id='horario-span-alarme'>" + horar + "</div>";
+                    bloco_span.appendChild(horario_span_alarme);
 
-                bloco_span.appendChild(horario_span_alarme);
-                bloco_span.appendChild(titulo_span_alarme);
-                bloco_span.appendChild(botao_span_alarme);
+                    var titulo_span_alarme = document.createElement('div');
+                    titulo_span_alarme.innerHTML = "<div id='titulo-span-alarme'>" + titul + "</div>";
+                    bloco_span.appendChild(titulo_span_alarme);
+
+                    var botao_span_alarme = document.createElement('div');
+                    botao_span_alarme.innerHTML = "<div id='botao-span-alarme' class='sombra1 borda3' onclick='para_alarme()'>" + "Parar" + "</div>";
+                    bloco_span.appendChild(botao_span_alarme);                    
+                }
+
 
                 audio.play();
+                vezes_clicado++;
 
                 setTimeout(function () {
                     audio.pause();
                     bloco_span.style.display = "none";
                     audio.currentTime = 0;
+                    vezes_clicado = 0;
+                    bloco_span.textContent = "";
                 }, 20000);
+
             }
 
             // audio.play();

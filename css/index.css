@@ -474,7 +474,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: -1vh;
     width: 16vw;
     height: 7.5vh;
-    font-size: 20pt;
+    font-size: 24pt;
     padding-left: 1vw;
     padding-top: 1.5vh;
     display: flex;
@@ -486,11 +486,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 30px;
     position: absolute;
     margin-left: 13.4vw;
-    margin-top: 1.3vh;
+    margin-top: 0.5vh;
 }
 
 #span-titulo-alarme {
-    font-size: 15pt;
+    font-size: 12pt;
 }
 
 .adicionar-alarme img {
