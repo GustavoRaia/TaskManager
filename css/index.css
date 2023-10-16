@@ -32,7 +32,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #header {
     width: 90vw;
     height: 6vh;
-    background-color: #1215284e;
+    background-color: rgba(18, 21, 40, 0.306);
     justify-content: space-evenly;
     display: none;
     border-radius: 50px;
@@ -99,12 +99,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-top: 20vh;
     width: 40%;
     height: 40vh;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 10px;
-    color: black;
     text-align: center;
     font-weight: bold;
-    background-color: #1215284e;
+    background-color: rgba(18, 21, 40, 0.306);
     display: none;
     color: white;
 }
@@ -123,7 +122,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: 5%;
     margin-top: 5%;
     width: 26%;
-    box-shadow: 0 0 3px black;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
     border-radius: 10px;
 }
 
@@ -163,7 +162,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .input-temporizador {
     border: 1px solid transparent;
     border-radius: 5px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     width: 4vw;
     height: 7vh;
     background-color: rgba(70, 71, 80, 0.238);
@@ -191,7 +190,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 14vw;
     font-size: 12pt;
     height: 2vh;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 5px;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -227,11 +226,11 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #div-temporizador,
 #div-cronometro {
     text-align: center;
-    background-color: #1215284e;
+    background-color: rgba(18, 21, 40, 0.306);
     margin-top: 20vh;
     height: 45vh;
     width: 30%;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 5px;
     display: none;
     user-select: none;
@@ -294,7 +293,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .btn-func {
     height: 5vh;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 5%;
     font-size: 19pt;
     padding-top: 5%;
@@ -437,7 +436,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #div-alarmes {
     position: absolute;
-    background-color: #1215284e;
+    background-color: rgba(18, 21, 40, 0.306);
     width: 20vw;
     height: 89vh;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
