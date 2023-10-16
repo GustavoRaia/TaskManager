@@ -12,9 +12,9 @@
     <title>Task Manager</title>
 </head>
 
-<body id="body">
+<body id="body" class="cor1">
 
-    <header id="header">
+    <header id="header" class="cor2 sombra1">
         <div id="relogio-header"></div>
         <div id="info">
             <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
@@ -26,20 +26,20 @@
 
     <div id="div-relogio" onclick="mostra()"></div>
 
-    <div id="bloco">
+    <div id="bloco" class="cor2 sombra2 borda2">
         <div id="titulo">
             Escolha uma opção
         </div>
 
-        <div class="opcao btn-despertador" onclick="despertador()">
+        <div class="opcao borda2 btn-despertador" onclick="despertador()">
             <img src="./imagem/despertador.png" />
         </div>
 
-        <div class="opcao btn-temporizador" onclick="temporizador()">
+        <div class="opcao borda2 btn-temporizador" onclick="temporizador()">
             <img src="./imagem/relogio.png " />
         </div>
 
-        <div class="opcao btn-cronometro" onclick="cronometro()">
+        <div class="opcao borda2 btn-cronometro" onclick="cronometro()">
             <img src="./imagem/cronometro.png" />
         </div>
 
@@ -54,25 +54,25 @@
         </div>
     </div>
 
-    <div id="div-despertador">
+    <div id="div-despertador" class="cor2 sombra2 borda3">
         <div onclick="volta()" class="btn-voltar">
             <img src="./imagem/voltar.png" alt="">
         </div>
 
         <form action="">
-            <input type="time" id="input-despertador" name="input-despertador" required>
-            <input type="text" id="input-titulo-despertador" name="input-titulo-despertador" placeholder="Título"
+            <input type="time" id="input-despertador" class="cor4 sombra4 borda2" name="input-despertador" required>
+            <input type="text" id="input-titulo-despertador" class="cor4 sombra4 borda2" name="input-titulo-despertador" placeholder="Título"
                 maxlength="25" required>
 
             <div class="botoes-func-container">
-                <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func"
+                <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func sombra2 cor4 borda4"
                     onclick="/* cadastrarAlarme() */ validarFormulario()">
             </div>
         </form>
 
     </div>
 
-    <div id="div-temporizador">
+    <div id="div-temporizador" class="cor2 sombra2 borda3">
         <div onclick="volta()" class="btn-voltar">
             <img src="./imagem/voltar.png" alt="">
         </div>
@@ -80,23 +80,23 @@
 
         <span id="span-temp"></span>
         <div id="div-inputs-temporizador">
-            <input id="horas-temporizador" class="input-temporizador" type="number" max="23" min="0" maxlength="2"
+            <input id="horas-temporizador" class="input-temporizador sombra2 borda3" type="number" max="23" min="0" maxlength="2"
                 placeholder="h" required>
-            <input id="minutos-temporizador" class="input-temporizador" type="number" max="59" min="0" maxlength="2"
+            <input id="minutos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="0" maxlength="2"
                 placeholder="m" required>
-            <input id="segundos-temporizador" class="input-temporizador" type="number" max="59" min="1" maxlength="2"
+            <input id="segundos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="1" maxlength="2"
                 placeholder="s" required>
-            <div id="confirmar-valor">Confirmar</div>
+            <div id="confirmar-valor" class="sombra2 borda3">Confirmar</div>
         </div>
 
         <div class="botoes-func-container">
-            <div id="iniciar_temporizador" class="btn-func">Iniciar</div>
-            <div id="pausar_temporizador" class="btn-func">Parar</div>
-            <div id="zerar_temporizador" class="btn-func">Zerar</div>
+            <div id="iniciar_temporizador" class="btn-func sombra2 borda4">Iniciar</div>
+            <div id="pausar_temporizador" class="btn-func sombra2 borda4">Parar</div>
+            <div id="zerar_temporizador" class="btn-func sombra2 borda4">Zerar</div>
         </div>
     </div>
 
-    <div id="div-cronometro">
+    <div id="div-cronometro" class="cor2 sombra2 borda3">
         <div onclick="volta()" class="btn-voltar">
             <img src="./imagem/voltar.png" alt="">
         </div>
@@ -104,13 +104,13 @@
         <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
 
         <div class="botoes-func-container">
-            <div id="iniciar_cronometro" class="btn-func">Iniciar</div>
-            <div id="pausar_cronometro" class="btn-func">Parar</div>
-            <div id="zerar_cronometro" class="btn-func">Zerar</div>
+            <div id="iniciar_cronometro" class="btn-func sombra2 borda4">Iniciar</div>
+            <div id="pausar_cronometro" class="btn-func sombra2 borda4">Parar</div>
+            <div id="zerar_cronometro" class="btn-func sombra2 borda4">Zerar</div>
         </div>
     </div>
 
-    <div id="div-alarmes" onload="exibeInfo()">
+    <div id="div-alarmes" class="cor2 sombra1" onload="exibeInfo()">
         <ul id="listaAlarmes"></ul>
     </div>
 
@@ -139,10 +139,10 @@
                 <div class="number number-12">12</div> 
     -->
 
-    <div id="span-alarme">
+    <div id="span-alarme" class="cor1 sombra4 borda2">
         <!-- <div id="horario-span-alarme">Fundencio</div>
         <div id="titulo-span-alarme">Meu nome é Henrikh Mkhitaryan</div>
-        <div id="botao-span-alarme">Parar</div> -->
+        <div id="botao-span-alarme" class="sombra1 borda3">Parar</div> -->
     </div>
 
 </body>

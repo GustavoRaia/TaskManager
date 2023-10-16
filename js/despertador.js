@@ -25,7 +25,7 @@ function cadastrarAlarme() {
         })
 
         var novoAlarme = document.createElement('div');
-        novoAlarme.innerHTML = "<div class='alarme'>" +
+        novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3'>" +
             input_despertador + "<br/> <div id='span-titulo-alarme'>" +
             input_titulo_despertador + "</div>" +
             "<img onclick='excluirAlarme()' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
@@ -72,7 +72,7 @@ function verificaAlarme() {
                 titulo_span_alarme.innerHTML = "<div id='titulo-span-alarme'>" + titul + "</div>";
 
                 var botao_span_alarme = document.createElement('div');
-                botao_span_alarme.innerHTML = "<div id='botao-span-alarme' onclick='para_alarme()'>" + "Parar" + "</div>";
+                botao_span_alarme.innerHTML = "<div id='botao-span-alarme' class='sombra1 borda3' onclick='para_alarme()'>" + "Parar" + "</div>";
 
                 bloco_span.appendChild(horario_span_alarme);
                 bloco_span.appendChild(titulo_span_alarme);

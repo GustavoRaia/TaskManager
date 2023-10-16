@@ -1,10 +1,59 @@
-/* CSS Body */
-
 /* Importa a fonte 'Nunito' */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); 
 
-#body {
+
+
+/* Definindo cores das divs (background-color) */
+
+.cor1{
     background-color: rgb(14, 16, 27);
+}
+.cor2{
+    background-color: rgba(18, 21, 40, 0.306);
+}
+.cor3{
+    background-color: rgba(70, 71, 80, 0.238);
+}
+.cor4{
+    background-color: rgba(14, 16, 27, 0.393);
+}
+
+/* Definindo sombras da borda das divs (box-shadow) */
+
+.sombra1{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
+}
+.sombra2{
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+.sombra3{
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+}
+.sombra4{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
+}
+
+/* Definindo a circunferência da borda das divs (border-radius) */
+
+.borda1{
+    border-radius: 50px;
+}
+.borda2{
+    border-radius: 10px;
+}
+.borda3{
+    border-radius: 5px;
+}
+.borda4{
+    border-radius: 5%;
+}
+
+
+
+/* CSS Body */
+
+#body {
+    /* background-color: rgb(14, 16, 27); */
     color: white;
     font-family: 'Nunito';
     display: flex;
@@ -32,11 +81,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #header {
     width: 90vw;
     height: 6vh;
-    background-color: rgba(18, 21, 40, 0.306);
     justify-content: space-evenly;
     display: none;
     border-radius: 50px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
     user-select: none;
 }
 
@@ -65,7 +112,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .card-header {
     width: 50px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .card-header:hover {
@@ -99,11 +146,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-top: 20vh;
     width: 40%;
     height: 40vh;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    border-radius: 10px;
     text-align: center;
     font-weight: bold;
-    background-color: rgba(18, 21, 40, 0.306);
     display: none;
     color: white;
 }
@@ -123,7 +167,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-top: 5%;
     width: 26%;
     box-shadow: 0 0 3px rgb(0, 0, 0);
-    border-radius: 10px;
 }
 
 .opcao img {
@@ -161,8 +204,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .input-temporizador {
     border: 1px solid transparent;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
     width: 4vw;
     height: 7vh;
     background-color: rgba(70, 71, 80, 0.238);
@@ -190,8 +231,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 14vw;
     font-size: 12pt;
     height: 2vh;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    border-radius: 5px;
     padding-top: 3px;
     padding-bottom: 3px;
 
@@ -226,12 +265,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #div-temporizador,
 #div-cronometro {
     text-align: center;
-    background-color: rgba(18, 21, 40, 0.306);
     margin-top: 20vh;
     height: 45vh;
     width: 30%;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    border-radius: 5px;
     display: none;
     user-select: none;
 
@@ -293,8 +329,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .btn-func {
     height: 5vh;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-    border-radius: 5%;
     font-size: 19pt;
     padding-top: 5%;
     padding-left: 4%;
@@ -388,11 +422,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #input-despertador {
     width: 15vw;
     height: 8vh;
-    border-radius: 10px;
     border: 1px solid transparent;
     color: white;
-    background-color: rgba(14, 16, 27, 0.393);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     font-size: 25pt;
     text-align: center;
     font-family: 'Nunito';
@@ -407,22 +438,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #input-titulo-despertador {
     width: 15vw;
     height: 3vh;
-    border-radius: 10px;
     margin-top: 3vh;
     border: 1px solid transparent;
     color: white;
-    background-color: rgba(14, 16, 27, 0.393);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     font-size: 15pt;
     text-align: center;
 }
 
 #adicionar-despertador {
     height: 5vh;
-    border-radius: 5%;
     font-size: 19pt;
-    background-color: rgba(14, 16, 27, 0.393);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
     border: 1px solid transparent;
     color: white;
     font-family: 'Nunito';
@@ -436,10 +461,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #div-alarmes {
     position: absolute;
-    background-color: rgba(18, 21, 40, 0.306);
     width: 20vw;
     height: 89vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
     margin-left: 80vw;
     margin-top: 10.2vh;
     display: none;
@@ -451,9 +474,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: -1vh;
     width: 16vw;
     height: 7.5vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
-    background-color: rgb(14, 16, 27);
-    border-radius: 5px;
     font-size: 20pt;
     padding-left: 1vw;
     padding-top: 1.5vh;
@@ -489,8 +509,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: -1vh;
     width: 16vw;
     height: 7.5vh;
-    background-color: rgba(14, 16, 27, 0.393);
-    border-radius: 10px;
     border: 2px dashed rgba(255, 255, 255, 0.423);
     padding-left: 1vw;
     padding-top: 1.5vh;
@@ -502,9 +520,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 25%;
     height: 35vh;
     margin-top: 33vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
-    background-color: rgb(14, 16, 27);
-    border-radius: 10px;
     display: none;
 }
 
@@ -522,12 +537,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 15pt;
     margin: 0 auto;
     margin-top: 4vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
     padding-top: 1.3vh;
     padding-bottom: 2vh;
     width: 20%;
     height: 2vh;
-    border-radius: 5px;
     user-select: none;
 }
 

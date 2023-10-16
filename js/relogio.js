@@ -56,14 +56,23 @@ function cronometro() {
 
 // Função de Modo Claro/Escuro
 function modo() {
-    const fundo = document.getElementById('body')
-    if(fundo.style.backgroundColor == "rgb(255, 255, 255)") {
-        fundo.style.backgroundColor = "rgb(14, 16, 27)";
-        div_bloco.style.color = "white";
-    } else {
-        fundo.style.backgroundColor = "rgb(255, 255, 255)";
-        div_bloco.style.color = "black";
+    const fundo = document.getElementById('body');
 
+    // var inex = 0;
+    // var lista_kudus = []
+    // for(inex in document.getElementsByClassName('cor2')) {
+    //     lista_kudus.push(inex);
+    // }
+    // console.log(lista_kudus);
+
+    if(teste234.style.backgroundColor == "rgba(18, 21, 40, 0.306)") { // Verifica se o fundo é branco
+        fundo.style.backgroundColor = "rgb(14, 16, 27)"; 
+        teste234.style.backgroundColor = "blue";
+        div_bloco.style.color = "white";
+    } else { // Se o fundo não for branco
+        fundo.style.backgroundColor = "rgb(255, 255, 255)"; 
+        div_bloco.style.color = "black";
+        teste234.style.backgroundColor = "blue";
     }
 }
 
