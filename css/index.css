@@ -283,6 +283,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     } */
 }
 
+.header-div-opcao {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5vh;
+}
+
 .btn-voltar {
     width: 2vw;
     height: 4vh;
@@ -297,6 +303,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .btn-voltar img {
     width: 2vw;
+}
+
+.img-direita-superior img{
+    width: 2.8vw;
+    margin-top: 2vh;
+    margin-left: -5.5vw;
 }
 
 
@@ -493,25 +505,28 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 12pt;
 }
 
-.adicionar-alarme img {
+#adicionar-alarme img {
     width: 2.5vw;
+    padding-left: 7.25vw;
+    padding-top: 1.8vh;
 }
 
 .alarme:hover,
-.adicionar-alarme:hover,
+#adicionar-alarme:hover,
 .img-lata-lixo:hover {
     transform: scale(1.04);
-    transition-duration: 0.1s;
+    /* transform: translateX(10px) rotate(10deg) translateY(5px); */
+    transition-duration: 0.07s;
 }
 
-.adicionar-alarme {
+#adicionar-alarme {
     margin-top: 3vh;
-    margin-left: -1vh;
-    width: 16vw;
-    height: 7.5vh;
-    border: 2px dashed rgba(255, 255, 255, 0.423);
-    padding-left: 1vw;
-    padding-top: 1.5vh;
+    margin-left: 1.5vw;
+    width: 17vw;
+    height: 8vh;
+    border: 2px dashed rgba(255, 255, 255, 0.079);
+    background-color: rgba(0, 0, 0, 0.218);
+    user-select: none;
 }
 
 #span-alarme {

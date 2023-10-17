@@ -1,6 +1,6 @@
 var qtd_alarmes = 0; // Q
 var alarmes_ativos = []; // Array de Alarmes Ativos
-var teste_lixo = 0; // Valor cumulativo para 
+var teste_lixo = 0; // Teste para o valor do nome da nova div de alarme
 var vezes_clicado = 0;
 
 var audio = document.getElementById('audio');
@@ -41,6 +41,10 @@ function cadastrarAlarme() {
     }
 
     qtd_alarmes++; // Incrementa a quantidade de alarmes cadastrados.
+
+    if(qtd_alarmes == 5) {
+        document.getElementById('adicionar-alarme').style.display = "none";
+    }
 }
 
 function excluirAlarme() {
@@ -136,4 +140,11 @@ function validarFormulario() {
 function para_alarme() {
     audio.pause();
     bloco_span.style.display = "none";
+}
+
+function btnAdicionarAlarme() {
+    document.getElementById('div-despertador').style.display = "block";
+    document.getElementById('div-temporizador').style.display = "none";
+    document.getElementById('div-cronometro').style.display = "none";
+    document.getElementById('bloco').style.display = "none";
 }

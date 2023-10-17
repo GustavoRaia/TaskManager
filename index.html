@@ -55,8 +55,13 @@
     </div>
 
     <div id="div-despertador" class="cor2 sombra2 borda3">
-        <div onclick="volta()" class="btn-voltar">
-            <img src="./imagem/voltar.png" alt="">
+        <div class="header-div-opcao">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+            <div class="img-direita-superior">
+                <img src="./imagem/despertador.png" alt="">
+            </div>
         </div>
 
         <form action="">
@@ -73,10 +78,14 @@
     </div>
 
     <div id="div-temporizador" class="cor2 sombra2 borda3">
-        <div onclick="volta()" class="btn-voltar">
-            <img src="./imagem/voltar.png" alt="">
+        <div class="header-div-opcao">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+            <div class="img-direita-superior">
+                <img src="./imagem/relogio.png" alt="">
+            </div>
         </div>
-
 
         <span id="span-temp"></span>
         <div id="div-inputs-temporizador">
@@ -97,8 +106,13 @@
     </div>
 
     <div id="div-cronometro" class="cor2 sombra2 borda3">
-        <div onclick="volta()" class="btn-voltar">
-            <img src="./imagem/voltar.png" alt="">
+        <div class="header-div-opcao">
+            <div onclick="volta()" class="btn-voltar">
+                <img src="./imagem/voltar.png" alt="">
+            </div>
+            <div class="img-direita-superior">
+                <img src="./imagem/cronometro.png" alt="">
+            </div>
         </div>
 
         <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
@@ -112,6 +126,7 @@
 
     <div id="div-alarmes" class="cor2 sombra1" onload="exibeInfo()">
         <ul id="listaAlarmes"></ul>
+        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()"><img src="./imagem/botao-adicionar.png" alt=""></div>
     </div>
 
     <audio id="audio" preload="auto" autoplay="false">
