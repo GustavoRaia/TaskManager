@@ -1,27 +1,29 @@
 let temporizador_display;
-const temporizadorElement = document.getElementById('span-temp');
+const temporizadorElement = document.getElementById('span-temp'); // Pega o valor da div do display do temporizador.
 
-const iniciarButtonT = document.getElementById('iniciar_temporizador');
-const pausarButtonT = document.getElementById('pausar_temporizador');
-const zerarButtonT = document.getElementById('zerar_temporizador');
-const pegarValor = document.getElementById('confirmar-valor');
+const iniciarButtonT = document.getElementById('iniciar_temporizador'); // Pega o valor da div do botão de iniciar temporizador.
+const pausarButtonT = document.getElementById('pausar_temporizador'); // Pega o valor da div do botão de pausar temporizador.
+const zerarButtonT = document.getElementById('zerar_temporizador'); // Pega o valor da div do botão de zerar temporizador.
+const pegarValor = document.getElementById('confirmar-valor'); // Pega o valor da div do botão de confirmar valor de tempo.
 
-const inputsHorarios = document.getElementById('div-inputs-temporizador');
+const inputsHorarios = document.getElementById('div-inputs-temporizador'); // Pega o valor da div do horário do temporizador.
 
-var audio = document.getElementById('audio');
-audio.pause();
+var audio = document.getElementById('audio'); // Pega o valor do elemento áudio do HTML.
+audio.pause(); // Pausa o áudio.
 
+// Função para formatar tempo (horas, minutos e segundos).
 function formatarTempoT(h, m, s) {
   return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
 }
 
+// Função para iniciar a contagem do temporizador.
 function iniciar_temporizadorr() {
   var sup = document.getElementById('span-temp').textContent; // Pega o valor na variável (possui 6 casas).
   var horasT = sup[0] + sup[1]; // Valor das horas são as duas primeiras casas da variável.
   var minutosT = sup[3] + sup[4]; // Valor dos minutos são as terceira e quarta casas da variável.
   var segundosT = sup[6] + sup[7]; // Valor dos segundos são as duas últimas casas da variável.
 
-  if (horasT == 0 && minutosT == 0 && segundosT == 0) {
+  if (horasT == 0 && minutosT == 0 && segundosT == 0) { // Verifica se o temporizador chegou ao valor final.
     audio.play(); // Toca o áudio quando o temporizador estiver zerado.
   } else {
     if (horasT < 1 && minutosT < 1) {
