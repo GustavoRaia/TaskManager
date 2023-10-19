@@ -29,8 +29,8 @@ function cadastrarAlarme() {
         novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3'>" +
             input_despertador + "<br/> <div id='span-titulo-alarme'>" +
             input_titulo_despertador + "</div>" +
-            "<img onclick='excluirAlarme()' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
-            "</div>"
+                                            "<img onclick='excluirAlarme(" + teste_lixo + ")' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
+                                       "</div>"
 
 
         var listaAlarmes = document.getElementById('listaAlarmes');
@@ -47,10 +47,19 @@ function cadastrarAlarme() {
     }
 }
 
-function excluirAlarme() {
-    window.alert("Botão Excluir Alarme Clicado.");
+function excluirAlarme(valor) {
 
-    // qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
+    var busca = 0;
+    for(busca in alarmes_ativos) {
+        if(alarmes_ativos[busca].horario_alarme == alarmes_ativos[valor].horario_alarme) { // Condição para a exclusão da div do alarme e também do valor do alarme dentro do array
+            console.log('gosminha');
+        } else {
+            console.log('nem passou');
+        }
+    }
+
+    qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
+    teste_lixo --;
 }
 
 function verificaAlarme() {
