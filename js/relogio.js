@@ -66,12 +66,12 @@ function modo() {
     // }
     // console.log(lista_kudus);
 
-    if(fundo.style.backgroundColor == "rgb(255, 255, 255)") { // Verifica se o fundo é branco
-        fundo.style.backgroundColor = "rgb(14, 16, 27)"; 
+    if (fundo.style.backgroundColor == "rgb(255, 255, 255)") { // Verifica se o fundo é branco
+        fundo.style.backgroundColor = "rgb(14, 16, 27)";
         // teste234.style.backgroundColor = "blue";
         div_bloco.style.color = "white";
     } else { // Se o fundo não for branco
-        fundo.style.backgroundColor = "rgb(255, 255, 255)"; 
+        fundo.style.backgroundColor = "rgb(255, 255, 255)";
         div_bloco.style.color = "black";
         // teste234.style.backgroundColor = "blue";
     }
@@ -86,11 +86,19 @@ function volta() {
     div_bloco.style.display = "block";
 }
 
-function mostraAlarmes () {
+function mostraAlarmes() {
     var div_alarmes = document.getElementById('div-alarmes')
-    if(div_alarmes.style.display == "block") {
+    if (div_alarmes.style.display == "block") {
         div_alarmes.style.display = "none";
     } else {
         div_alarmes.style.display = "block";
     }
 }
+
+document.getElementById("moverDivAlarmes").addEventListener("click", function () {
+    var divMovel = document.getElementById("div-alarmes");
+
+    divMovel.style.display = "block";
+    divMovel.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
+
+});

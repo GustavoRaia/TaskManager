@@ -59,6 +59,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow: hidden;
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -475,11 +476,19 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     position: absolute;
     width: 20vw;
     height: 89vh;
-    margin-left: 80vw;
+    margin-left: 120vw;
     margin-top: 10.2vh;
-    display: none;
     border-top-left-radius: 10px;
+    transition: transform 1s; /* Adiciona uma transição de 1 segundo para suavizar o movimento */
 }
+
+.move-esquerda {
+    transform: translateX(-20vw);
+}
+
+/* .move-direita {
+    transform: translateX(20vw);
+} */
 
 .alarme {
     margin-top: 3vh;

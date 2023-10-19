@@ -86,7 +86,7 @@ pausarButtonT.addEventListener('click', function () {
   clearInterval(temporizador_display); // Pausa a execução.
   temporizador_display = null; // A execução do temporizador passa a ser 'null'.
   iniciarButtonT.disabled = false; // Ativa o botão de iniciar contagem, que funcionará para "reiniciar" a contagem de onde foi parado.
-  // audio.pause();
+  audio.pause();
   audio.currentTime = 0;
 });
 
@@ -107,4 +107,6 @@ zerarButtonT.addEventListener('click', function () {
 
   audio.pause(); // Para a execução do áudio.
   audio.currentTime = 0; // Reinicia o valor do áudio para o início
+
+  temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
 });
