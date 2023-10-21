@@ -25,7 +25,7 @@ function cadastrarAlarme() {
         novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3' id='alarme-" + teste_lixo + "'>" +
             input_despertador + "<br/> <div id='span-titulo-alarme'>" +
             input_titulo_despertador + "</div>" +
-            "<img onclick='excluirAlarme(" + teste_lixo + ")' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
+            "<img onclick='excluirAlarme(" + teste_lixo + ")' class='img-lata-lixo lixo" + teste_lixo++ + "' src='./imagem/lata-de-lixo.png' alt=''>" +
             "</div>"
 
 
