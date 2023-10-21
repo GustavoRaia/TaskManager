@@ -7,7 +7,7 @@ var audio = document.getElementById('audio');
 var bloco_span = document.getElementById('span-alarme');
 
 function cadastrarAlarme() {
-    if (qtd_alarmes >= 5) { // Verifica  a qtd de alarmes cadastrados
+    if (qtd_alarmes == 5) { // Verifica a qtd de alarmes cadastrados
         window.alert("Não é possível cadastrar mais alarmes"); // Mensagem de erro caso haja o nº máximo de alarmes cadastrados.
 
         document.getElementById('input-despertador').value = '';
@@ -16,21 +16,17 @@ function cadastrarAlarme() {
         var input_despertador = document.getElementById('input-despertador').value;
         var input_titulo_despertador = document.getElementById('input-titulo-despertador').value;
 
-        if (input_despertador == "" || input_titulo_despertador == "") {
-            return;
-        }
-
         alarmes_ativos.push({
             horario_alarme: input_despertador,
             titulo_alarme: input_titulo_despertador,
         })
 
         var novoAlarme = document.createElement('div');
-        novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3'>" +
+        novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3' id='alarme-" + teste_lixo + "'>" +
             input_despertador + "<br/> <div id='span-titulo-alarme'>" +
             input_titulo_despertador + "</div>" +
-                                            "<img onclick='excluirAlarme(" + teste_lixo + ")' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
-                                       "</div>"
+            "<img onclick='excluirAlarme(" + teste_lixo + ")' class='img-lata-lixo lixo" + teste_lixo++ + "' src='../imagem/lata-de-lixo.png' alt=''>" +
+            "</div>"
 
 
         var listaAlarmes = document.getElementById('listaAlarmes');
@@ -42,24 +38,32 @@ function cadastrarAlarme() {
 
     qtd_alarmes++; // Incrementa a quantidade de alarmes cadastrados.
 
-    if(qtd_alarmes == 5) {
+    if (qtd_alarmes == 5) {
         document.getElementById('adicionar-alarme').style.display = "none";
     }
 }
 
 function excluirAlarme(valor) {
 
-    var busca = 0;
-    for(busca in alarmes_ativos) {
-        if(alarmes_ativos[busca].horario_alarme == alarmes_ativos[valor].horario_alarme) { // Condição para a exclusão da div do alarme e também do valor do alarme dentro do array
-            console.log('gosminha');
-        } else {
-            console.log('nem passou');
+    var valor_alarme_excluir = document.getElementById("alarme-" + valor).textContent;
+
+    var ko = 0;
+    for (ko in alarmes_ativos) {
+        if (alarmes_ativos[ko].horario_alarme == valor_alarme_excluir.slice(0, 5)) {
+            document.getElementById("alarme-" + valor).remove();
+
+            if(qtd_alarmes == 5) {
+                document.getElementById('adicionar-alarme').style.display = "block";
+            }
+
+            qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
+            teste_lixo--;
+
+            var remove_aray = alarmes_ativos.indexOf(alarmes_ativos[ko]);
+            alarmes_ativos.splice(remove_aray, 1);
+
         }
     }
-
-    qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
-    teste_lixo --;
 }
 
 function verificaAlarme() {
@@ -80,14 +84,7 @@ function verificaAlarme() {
 
             if (segundos_agora < 1) {
 
-                console.log(horar);
-                console.log(titul);
-                console.log(i);
-                console.log(alarmes_ativos[i].horario_alarme);
-                console.log(alarmes_ativos[i].titulo_alarme);
-                console.log("");
-
-                if(bloco_span.textContent == "") {
+                if (bloco_span.textContent == "") {
                     var horario_span_alarme = document.createElement('div');
                     horario_span_alarme.innerHTML = "<div id='horario-span-alarme'>" + horar + "</div>";
                     bloco_span.appendChild(horario_span_alarme);
@@ -98,9 +95,8 @@ function verificaAlarme() {
 
                     var botao_span_alarme = document.createElement('div');
                     botao_span_alarme.innerHTML = "<div id='botao-span-alarme' class='sombra1 borda3' onclick='para_alarme()'>" + "Parar" + "</div>";
-                    bloco_span.appendChild(botao_span_alarme);                    
+                    bloco_span.appendChild(botao_span_alarme);
                 }
-
 
                 audio.play();
                 vezes_clicado++;
@@ -114,14 +110,6 @@ function verificaAlarme() {
                 }, 20000);
 
             }
-
-            // audio.play();
-
-            // setTimeout(function() {
-            //     audio.pause();
-            //     bloco_span.style.display = "none";
-            //     audio.currentTime = 0;
-            //   }, 20000);
         }
     }
 
@@ -130,20 +118,28 @@ function verificaAlarme() {
 setInterval(verificaAlarme, 1000);
 
 function validarFormulario() {
-    var inputDespertador = document.getElementById("input-despertador").value;
-    var inputTituloDespertador = document.getElementById("input-titulo-despertador").value;
+    var inputDespertador = document.getElementById('input-despertador').value;
+    var inputTituloDespertador = document.getElementById('input-titulo-despertador').value;
 
     var indice = 0;
-    for (indice in alarmes_ativos) {
-        if (inputDespertador == alarmes_ativos[indice].horario_alarme) {
-            return false;
+    if(alarmes_ativos.length > 0){
+        for (indice in alarmes_ativos) {
+            if (inputDespertador == alarmes_ativos[indice].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
+                document.getElementById('input-despertador').value = ''; // Limpa o valor do input de horário do despertador.
+                document.getElementById('input-titulo-despertador').value = ''; // Limpa o valor do input de descrição do despertador.
+
+                window.alert("Não é possível cadastrar alarmes com o mesmo horário."); // Mensagem de erro caso o valor inserido já esteja cadastrado (2 alarmes com o mesmo horário).
+
+                return false; // Retorna falso para não cadastrar o alarme com erro.
+            }
         }
     }
-    if (inputDespertador === "" || inputTituloDespertador === "") {
-        return false;
+
+    if (inputDespertador === "" || inputTituloDespertador === "") { // Verifica se os inputs foram enviados vazios.
+        return false; // Retorna falso para não cadastrar o alarme com erro.
     }
 
-    cadastrarAlarme();
+    cadastrarAlarme(); // Se não ocorrer nenhum erro, a função de cadastar alarme é chamada
 }
 
 function para_alarme() {

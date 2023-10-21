@@ -1,6 +1,12 @@
 /* Importa a fonte 'Nunito' */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); 
 
+@-o-viewport {
+    zoom: 1.00;
+    min-zoom: 0.75;
+    max-zoom: 1.5;
+}
+
 
 
 /* Definindo cores das divs (background-color) */
@@ -486,32 +492,30 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     transform: translateX(-20vw);
 }
 
-/* .move-direita {
-    transform: translateX(20vw);
-} */
-
 .alarme {
     margin-top: 3vh;
     margin-left: -1vh;
     width: 16vw;
-    height: 7.5vh;
     font-size: 24pt;
     padding-left: 1vw;
-    padding-top: 1.5vh;
+    padding-top: 1vh;
     display: flex;
     flex-direction: column;
     user-select: none;
+    padding-bottom: 1.5vh;
 }
 
 .img-lata-lixo {
     width: 30px;
     position: absolute;
-    margin-left: 13.4vw;
+    margin-left: 13.7vw;
     margin-top: 0.5vh;
 }
 
 #span-titulo-alarme {
+    width: 80%;
     font-size: 12pt;
+    overflow-wrap: break-word;
 }
 
 #adicionar-alarme img {
