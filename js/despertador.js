@@ -38,6 +38,14 @@ function cadastrarAlarme() {
 
     qtd_alarmes++; // Incrementa a quantidade de alarmes cadastrados.
 
+    // const divElement = document.getElementById('div-alarmes'); // Substitua 'sua-div' pelo ID da sua div
+    // document.getElementById('div-alarmes').classList.add('move-esquerda-parcial');
+
+    // setTimeout(() => {
+    //     divElement.classList.remove('move-esquerda-parcial');
+    //     divElement.classList.add('voltar-origem');
+    // }, 2000);
+
     if (qtd_alarmes == 5) {
         document.getElementById('adicionar-alarme').style.display = "none";
     }
@@ -52,7 +60,7 @@ function excluirAlarme(valor) {
         if (alarmes_ativos[ko].horario_alarme == valor_alarme_excluir.slice(0, 5)) {
             document.getElementById("alarme-" + valor).remove();
 
-            if(qtd_alarmes == 5) {
+            if (qtd_alarmes == 5) {
                 document.getElementById('adicionar-alarme').style.display = "block";
             }
 
@@ -117,14 +125,12 @@ function verificaAlarme() {
 
 setInterval(verificaAlarme, 1000);
 
+// Função para verificar dados dos inputs do formulário (vazios ou com o mesmo horário)
 function validarFormulario() {
-    var inputDespertador = document.getElementById('input-despertador').value;
-    var inputTituloDespertador = document.getElementById('input-titulo-despertador').value;
 
-    var indice = 0;
-    if(alarmes_ativos.length > 0){
-        for (indice in alarmes_ativos) {
-            if (inputDespertador == alarmes_ativos[indice].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
+    if (alarmes_ativos.length > 0) { // Verifica se o array de alarmes cadastrados está vazio.
+        for (let i = 0; i < alarmes_ativos.length; i++) { // Percorre o array de alarmes cadastrados.
+            if (document.getElementById('input-despertador').value == alarmes_ativos[i].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
                 document.getElementById('input-despertador').value = ''; // Limpa o valor do input de horário do despertador.
                 document.getElementById('input-titulo-despertador').value = ''; // Limpa o valor do input de descrição do despertador.
 
@@ -135,7 +141,7 @@ function validarFormulario() {
         }
     }
 
-    if (inputDespertador === "" || inputTituloDespertador === "") { // Verifica se os inputs foram enviados vazios.
+    if (document.getElementById('input-despertador').value === "" || document.getElementById('input-titulo-despertador').value === "") { // Verifica se os inputs foram enviados vazios.
         return false; // Retorna falso para não cadastrar o alarme com erro.
     }
 
@@ -143,8 +149,8 @@ function validarFormulario() {
 }
 
 function para_alarme() {
-    audio.pause();
-    bloco_span.style.display = "none";
+    audio.pause(); // Pausa o áudio que toca o alarme
+    bloco_span.style.display = "none"; // A div que contém o alarme passa a ficar invisível
 }
 
 function btnAdicionarAlarme() {

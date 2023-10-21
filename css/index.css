@@ -1,56 +1,66 @@
 /* Importa a fonte 'Nunito' */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"); 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
 
 @-o-viewport {
     zoom: 1.00;
     min-zoom: 0.75;
     max-zoom: 1.5;
+    background-color: #49515a47;
 }
 
 
 
 /* Definindo cores das divs (background-color) */
 
-.cor1{
-    background-color: rgb(14, 16, 27);
+.cor1 {
+    background-color: #0e101b;
 }
-.cor2{
-    background-color: rgba(18, 21, 40, 0.306);
+
+.cor2 {
+    background-color: #1215284e;
 }
-.cor3{
-    background-color: rgba(70, 71, 80, 0.238);
+
+.cor3 {
+    background-color: #4647503d;
 }
-.cor4{
-    background-color: rgba(14, 16, 27, 0.393);
+
+.cor4 {
+    background-color: #0e101b64;
 }
 
 /* Definindo sombras da borda das divs (box-shadow) */
 
-.sombra1{
+.sombra1 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
 }
-.sombra2{
+
+.sombra2 {
     box-shadow: 0 0 5px rgb(0, 0, 0);
 }
-.sombra3{
+
+.sombra3 {
     box-shadow: 0 0 3px rgb(0, 0, 0);
 }
-.sombra4{
+
+.sombra4 {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.83);
 }
 
 /* Definindo a circunferência da borda das divs (border-radius) */
 
-.borda1{
+.borda1 {
     border-radius: 50px;
 }
-.borda2{
+
+.borda2 {
     border-radius: 10px;
 }
-.borda3{
+
+.borda3 {
     border-radius: 5px;
 }
-.borda4{
+
+.borda4 {
     border-radius: 5%;
 }
 
@@ -315,7 +325,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     width: 2vw;
 }
 
-.img-direita-superior img{
+.img-direita-superior img {
     width: 2.8vw;
     margin-top: 2vh;
     margin-left: -5.5vw;
@@ -488,12 +498,53 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: 120vw;
     margin-top: 10.2vh;
     border-top-left-radius: 10px;
-    transition: transform 1s; /* Adiciona uma transição de 1 segundo para suavizar o movimento */
+    transition: transform 1s;
+    /* Adiciona uma transição de 1 segundo para suavizar o movimento */
 }
 
 .move-esquerda {
     transform: translateX(-20vw);
 }
+
+
+
+.move-esquerda-parcial {
+    animation-name: moverParaEsquerdaUmPouco;
+    animation-duration: 1.5s;
+}
+
+@keyframes moverParaEsquerdaUmPouco {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5vw);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.voltar-origem {
+    animation-name: voltarParaOrigem;
+    animation-duration: 1.5s;
+}
+
+@keyframes voltarParaOrigem {
+    0% {
+        transform: translateX(10vw);
+        /* Começa a partir da posição parcialmente à direita */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Volta para a posição original */
+    }
+}
+
+
 
 .alarme {
     margin-top: 3vh;

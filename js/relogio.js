@@ -11,8 +11,9 @@ function atualizarRelogio() {
     const ano = agora.getFullYear().toString();
     const data = `${dia}/${mes}/${ano}`
 
-    document.getElementById('div-relogio').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial
-    document.getElementById('relogio-header').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div presente na header
+    document.getElementById('div-relogio').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial.
+    document.getElementById('relogio-header').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div presente na header.
+    document.title = "Task Manager - " + relogio; // Define o relógio para atualizar o valor na barra de tarefas.
 }
 
 setInterval(atualizarRelogio, 1000); // Atualiza o relógio a cada segundo
@@ -54,27 +55,40 @@ function cronometro() {
 // CRIAR OUTRO ARQUIVO JS PARA AS FUNÇÕES ABAIXO
 // -------------------------------------------------
 
+var alterna = 0;
+
 // Função de Modo Claro/Escuro
 function modo() {
-    const fundo = document.getElementById('body');
-    // var teste234 = document.getElementsByClassName('cor2').document.getElementById(1);
 
-    // var inex = 0;
-    // var lista_kudus = []
-    // for(inex in document.getElementsByClassName('cor2')) {
-    //     lista_kudus.push(inex);
-    // }
-    // console.log(lista_kudus);
+    const classes = ['cor1', 'cor2', 'cor4'];
+    const novasCores = ['#49515a05', '#49515a40', '#49515a20']; // Cores correspondentes às classes
+    const coresVolta = ['#0e101b', '#1215284e', '#0e101b64']; // Cores correspondentes às classes
 
-    if (fundo.style.backgroundColor == "rgb(255, 255, 255)") { // Verifica se o fundo é branco
-        fundo.style.backgroundColor = "rgb(14, 16, 27)";
-        // teste234.style.backgroundColor = "blue";
-        div_bloco.style.color = "white";
-    } else { // Se o fundo não for branco
-        fundo.style.backgroundColor = "rgb(255, 255, 255)";
-        div_bloco.style.color = "black";
-        // teste234.style.backgroundColor = "blue";
+
+    if(alterna == 0) {
+        for (let i = 0; i < classes.length; i++) {
+            const elementos = document.querySelectorAll('.' + classes[i]);
+
+            elementos.forEach(function (elemento) {
+                elemento.style.backgroundColor = novasCores[i];
+            });
+        }
+        // document.getElementById('modo-claro-escuro').style.backgroundImage = "./imagem/forma-de-meia-lua.png";
+        document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/forma-de-meia-lua.png");
+        alterna = 1;
+    } else if (alterna == 1) {
+        for (let i = 0; i < classes.length; i++) {
+            const elementos2 = document.querySelectorAll('.' + classes[i]);
+
+            elementos2.forEach(function (elemento) {
+                elemento.style.backgroundColor = coresVolta[i];
+            });
+        }
+        document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/brilho-do-sol.png");
+        alterna = 0;
     }
+
+
 }
 
 

@@ -52,12 +52,13 @@ function iniciar_temporizadorr() {
 
 // Função para definir o valor do temporizador.
 pegarValor.addEventListener('click', function () {
+
   var horasTemp = document.getElementById("horas-temporizador").value; // Pega o valor do input destinado às horas.
   var minutosTemp = document.getElementById("minutos-temporizador").value; // Pega o valor do input destinado aos minutos.
   var segundosTemp = document.getElementById("segundos-temporizador").value; // Pega o valor do input destinado aos segundos.
 
   // Verifica se algum valor está excedendo o limite máximo (horas, minutos ou segundos) ou se há algum valor negativo.
-  if(segundosTemp>59 || minutosTemp > 59 || horasTemp > 23 || segundosTemp < 0 || minutosTemp < 0 || horasTemp < 0) {
+  if (segundosTemp > 59 || minutosTemp > 59 || horasTemp > 23 || segundosTemp < 0 || minutosTemp < 0 || horasTemp < 0 || (segundosTemp == 0 && minutosTemp == 0 && horasTemp == 0)) {
     document.getElementById('horas-temporizador').value = ""; // Zera o valor do input das horas.
     document.getElementById('minutos-temporizador').value = ""; // Zera o valor do input dos minutos.
     document.getElementById('segundos-temporizador').value = ""; // Zera o valor do input dos segundos.
@@ -99,8 +100,11 @@ zerarButtonT.addEventListener('click', function () {
   document.getElementById('minutos-temporizador').value = ""; // Zera o valor do input dos minutos.
   document.getElementById('segundos-temporizador').value = ""; // Zera o valor do input dos segundos.
 
-  temporizadorElement.innerHTML = '00:00:00'; // Valor do display passa a ser zerado.
-  iniciarButtonT.disabled = false; // Botão de iniciar a contagem volta a poder ser clicado.
+  temporizadorElement.innerHTML = ''; // Valor do display passa a ser zerado.
+
+  if (inputsHorarios.style.display == "none") {
+    iniciarButtonT.disabled = false; // Botão de iniciar a contagem volta a poder ser clicado.
+  }
 
   temporizadorElement.style.display = "none"; // Display da contagem do temporizador desaparece
   inputsHorarios.style.display = "block"; // Display de definir os horários (h, m, s) volta a aparecer.
