@@ -127,6 +127,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     transition-duration: 0.1s;
 }
 
+#invisivel {
+    display: none;
+}
+
 
 
 /* CSS Relógio */
