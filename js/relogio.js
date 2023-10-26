@@ -21,14 +21,50 @@ atualizarRelogio();
 
 
 var div_header = document.getElementById('header'); // Pega o valor do id 'header'
-var div_bloco = document.getElementById('bloco'); // Pega o valor do id 'bloco'
+var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do id do bloco principal 
+var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa
 
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra() {
-    div_header.style.display = "block";
-    div_header.style.display = "flex";
-    div_bloco.style.display = "block";
-    document.getElementById('div-relogio').style.display = "none";
+
+    if(elem_relogio.style.display == "none") {
+        div_header.style.display = "none";
+        div_bloco.style.display = "none";
+        document.getElementById('div-despertador').style.display = "none";
+        document.getElementById('div-temporizador').style.display = "none";
+        document.getElementById('div-cronometro').style.display = "none";
+        document.getElementById('div-alarmes').style.display = "none";
+
+        elem_relogio.style.display = "block";
+
+    } else {
+        div_header.style.display = "block";
+        div_header.style.display = "flex";
+        div_bloco.style.display = "block";
+
+        elem_relogio.style.display = "none";
+    }
+
+    // const classes = ['.bloco'];
+    
+    // if (mostra == 0) {
+    //     for (let i = 0; i < classes.length; i++) {
+    //         const elementos = document.querySelectorAll(classes[i]);
+    //         elementos.forEach(function (elemento) {
+    //             elemento.style.display = "none";
+    //         });
+    //     }
+    //     mostra = 1;
+    // } else if (mostra == 1) {
+    //     for (let i = 0; i < classes.length; i++) {
+    //         const elementos = document.querySelectorAll(classes[i]);
+    //         elementos.forEach(function (elemento) {
+    //             elemento.style.display = "block"; // ou qualquer outro valor desejado
+    //         });
+    //     }
+    //     mostra = 0;
+    // }
+
 }
 
 // Muda os displays ao evento de clicar no botão de despertador
@@ -87,7 +123,6 @@ function modo() {
         document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/brilho-do-sol.png");
         alterna = 0;
     }
-
 
 }
 

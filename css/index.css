@@ -8,7 +8,9 @@
     background-color: #49515a47;
 }
 
-
+* {
+    user-select: none;
+}
 
 /* Definindo cores das divs (background-color) */
 
@@ -31,7 +33,7 @@
 /* Definindo sombras da borda das divs (box-shadow) */
 
 .sombra1 {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.409);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.409);
 }
 
 .sombra2 {
@@ -70,6 +72,7 @@
 
 #body {
     /* background-color: rgb(14, 16, 27); */
+    width: 100%;
     color: white;
     font-family: 'Nunito';
     display: flex;
@@ -91,43 +94,42 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
-
-
-/* CSS Header */
-
-#header {
-    width: 90vw;
-    height: 6vh;
-    justify-content: space-evenly;
-    display: none;
-    border-radius: 50px;
-    user-select: none;
-}
-
-#relogio-header {
-    font-size: 20pt;
-    margin-top: 1.4vh;
-}
-
-#relogio-header:hover {
+.span-tempo:hover {
     color: blueviolet;
     transform: scale(1.05);
     transition-duration: 0.5s;
 }
 
+/* CSS Header */
+
+#header {
+    width: 100%;
+    height: 6vh;
+    justify-content: space-evenly;
+    display: none;
+    /* border-radius: 50px; */
+    margin-top: -1vh;
+    margin-left: -1vw;
+    /* user-select: none; */
+}
+
+#relogio-header {
+    font-size: 20pt;
+    margin-top: 1.1vh;
+}
+
 #info {
-    width: 15vw;
-    height: 5.5vh;
     display: flex;
     justify-content: center;
     column-gap: 3vh;
 }
 
 #info img {
-    height: 40px;
+    height: 80%;
 }
 
 .card-header {
+    padding-top: 1%;
     width: 50px;
     margin-top: 10px;
 }
@@ -146,23 +148,16 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #div-relogio {
     font-size: 50pt;
-    height: 10vh;
-    width: 13vw;
     margin-top: 40vh;
-    user-select: none;
-}
-
-#div-relogio:hover {
-    color: blueviolet;
-    transform: scale(1.05);
-    transition-duration: 0.4s;
+    display: block;
+    /* user-select: none; */
 }
 
 
 
 /* CSS Opções de Escolha */
 
-#bloco {
+#bloco-principal {
     margin-top: 20vh;
     width: 40%;
     height: 40vh;
@@ -172,7 +167,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     color: white;
 }
 
-#bloco img {
+#bloco-principal img {
     width: 8vw;
 }
 
@@ -186,13 +181,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: 5%;
     margin-top: 5%;
     width: 26%;
-    box-shadow: 0 0 3px rgb(0, 0, 0);
+    box-shadow: 0 0 4px rgb(0, 0, 0);
 }
 
 .opcao img {
     width: 150px;
     padding: 11.5%;
-    user-select: none;
+    /* user-select: none; */
 }
 
 .btn-despertador:hover,
@@ -289,7 +284,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     height: 45vh;
     width: 30%;
     display: none;
-    user-select: none;
+    /* user-select: none; */
 
     /* @media (max-width: 1400px) {
         width: 40%;
@@ -312,7 +307,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .btn-voltar {
     width: 2vw;
     height: 4vh;
-    user-select: none;
+    /* user-select: none; */
     margin: 5%;
 }
 
@@ -336,13 +331,18 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 /* CSS Div Cronômetro */
 
 #span-smh,
-#span-temp {
+#span-temporizador {
     margin: 0 auto;
-    width: 25vw;
+    width: 15vw;
     font-size: 50pt;
 }
 
-#span-temp {
+#span-cronometro {
+    margin: 0 auto;
+    width: 15vw;
+}
+
+#span-temporizador {
     display: none;
 }
 
@@ -555,7 +555,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     padding-top: 1vh;
     display: flex;
     flex-direction: column;
-    user-select: none;
+    /* user-select: none; */
     padding-bottom: 1.5vh;
 }
 
@@ -593,7 +593,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     height: 8vh;
     border: 2px dashed rgba(255, 255, 255, 0.079);
     background-color: rgba(0, 0, 0, 0.218);
-    user-select: none;
+    /* user-select: none; */
 }
 
 #span-alarme {
@@ -623,7 +623,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     padding-bottom: 2vh;
     width: 20%;
     height: 2vh;
-    user-select: none;
+    /* user-select: none; */
 }
 
 #botao-span-alarme:hover {

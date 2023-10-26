@@ -1,5 +1,5 @@
 let temporizador_display;
-const temporizadorElement = document.getElementById('span-temp'); // Pega o valor da div do display do temporizador.
+const temporizadorElement = document.getElementById('span-temporizador'); // Pega o valor da div do display do temporizador.
 
 const iniciarButtonT = document.getElementById('iniciar_temporizador'); // Pega o valor da div do botão de iniciar temporizador.
 const pausarButtonT = document.getElementById('pausar_temporizador'); // Pega o valor da div do botão de pausar temporizador.
@@ -18,7 +18,7 @@ function formatarTempoT(h, m, s) {
 
 // Função para iniciar a contagem do temporizador.
 function iniciar_temporizadorr() {
-  var sup = document.getElementById('span-temp').textContent; // Pega o valor na variável (possui 6 casas).
+  var sup = document.getElementById('span-temporizador').textContent; // Pega o valor na variável (possui 6 casas).
   var horasT = sup[0] + sup[1]; // Valor das horas são as duas primeiras casas da variável.
   var minutosT = sup[3] + sup[4]; // Valor dos minutos são as terceira e quarta casas da variável.
   var segundosT = sup[6] + sup[7]; // Valor dos segundos são as duas últimas casas da variável.
@@ -114,3 +114,7 @@ zerarButtonT.addEventListener('click', function () {
 
   temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
 });
+
+function focoTemporizador() {
+  alert("Foco Temporizador.");
+}

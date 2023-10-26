@@ -87,3 +87,7 @@ function formataCronometro() {
     cronometro_display = null; // A execução do cronômetro passa a ser 'null'.
     cronometroMilissegundos = null; // A execução do cronômetro de milissegundos passa a ser 'null'.
 }
+
+function focoCronometro() {
+    alert("Foco Cronometro.");
+  }

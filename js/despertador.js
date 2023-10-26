@@ -157,5 +157,5 @@ function btnAdicionarAlarme() {
     document.getElementById('div-despertador').style.display = "block";
     document.getElementById('div-temporizador').style.display = "none";
     document.getElementById('div-cronometro').style.display = "none";
-    document.getElementById('bloco').style.display = "none";
+    document.getElementById('bloco-principal').style.display = "none";
 }

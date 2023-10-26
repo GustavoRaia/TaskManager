@@ -16,20 +16,20 @@
 
 <body id="body" class="cor1">
 
-    <header id="header" class="cor2 sombra1">
-        <div id="relogio-header"></div>
+    <header id="header" class="bloco cor2 sombra1">
+        <div class="span-tempo" id="relogio-header" onclick="mostra()">sdfsdf</div>
         <div id="info">
             <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
             <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
             <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
-            <div class="card-header" id="moverDivAlarmes" onclick="mostraAlarmes()"><img src="./imagem/alarme.png" alt=""></div>
+            <div class="card-header" id="moverDivAlarmes"><img src="./imagem/alarme.png" alt=""></div>
             <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png" alt=""></div>
         </div>
     </header>
 
-    <div id="div-relogio" onclick="mostra()"></div>
+    <div class="span-tempo" id="div-relogio" onclick="mostra()"></div>
 
-    <div id="bloco" class="cor2 sombra2 borda2">
+    <div id="bloco-principal" class="bloco cor2 sombra2 borda2">
         <div id="titulo">
             Escolha uma opção
         </div>
@@ -57,7 +57,7 @@
         </div>
     </div>
 
-    <div id="div-despertador" class="cor2 sombra2 borda3">
+    <div id="div-despertador" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
@@ -74,13 +74,13 @@
 
             <div class="botoes-func-container">
                 <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func sombra2 cor4 borda4"
-                    onclick="/* cadastrarAlarme() */ validarFormulario()">
+                    onclick="validarFormulario()">
             </div>
         </form>
 
     </div>
 
-    <div id="div-temporizador" class="cor2 sombra2 borda3">
+    <div id="div-temporizador" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <span id="span-temp"></span>
+        <span id="span-temporizador" class="span-tempo" onclick="focoTemporizador()"></span>
         <div id="div-inputs-temporizador">
             <input id="horas-temporizador" class="input-temporizador sombra2 borda3" type="number" max="23" min="0" maxlength="2"
                 placeholder="h" required>
@@ -108,7 +108,7 @@
         </div>
     </div>
 
-    <div id="div-cronometro" class="cor2 sombra2 borda3">
+    <div id="div-cronometro" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
             <div onclick="volta()" class="btn-voltar">
                 <img src="./imagem/voltar.png" alt="">
@@ -118,7 +118,9 @@
             </div>
         </div>
 
-        <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
+        <div id="span-cronometro" class="span-tempo" onclick="focoCronometro()">
+            <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
+        </div>
 
         <div class="botoes-func-container">
             <div id="iniciar_cronometro" class="btn-func sombra2 borda4">Iniciar</div>
@@ -127,7 +129,7 @@
         </div>
     </div>
 
-    <div id="div-alarmes" class="animate-right-to-left cor2 sombra1" onload="exibeInfo()">
+    <div id="div-alarmes" class="bloco animate-right-to-left cor2 sombra1" onload="exibeInfo()">
         <ul id="listaAlarmes"></ul>
         <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()"><img src="./imagem/botao-adicionar.png" alt=""></div>
     </div>
