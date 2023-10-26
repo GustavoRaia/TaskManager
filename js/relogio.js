@@ -87,7 +87,6 @@ function cronometro() {
 
 
 
-
 // CRIAR OUTRO ARQUIVO JS PARA AS FUNÇÕES ABAIXO
 // -------------------------------------------------
 
@@ -122,6 +121,7 @@ function modo() {
         }
         document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/brilho-do-sol.png");
         alterna = 0;
+
     }
 
 }
