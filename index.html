@@ -17,17 +17,19 @@
 <body id="body" class="cor1">
 
     <header id="header" class="bloco cor2 sombra1">
-        <div class="span-tempo" id="relogio-header" onclick="mostra()">sdfsdf</div>
+        <div class="span-tempo" id="relogio-header">sdfsdf</div>
         <div id="info">
             <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div>
             <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
-            <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png" alt=""></div>
+            <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png"
+                    alt=""></div>
             <div class="card-header" id="moverDivAlarmes"><img src="./imagem/alarme.png" alt=""></div>
             <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png" alt=""></div>
         </div>
     </header>
 
-    <div class="span-tempo" id="div-relogio" onclick="mostra()"></div>
+    <div class="span-tempo" id="div-relogio"></div>
+    <div id="div-container"></div>
 
     <div id="bloco-principal" class="bloco cor2 sombra2 borda2">
         <div id="titulo">
@@ -55,6 +57,7 @@
         <div id="txt-cronometro">
             Cronômetro
         </div>
+
     </div>
 
     <div id="div-despertador" class="bloco cor2 sombra2 borda3">
@@ -69,8 +72,8 @@
 
         <form action="">
             <input type="time" id="input-despertador" class="cor4 sombra4 borda2" name="input-despertador" required>
-            <input type="text" id="input-titulo-despertador" class="cor4 sombra4 borda2" name="input-titulo-despertador" placeholder="Título"
-                maxlength="50" required>
+            <input type="text" id="input-titulo-despertador" class="cor4 sombra4 borda2" name="input-titulo-despertador"
+                placeholder="Título" maxlength="50" required>
 
             <div class="botoes-func-container">
                 <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func sombra2 cor4 borda4"
@@ -90,14 +93,14 @@
             </div>
         </div>
 
-        <span id="span-temporizador" class="span-tempo" onclick="focoTemporizador()"></span>
+        <span id="span-temporizador" class="span-tempo"></span>
         <div id="div-inputs-temporizador">
-            <input id="horas-temporizador" class="input-temporizador sombra2 borda3" type="number" max="23" min="0" maxlength="2"
-                placeholder="h" required>
-            <input id="minutos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="0" maxlength="2"
-                placeholder="m" required>
-            <input id="segundos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="1" maxlength="2"
-                placeholder="s" required>
+            <input id="horas-temporizador" class="input-temporizador sombra2 borda3" type="number" max="23" min="0"
+                maxlength="2" placeholder="h" required>
+            <input id="minutos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="0"
+                maxlength="2" placeholder="m" required>
+            <input id="segundos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="1"
+                maxlength="2" placeholder="s" required>
             <div id="confirmar-valor" class="sombra2 borda3">Confirmar</div>
         </div>
 
@@ -118,7 +121,7 @@
             </div>
         </div>
 
-        <div id="span-cronometro" class="span-tempo" onclick="focoCronometro()">
+        <div id="span-cronometro" class="span-tempo">
             <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
         </div>
 
@@ -129,35 +132,24 @@
         </div>
     </div>
 
-    <div id="div-alarmes" class="bloco animate-right-to-left cor2 sombra1" onload="exibeInfo()">
+    <div id="puxa" class="cor2 sombra1">
+        <div id="gira-puxa">
+            Alarmes
+        </div>
+        <div id="gira-puxa2">
+            <img src="./imagem/alarme.png" alt="">
+        </div>
+
+    </div>
+    <div id="div-alarmes" class="bloco cor2 sombra1" onload="exibeInfo()">
         <ul id="listaAlarmes"></ul>
-        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()"><img src="./imagem/botao-adicionar.png" alt=""></div>
+        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()"><img src="./imagem/botao-adicionar.png"
+                alt=""></div>
     </div>
 
     <audio id="audio" preload="auto" autoplay="false">
         <source src="./audio/mixkit-marimba-ringtone-1359.wav" type="audio/mpeg">
     </audio>
-
-    <!-- <div class="clock">
-            </div>
-
-                <div class="hour-hand"></div>
-                <div class="minute-hand"></div>
-                <div class="second-hand"></div>
-
-                <div class="number number-1">1</div>
-                <div class="number number-2">2</div>
-                <div class="number number-3">3</div>
-                <div class="number number-4">4</div>
-                <div class="number number-5">5</div>
-                <div class="number number-6">6</div>
-                <div class="number number-7">7</div>
-                <div class="number number-8">8</div>
-                <div class="number number-9">9</div>
-                <div class="number number-10">10</div>
-                <div class="number number-11">11</div>
-                <div class="number number-12">12</div> 
-    -->
 
     <div id="span-alarme" class="cor1 sombra4 borda2"></div>
 

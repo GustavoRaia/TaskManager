@@ -114,7 +114,3 @@ zerarButtonT.addEventListener('click', function () {
 
   temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
 });
-
-function focoTemporizador() {
-  alert("Foco Temporizador.");
-}

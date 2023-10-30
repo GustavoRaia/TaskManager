@@ -7,7 +7,7 @@ var audio = document.getElementById('audio');
 var bloco_span = document.getElementById('span-alarme');
 
 function cadastrarAlarme() {
-    if (qtd_alarmes == 5) { // Verifica a qtd de alarmes cadastrados
+    if (qtd_alarmes == 10) { // Verifica a qtd de alarmes cadastrados
         window.alert("Não é possível cadastrar mais alarmes"); // Mensagem de erro caso haja o nº máximo de alarmes cadastrados.
 
         document.getElementById('input-despertador').value = '';
@@ -38,15 +38,7 @@ function cadastrarAlarme() {
 
     qtd_alarmes++; // Incrementa a quantidade de alarmes cadastrados.
 
-    // const divElement = document.getElementById('div-alarmes'); // Substitua 'sua-div' pelo ID da sua div
-    // document.getElementById('div-alarmes').classList.add('move-esquerda-parcial');
-
-    // setTimeout(() => {
-    //     divElement.classList.remove('move-esquerda-parcial');
-    //     divElement.classList.add('voltar-origem');
-    // }, 2000);
-
-    if (qtd_alarmes == 5) {
+    if (qtd_alarmes == 10) {
         document.getElementById('adicionar-alarme').style.display = "none";
     }
 }
@@ -60,11 +52,12 @@ function excluirAlarme(valor) {
         if (alarmes_ativos[ko].horario_alarme == valor_alarme_excluir.slice(0, 5)) {
             document.getElementById("alarme-" + valor).remove();
 
-            if (qtd_alarmes == 5) {
+            qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
+
+            if (qtd_alarmes < 10) {
                 document.getElementById('adicionar-alarme').style.display = "block";
             }
 
-            qtd_alarmes--; // Decrementa a quantidade de alarmes cadastrados.
             teste_lixo--;
 
             var remove_aray = alarmes_ativos.indexOf(alarmes_ativos[ko]);

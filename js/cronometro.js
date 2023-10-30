@@ -77,7 +77,9 @@ zerarButton.addEventListener('click', function () {
     horasCronometro = 0; // Zera o valor REAL de horas.
     
     cronometroElement.innerHTML = '00:00:00'; // Volta o valor do cronômetro VISÍVEL para 0 (hh:mm:ss).
+
     milissegundosElement.innerHTML = '00'; // Volta o valor VISÍVEL de milissegundos para 0.
+
     iniciarButton.disabled = false; // Botão de iniciar o cronômetro pode ser clicado novamente.
 });
 
@@ -87,7 +89,3 @@ function formataCronometro() {
     cronometro_display = null; // A execução do cronômetro passa a ser 'null'.
     cronometroMilissegundos = null; // A execução do cronômetro de milissegundos passa a ser 'null'.
 }
-
-function focoCronometro() {
-    alert("Foco Cronometro.");
-  }

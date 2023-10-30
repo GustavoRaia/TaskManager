@@ -22,50 +22,80 @@ atualizarRelogio();
 
 var div_header = document.getElementById('header'); // Pega o valor do id 'header'
 var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do id do bloco principal 
-var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa
+
+var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa.
+var elem_temporizador = document.getElementById('temporizador-minimo'); // Pega o valor do id da div do relógio.
+var elem_cronometro = document.getElementById('cronometro-minimo'); // Pega o valor do id da div do relógio.
+var elem_puxa = document.getElementById('puxa'); // Pega o valor do id fda div de puxar a obsercação da lista de alarmes.
 
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
-function mostra() {
+function mostra(elem_tempo) {
 
-    if(elem_relogio.style.display == "none") {
-        div_header.style.display = "none";
-        div_bloco.style.display = "none";
-        document.getElementById('div-despertador').style.display = "none";
-        document.getElementById('div-temporizador').style.display = "none";
-        document.getElementById('div-cronometro').style.display = "none";
-        document.getElementById('div-alarmes').style.display = "none";
+    switch (elem_tempo) {
+        // Pronto
+        case "div-relogio":
 
-        elem_relogio.style.display = "block";
+            div_header.style.display = "block";
+            div_header.style.display = "flex";
+            div_bloco.style.display = "block";
+            elem_puxa.style.display = "block";
 
-    } else {
-        div_header.style.display = "block";
-        div_header.style.display = "flex";
-        div_bloco.style.display = "block";
+            elem_relogio.style.display = "none";
 
-        elem_relogio.style.display = "none";
-    }
+            break;
 
-    // const classes = ['.bloco'];
+        // Pronto
+        case "relogio-header":
+
+            div_header.style.display = "none";
+            div_bloco.style.display = "none";
+            elem_puxa.style.display = "none";
+            document.getElementById('div-despertador').style.display = "none";
+            document.getElementById('div-temporizador').style.display = "none";
+            document.getElementById('div-cronometro').style.display = "none";
+            document.getElementById('div-alarmes').style.display = "none";
     
-    // if (mostra == 0) {
-    //     for (let i = 0; i < classes.length; i++) {
-    //         const elementos = document.querySelectorAll(classes[i]);
-    //         elementos.forEach(function (elemento) {
-    //             elemento.style.display = "none";
-    //         });
-    //     }
-    //     mostra = 1;
-    // } else if (mostra == 1) {
-    //     for (let i = 0; i < classes.length; i++) {
-    //         const elementos = document.querySelectorAll(classes[i]);
-    //         elementos.forEach(function (elemento) {
-    //             elemento.style.display = "block"; // ou qualquer outro valor desejado
-    //         });
-    //     }
-    //     mostra = 0;
-    // }
+            elem_relogio.style.display = "block";
+            break;
 
+        // A fazer
+        case "span-temporizador":
+            window.alert("Case 3");
+            break;
+
+
+        // A fazer
+        case "span-cronometro":
+
+            var containter = document.getElementById('div-container')
+            containter.innerHTML = elem_tempo
+
+            div_header.style.display = "none";
+            document.getElementById('div-despertador').style.display = "none";
+            document.getElementById('div-temporizador').style.display = "none";
+            document.getElementById('div-cronometro').style.display = "none";
+            document.getElementById('div-alarmes').style.display = "none";
+
+            document.getElementById('cronometro-minimo').style.display = "block";
+
+            break;
+
+    }
 }
+
+
+document.getElementById('span-cronometro').addEventListener('click', function() {
+    mostra('span-cronometro');
+});
+document.getElementById('span-temporizador').addEventListener('click', function() {
+    mostra('span-temporizador');
+});
+document.getElementById('relogio-header').addEventListener('click', function() {
+    mostra('relogio-header');
+});
+document.getElementById('div-relogio').addEventListener('click', function() {
+    mostra('div-relogio');
+});
 
 // Muda os displays ao evento de clicar no botão de despertador
 function despertador() {
@@ -144,10 +174,13 @@ function mostraAlarmes() {
     }
 }
 
-document.getElementById("moverDivAlarmes").addEventListener("click", function () {
+document.getElementById("puxa").addEventListener("click", function () {
     var divMovel = document.getElementById("div-alarmes");
+    var divMovel2 = document.getElementById("puxa");
 
     divMovel.style.display = "block";
     divMovel.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
+    
+    divMovel2.classList.toggle("move-esquerda2");
 
 });
