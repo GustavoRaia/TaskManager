@@ -383,35 +383,55 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border-bottom-left-radius: 10px;
     transition: transform 1s;
     overflow: auto;
-    z-index: 2;
+    z-index: 1;
 }
 
-#puxa {
+.etiqueta {
     position: absolute;
     width: 1.6vw;
     height: 10.5vh;
     margin-left: 97.4vw;
-    margin-top: 12vh;
     transition: transform 1s;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     display: none;
+}
+
+#puxa-alarmes {
+    margin-top: 12vh;
     z-index: 1;
 }
-
-#puxa img {
+#puxa-alarmes img {
     width: 90%;
 }
-
-#gira-puxa {
+#gira-puxa-alarmes {
     transform: rotate(-90deg);
     margin-top: 4.5vh;
 }
-#gira-puxa2 {
+#gira-puxa-alarmes2 {
     transform: rotate(-90deg);
     margin-top: 0.7vh;
     margin-left: 0.4vw;
 }
+
+#puxa-teste {
+    margin-top: 24vh;
+    z-index: 0;
+}
+#puxa-teste img {
+    width: 80%;
+}
+#gira-puxa-teste {
+    transform: rotate(-90deg);
+    margin-top: 4.5vh;
+}
+#gira-puxa-teste2 {
+    transform: rotate(-90deg);
+    margin-top: 0.7vh;
+    margin-left: 0.4vw;
+}
+
+
 
 #div-alarmes::-webkit-scrollbar {
     width: 1vw;
@@ -428,10 +448,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .move-esquerda {
-    transform: translateX(-21vw);
-}
-
-.move-esquerda2 {
     transform: translateX(-21vw);
 }
 
@@ -463,7 +479,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #adicionar-alarme img {
     width: 2.5vw;
-    padding-left: 7.25vw;
+    padding-left: 7.35vw;
     padding-top: 1.8vh;
 }
 
@@ -480,7 +496,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: 1.5vw;
     width: 17vw;
     padding-bottom: 1.1vh;
-    border: 2px dashed rgba(255, 255, 255, 0.079);
+    border: 1px dashed rgba(255, 255, 255, 0.079);
     background-color: rgba(0, 0, 0, 0.218);
 }
 

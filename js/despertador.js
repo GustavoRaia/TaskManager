@@ -17,9 +17,9 @@ validarFormulario.addEventListener('click', function() {
         for (let i = 0; i < alarmes_ativos.length; i++) { // Percorre o array de alarmes cadastrados.
             
             if (document.getElementById('input-despertador').value == alarmes_ativos[i].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
-                
                 window.alert("Não é possível cadastrar alarmes com o mesmo horário."); // Mensagem de erro caso o valor inserido já esteja cadastrado (2 alarmes com o mesmo horário).
                 limpaInputD(); // Chama função para limpar o valor dos inputs.
+
                 return false; // Retorna falso para não cadastrar o alarme com erro.
             }
         }
@@ -27,12 +27,14 @@ validarFormulario.addEventListener('click', function() {
 
     if (document.getElementById('input-despertador').value === "" || document.getElementById('input-titulo-despertador').value === "") { // Verifica se os inputs foram enviados vazios.
         window.alert("Preencha os campos.");
+
         return false; // Retorna falso para não cadastrar o alarme com erro.
     }
 
     if (alarmes_ativos.length == 10) { // Verifica a qtd de alarmes cadastrados
         window.alert("Não é possível cadastrar mais alarmes"); // Mensagem de erro caso haja o nº máximo de alarmes cadastrados.
         limpaInputD(); // Chama função para limpar o valor dos inputs.
+
         return false; // Retorna falso para não cadastrar o alarme com erro.
     }
 
@@ -40,8 +42,8 @@ validarFormulario.addEventListener('click', function() {
 });
 
 btnAdicionarAlarme.addEventListener('click', function() {
-    document.getElementById('div-despertador').style.display = "block";
-    document.getElementById('div-temporizador').style.display = "none";
+    document.getElementById('div-despertador').style.display = "block"; // Bloco de Adicionar despertador fica visível,
+    document.getElementById('div-temporizador').style.display = "none"; // Os outros blovos ficam invisíveis,
     document.getElementById('div-cronometro').style.display = "none";
     document.getElementById('bloco-principal').style.display = "none";
 });
@@ -61,8 +63,8 @@ function excluirAlarme(valor) {
 
             num_alarme--; // Decrementa o valor atual do alarme (para uma possível nova adição).
 
-            var remove_aray = alarmes_ativos.indexOf(alarmes_ativos[ko]);
-            alarmes_ativos.splice(remove_aray, 1);
+            var remove_aray = alarmes_ativos.indexOf(alarmes_ativos[ko]); // Pega o valor do alarme pelo índice atual.
+            alarmes_ativos.splice(remove_aray, 1); // Remove o elemento do Array de alarmes cadastrados.
 
         }
     }
@@ -100,8 +102,8 @@ function verificaAlarme() {
                     bloco_span.appendChild(botao_span_alarme); // Insere na div pai.
                 }
 
-                audio.play();
-                vezes_clicado++;
+                audio.play(); // Inicia o áudio do alarme.
+                vezes_clicado++; // Incrementa a quantidade de vezes clicado.
 
                 setTimeout(function () {
                     audio.pause();  // Para a execução do áudio.
@@ -125,18 +127,15 @@ function para_alarme() {
 
 function cadastrarAlarme() {
 
-    var input_despertador = document.getElementById('input-despertador').value; // Pega o valor do input do horário do alarme cadastrado.
-    var input_titulo_despertador = document.getElementById('input-titulo-despertador').value; // Pega o valor do input do título do alarme cadastrado.
-
     alarmes_ativos.push({ // Adiciona ambos os valores ao Array de alarmes cadastrados.
-        horario_alarme: input_despertador,
-        titulo_alarme: input_titulo_despertador,
+        horario_alarme: document.getElementById('input-despertador').value, // Pega o valor do input do título do alarme cadastrado.
+        titulo_alarme: document.getElementById('input-titulo-despertador').value // Pega o valor do input do título do alarme cadastrado.
     })
 
     var novoAlarme = document.createElement('div'); // Cria um novo elemento para um alarme cadastrado.
     novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3' id='alarme-" + num_alarme + "'>" + // Cria uma div com classes para estilo (descritas no arquivo CSS).
-        input_despertador + "<br/> <div id='span-titulo-alarme'>" + // Adiciona o horário do Alarme ao cartão.
-        input_titulo_despertador + "</div>" + // Adiciona o Título/Descrição do alarme ao cartão.
+        document.getElementById('input-despertador').value + "<br/> <div id='span-titulo-alarme'>" + // Adiciona o horário do Alarme ao cartão.
+        document.getElementById('input-titulo-despertador').value + "</div>" + // Adiciona o Título/Descrição do alarme ao cartão.
         "<img onclick='excluirAlarme(" + num_alarme + ")' class='img-lata-lixo lixo" + num_alarme++ + "' src='./imagem/lata-de-lixo.png' alt=''>" + // Adiciona um evento de botão caso o ícone de lixo seja pressionado.
         "</div>";
 

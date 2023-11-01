@@ -19,11 +19,11 @@
     <header id="header" class="bloco cor2 sombra1">
         <div class="span-tempo" id="relogio-header">sdfsdf</div>
         <div id="info">
-            <!-- <div class="card-header" onclick="zera()"><img src="./imagem/casa.png" alt=""></div> -->
-            <div class="card-header"><img src="./imagem/calendario.png" alt=""></div>
-            <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png"
-                    alt=""></div>
-            <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png" alt=""></div>
+            <!-- <div class="card-header" onclick="zera()"><img src="./imagem/casa.png"></div> -->
+            <!-- <div class="card-header"><img src="./imagem/calendario.png"></div> -->
+            <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
+            </div>
+            <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png"></div>
         </div>
     </header>
 
@@ -61,11 +61,11 @@
 
     <div id="div-despertador" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
-            <div onclick="volta()" class="btn-voltar">
-                <img src="./imagem/voltar.png" alt="">
+            <div onclick="volta('div-despertador')" class="btn-voltar">
+                <img src="./imagem/voltar.png">
             </div>
             <div class="img-direita-superior">
-                <img src="./imagem/despertador.png" alt="">
+                <img src="./imagem/despertador.png">
             </div>
         </div>
 
@@ -83,11 +83,11 @@
 
     <div id="div-temporizador" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
-            <div onclick="volta()" class="btn-voltar">
-                <img src="./imagem/voltar.png" alt="">
+            <div onclick="volta('div-temporizador')" class="btn-voltar">
+                <img src="./imagem/voltar.png">
             </div>
             <div class="img-direita-superior">
-                <img src="./imagem/relogio.png" alt="">
+                <img src="./imagem/relogio.png">
             </div>
         </div>
 
@@ -111,11 +111,11 @@
 
     <div id="div-cronometro" class="bloco cor2 sombra2 borda3">
         <div class="header-div-opcao">
-            <div onclick="volta()" class="btn-voltar">
-                <img src="./imagem/voltar.png" alt="">
+            <div onclick="volta('div-cronometro')" class="btn-voltar">
+                <img src="./imagem/voltar.png">
             </div>
             <div class="img-direita-superior">
-                <img src="./imagem/cronometro.png" alt="">
+                <img src="./imagem/cronometro.png">
             </div>
         </div>
 
@@ -130,19 +130,20 @@
         </div>
     </div>
 
-    <div id="puxa" class="cor2 sombra1">
-        <div id="gira-puxa">
+    <div id="puxa-alarmes" class="etiqueta cor2 sombra1">
+        <div id="gira-puxa-alarmes">
             Alarmes
         </div>
-        <div id="gira-puxa2">
-            <img src="./imagem/alarme.png" alt="">
+        <div id="gira-puxa-alarmes2">
+            <img src="./imagem/alarme.png">
         </div>
-
     </div>
+
     <div id="div-alarmes" class="bloco cor2 sombra1" onload="exibeInfo()">
         <ul id="listaAlarmes"></ul>
-        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()"><img src="./imagem/botao-adicionar.png"
-                alt=""></div>
+        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()">
+            <img src="./imagem/botao-adicionar.png">
+        </div>
     </div>
 
     <audio id="audio" preload="auto" autoplay="false">

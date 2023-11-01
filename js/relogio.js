@@ -26,30 +26,31 @@ var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do i
 var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa.
 var elem_temporizador = document.getElementById('temporizador-minimo'); // Pega o valor do id da div do relógio.
 var elem_cronometro = document.getElementById('cronometro-minimo'); // Pega o valor do id da div do relógio.
-var elem_puxa = document.getElementById('puxa'); // Pega o valor do id fda div de puxar a obsercação da lista de alarmes.
+var elem_puxa_alarmes = document.getElementById('puxa-alarmes'); // Pega o valor do id fda div de puxar a obsercação da lista de alarmes.
+// var elem_puxa_teste = document.getElementById('puxa-teste');
 
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra(elem_tempo) {
 
     switch (elem_tempo) {
-        // Pronto
         case "div-relogio":
 
             div_header.style.display = "block";
             div_header.style.display = "flex";
             div_bloco.style.display = "block";
-            elem_puxa.style.display = "block";
+            elem_puxa_alarmes.style.display = "block";
+            // elem_puxa_teste.style.display = "block";
 
             elem_relogio.style.display = "none";
-
             break;
 
-        // Pronto
         case "relogio-header":
 
             div_header.style.display = "none";
             div_bloco.style.display = "none";
-            elem_puxa.style.display = "none";
+            elem_puxa_alarmes.style.display = "none";
+            // elem_puxa_teste.style.display = "none";
+
             document.getElementById('div-despertador').style.display = "none";
             document.getElementById('div-temporizador').style.display = "none";
             document.getElementById('div-cronometro').style.display = "none";
@@ -63,20 +64,19 @@ function mostra(elem_tempo) {
             window.alert("Case 3");
             break;
 
-
         // A fazer
         case "span-cronometro":
 
-            var containter = document.getElementById('div-container')
-            containter.innerHTML = elem_tempo
+            window.alert("Case 4");
 
-            div_header.style.display = "none";
-            document.getElementById('div-despertador').style.display = "none";
-            document.getElementById('div-temporizador').style.display = "none";
-            document.getElementById('div-cronometro').style.display = "none";
-            document.getElementById('div-alarmes').style.display = "none";
+            // var containter = document.getElementById('div-container')
+            // containter.innerHTML = elem_tempo
 
-            document.getElementById('cronometro-minimo').style.display = "block";
+            // div_header.style.display = "none";
+            // document.getElementById('div-despertador').style.display = "none";
+            // document.getElementById('div-temporizador').style.display = "none";
+            // document.getElementById('div-cronometro').style.display = "none";
+            // document.getElementById('div-alarmes').style.display = "none";
 
             break;
 
@@ -157,11 +157,8 @@ function modo() {
 }
 
 
-function volta() {
-    // Dar um jeito de pegar a div atual que foi clicada    
-    document.getElementById('div-despertador').style.display = "none";
-    document.getElementById('div-temporizador').style.display = "none";
-    document.getElementById('div-cronometro').style.display = "none";
+function volta(div_voltar) {
+    document.getElementById(div_voltar).style.display = "none";
     div_bloco.style.display = "block";
 }
 
@@ -174,13 +171,14 @@ function mostraAlarmes() {
     }
 }
 
-document.getElementById("puxa").addEventListener("click", function () {
+document.getElementById("puxa-alarmes").addEventListener("click", function () {
     var divMovel = document.getElementById("div-alarmes");
-    var divMovel2 = document.getElementById("puxa");
+    var divMovel2 = document.getElementById("puxa-alarmes");
+    // var divMovel3 = document.getElementById("puxa-teste");
 
     divMovel.style.display = "block";
     divMovel.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
-    
-    divMovel2.classList.toggle("move-esquerda2");
+    divMovel2.classList.toggle("move-esquerda");
+    // divMovel3.classList.toggle("move-esquerda");
 
 });
