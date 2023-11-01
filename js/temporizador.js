@@ -25,6 +25,11 @@ function iniciar_temporizadorr() {
 
   if (horasT == 0 && minutosT == 0 && segundosT == 0) { // Verifica se o temporizador chegou ao valor final.
     audio.play(); // Toca o áudio quando o temporizador estiver zerado.
+    zerarButtonT.style.backgroundColor = "red";
+    zerarButtonT.style.animation = "pulse 1s infinite";
+
+    iniciarButtonT.style.display = "none";
+    pausarButtonT.style.display = "none";
   } else {
     if (horasT < 1 && minutosT < 1) {
       // Altera a cor da fonte para amarela quando o tempo para acabar for menor que 1 minuto.
@@ -53,15 +58,14 @@ function iniciar_temporizadorr() {
 // Função para definir o valor do temporizador.
 pegarValor.addEventListener('click', function () {
 
-  var horasTemp = document.getElementById("horas-temporizador").value; // Pega o valor do input destinado às horas.
-  var minutosTemp = document.getElementById("minutos-temporizador").value; // Pega o valor do input destinado aos minutos.
-  var segundosTemp = document.getElementById("segundos-temporizador").value; // Pega o valor do input destinado aos segundos.
+  var horasTemp = document.getElementById('horas-temporizador').value; // Pega o valor do input destinado às horas.
+  var minutosTemp = document.getElementById('minutos-temporizador').value; // Pega o valor do input destinado aos minutos.
+  var segundosTemp = document.getElementById('segundos-temporizador').value; // Pega o valor do input destinado aos segundos.
 
   // Verifica se algum valor está excedendo o limite máximo (horas, minutos ou segundos) ou se há algum valor negativo.
   if (segundosTemp > 59 || minutosTemp > 59 || horasTemp > 23 || segundosTemp < 0 || minutosTemp < 0 || horasTemp < 0 || (segundosTemp == 0 && minutosTemp == 0 && horasTemp == 0)) {
-    document.getElementById('horas-temporizador').value = ""; // Zera o valor do input das horas.
-    document.getElementById('minutos-temporizador').value = ""; // Zera o valor do input dos minutos.
-    document.getElementById('segundos-temporizador').value = ""; // Zera o valor do input dos segundos.
+    limpaInputT();
+
     return window.alert("Insira apenas valores possíveis"); // Retorna uma mensagem de erro.
   }
 
@@ -71,6 +75,9 @@ pegarValor.addEventListener('click', function () {
   temporizadorElement.textContent = formatarTempoT(horasTemp, minutosTemp, segundosTemp); // Formata o tempo e exibe na div (estático)
 
   iniciarButtonT.disabled = true; // Desativa o clique no botão de iniciar
+
+  iniciarButtonT.style.display = "block";
+
 });
 
 // Função de iniciar a contagem
@@ -79,6 +86,9 @@ iniciarButtonT.addEventListener('click', function () {
     temporizador_display = setInterval(iniciar_temporizadorr, 1000); // Aciona a função a cada 1 segundo.
 
     iniciarButtonT.disabled = true; // Desativa o clique no botão de iniciar.
+
+    pausarButtonT.style.display = "block";
+    zerarButtonT.style.display = "block";
   }
 });
 
@@ -96,9 +106,7 @@ zerarButtonT.addEventListener('click', function () {
   clearInterval(temporizador_display); // Para a execução.
   temporizador_display = null; // A execução do temporizador passa a ser 'null'.
 
-  document.getElementById('horas-temporizador').value = ""; // Zera o valor do input das horas.
-  document.getElementById('minutos-temporizador').value = ""; // Zera o valor do input dos minutos.
-  document.getElementById('segundos-temporizador').value = ""; // Zera o valor do input dos segundos.
+  limpaInputT();
 
   temporizadorElement.innerHTML = ''; // Valor do display passa a ser zerado.
 
@@ -113,4 +121,16 @@ zerarButtonT.addEventListener('click', function () {
   audio.currentTime = 0; // Reinicia o valor do áudio para o início
 
   temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
+  zerarButtonT.style.backgroundColor = "";
+  zerarButtonT.style.animation = "";
+
+  iniciarButtonT.style.display = "none";
+  pausarButtonT.style.display = "none";
+  zerarButtonT.style.display = "none";
 });
+
+function limpaInputT() {
+  document.getElementById('horas-temporizador').value = ""; // Zera o valor do input das horas.
+  document.getElementById('minutos-temporizador').value = ""; // Zera o valor do input dos minutos.
+  document.getElementById('segundos-temporizador').value = ""; // Zera o valor do input dos segundos.
+}

@@ -116,14 +116,14 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #relogio-header {
     font-size: 20pt;
-    margin-top: 1.44vh;
+    margin-top: 1.2vh;
 }
 
 #info {
     display: flex;
     justify-content: center;
     column-gap: 3vh;
-    margin-bottom: 0.7vh;
+    margin-bottom: 0.2vh;
 }
 
 #info img {
@@ -223,6 +223,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     padding-bottom: 0.4vh;
 }
 
+#iniciar_temporizador,
+#zerar_temporizador,
+#pausar_temporizador {
+    display: none;
+}
+
 #confirmar-valor {
     margin: 0 auto;
     text-align: center;
@@ -312,6 +318,23 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: flex;
     justify-content: center;
     column-gap: 5%;
+}
+
+/* #botoes-func-container-despertador,
+#botoes-func-container-temporizador {
+    display: none;
+} */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamanho original */
+    }
+    50% {
+        transform: scale(1.03); /* Tamanho aumentado (pulso) */
+    }
+    100% {
+        transform: scale(1); /* Tamanho original */
+    }
 }
 
 .btn-func {

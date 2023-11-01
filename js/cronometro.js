@@ -40,8 +40,6 @@ function atualizarCronometroMilissegundos() {
     milissegundosElement.textContent = formatarTempoCMilissegundos(milissegundos); // Mostra na div o valor formatado dos milissegundos.
 }
 
-
-
 // Botões do Cronômetro -------------------------
 
 let cronometro_display;
