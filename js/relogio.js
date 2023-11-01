@@ -1,3 +1,29 @@
+// Dicionário de Variáveis ======================
+
+var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa.
+
+var div_header = document.getElementById('header'); // Pega o valor do id 'header'
+var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do id do bloco principal 
+
+var elem_container_temporizador = document.getElementById('container-temporizador');
+var elem_container_cronometro = document.getElementById('container-cronometro');
+
+var elem_div_despertador = document.getElementById('div-despertador');
+var elem_div_temporizador = document.getElementById('div-temporizador');
+var elem_div_cronometro = document.getElementById('div-cronometro');
+
+var elem_span_temporizador = document.getElementById('span-temporizador');
+var elem_span_smh = document.getElementById('span-smh');
+var elem_span_milissegundos = document.getElementById('span-milissegundos');
+
+var elem_botoes_cronometro = document.getElementById('botoes-func-container-cronometro');
+var elem_botoes_temporizador = document.getElementById('botoes-func-container-temporizador');
+
+var elem_puxa_alarmes = document.getElementById('puxa-alarmes'); // Pega o valor do id da div de puxar a observação da lista de alarmes.
+var elem_div_alarmes = document.getElementById('div-alarmes');
+
+// Funções ======================================
+
 // Função de formatar e atualizar relógio
 function atualizarRelogio() {
     const agora = new Date();
@@ -11,111 +37,153 @@ function atualizarRelogio() {
     const ano = agora.getFullYear().toString();
     const data = `${dia}/${mes}/${ano}`
 
-    document.getElementById('div-relogio').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial.
+    elem_relogio.textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial.
     document.getElementById('relogio-header').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div presente na header.
     document.title = "Task Manager - " + relogio; // Define o relógio para atualizar o valor na barra de tarefas.
 }
-
 setInterval(atualizarRelogio, 1000); // Atualiza o relógio a cada segundo
 atualizarRelogio();
 
-
-var div_header = document.getElementById('header'); // Pega o valor do id 'header'
-var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do id do bloco principal 
-
-var elem_relogio = document.getElementById('div-relogio'); // Pega o valor do id da div do relógio de inicio do programa.
-var elem_temporizador = document.getElementById('temporizador-minimo'); // Pega o valor do id da div do relógio.
-var elem_cronometro = document.getElementById('cronometro-minimo'); // Pega o valor do id da div do relógio.
-var elem_puxa_alarmes = document.getElementById('puxa-alarmes'); // Pega o valor do id fda div de puxar a obsercação da lista de alarmes.
-// var elem_puxa_teste = document.getElementById('puxa-teste');
+var modo_temporizador = 0;
+var modo_cronometro = 0;
 
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra(elem_tempo) {
 
     switch (elem_tempo) {
-        case "div-relogio":
+        case "div-relogio": // Se o relógio do inicio da aplicação for clicada
 
             div_header.style.display = "block";
             div_header.style.display = "flex";
             div_bloco.style.display = "block";
+            
             elem_puxa_alarmes.style.display = "block";
-            // elem_puxa_teste.style.display = "block";
+            elem_div_alarmes.style.display = "block";
 
             elem_relogio.style.display = "none";
             break;
 
-        case "relogio-header":
+        case "relogio-header": // Se o relógio da header for clicado
 
-            div_header.style.display = "none";
-            div_bloco.style.display = "none";
-            elem_puxa_alarmes.style.display = "none";
-            // elem_puxa_teste.style.display = "none";
-
-            document.getElementById('div-despertador').style.display = "none";
-            document.getElementById('div-temporizador').style.display = "none";
-            document.getElementById('div-cronometro').style.display = "none";
-            document.getElementById('div-alarmes').style.display = "none";
+            limpaTudo();
     
             elem_relogio.style.display = "block";
             break;
 
-        // A fazer
-        case "span-temporizador":
-            window.alert("Case 3");
+        case "span-temporizador": // Se o span de valor do temporizador for clicado
+            
+            if(modo_temporizador == 0) {
+
+                limpaTudo();
+
+                // Edição das Informações do Temporizador para Tela Minimalista.
+                elem_container_temporizador.style.marginTop = "32.5vh";
+                elem_container_temporizador.style.marginLeft = "-5vw";
+                
+                elem_botoes_temporizador.style.marginLeft = "5.5vw";
+
+                elem_span_temporizador.style.fontSize = "66pt";
+                elem_span_temporizador.style.marginLeft = "6vw";
+                
+                elem_container_temporizador.style.display = "block";
+                
+                modo_temporizador++;
+            } else if (modo_temporizador == 1) {
+
+                voltaPadrao('div-temporizador', 'container-temporizador');
+
+                // Edição das Informações do Temporizador para voltar a tela normal.
+                elem_container_temporizador.style.marginTop = "";
+                elem_container_temporizador.style.marginLeft = "";
+                elem_span_temporizador.style.marginLeft = "";
+                elem_botoes_temporizador.style.marginLeft = "";
+                elem_span_temporizador.style.fontSize = "";
+
+                elem_puxa_alarmes.style.display = "block";
+                elem_div_alarmes.style.display = "block";
+
+                modo_temporizador--;
+            }
             break;
 
-        // A fazer
-        case "span-cronometro":
+        case "span-cronometro": // Se o span de valor do cronômetro for clicado
 
-            window.alert("Case 4");
+            if(modo_cronometro == 0) {
 
-            // var containter = document.getElementById('div-container')
-            // containter.innerHTML = elem_tempo
+                limpaTudo();
 
-            // div_header.style.display = "none";
-            // document.getElementById('div-despertador').style.display = "none";
-            // document.getElementById('div-temporizador').style.display = "none";
-            // document.getElementById('div-cronometro').style.display = "none";
-            // document.getElementById('div-alarmes').style.display = "none";
+                // Edição das Informações do Cronômetro para Tela Minimalista.
+                elem_container_cronometro.style.marginTop = "32.5vh";
+                elem_container_cronometro.style.marginLeft = "-5vw";
+                
+                elem_botoes_cronometro.style.marginLeft = "5.5vw";
 
+                elem_span_smh.style.fontSize = "66pt";
+
+                elem_span_milissegundos.style.fontSize = "20pt";
+
+                elem_container_cronometro.style.display = "block";
+                
+                modo_cronometro++;
+            } else if (modo_cronometro == 1) {
+
+                voltaPadrao('div-cronometro', 'container-cronometro');
+
+                // Edição das Informações do Cronômetro para voltar a tela normal.
+                elem_container_cronometro.style.marginTop = "";
+                elem_container_cronometro.style.marginLeft = "";
+                elem_botoes_cronometro.style.marginLeft = "";
+                elem_span_smh.style.fontSize = "";
+                elem_span_milissegundos.style.fontSize = "";
+
+                elem_puxa_alarmes.style.display = "block";
+                elem_div_alarmes.style.display = "block";
+
+                modo_cronometro--;
+            }
             break;
-
     }
 }
 
+function limpaTudo() {
+    div_header.style.display = "none";
+    div_bloco.style.display = "none";
+    elem_div_despertador.style.display = "none";
+    elem_div_temporizador.style.display = "none";
+    elem_div_cronometro.style.display = "none";
 
-document.getElementById('span-cronometro').addEventListener('click', function() {
-    mostra('span-cronometro');
-});
-document.getElementById('span-temporizador').addEventListener('click', function() {
-    mostra('span-temporizador');
-});
-document.getElementById('relogio-header').addEventListener('click', function() {
-    mostra('relogio-header');
-});
-document.getElementById('div-relogio').addEventListener('click', function() {
-    mostra('div-relogio');
-});
+    elem_container_cronometro.style.display = "none";
+    elem_container_temporizador.style.display = "none";
+
+    elem_puxa_alarmes.style.display = "none";
+    elem_div_alarmes.style.display = "none";
+}
+
+function voltaPadrao(elem1, elem2) {
+    document.getElementById(elem1).style.display = "block";
+    document.getElementById(elem2).style.display = "block";
+
+    div_header.style.display = "block";
+    div_header.style.display = "flex";
+}
 
 // Muda os displays ao evento de clicar no botão de despertador
 function despertador() {
     div_bloco.style.display = "none";
-    document.getElementById('div-despertador').style.display = "block";
+    elem_div_despertador.style.display = "block";
 }
 
 function temporizador() {
     div_bloco.style.display = "none";
-    document.getElementById('div-temporizador').style.display = "block";
+    elem_div_temporizador.style.display = "block";
+    elem_container_temporizador.style.display = "block";
 }
 
 function cronometro() {
     div_bloco.style.display = "none";
-    document.getElementById('div-cronometro').style.display = "block";
+    elem_div_cronometro.style.display = "block";
+    elem_container_cronometro.style.display = "block";
 }
-
-
-
-
 
 // CRIAR OUTRO ARQUIVO JS PARA AS FUNÇÕES ABAIXO
 // -------------------------------------------------
@@ -138,7 +206,6 @@ function modo() {
                 elemento.style.backgroundColor = novasCores[i];
             });
         }
-        // document.getElementById('modo-claro-escuro').style.backgroundImage = "./imagem/forma-de-meia-lua.png";
         document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/forma-de-meia-lua.png");
         alterna = 1;
     } else if (alterna == 1) {
@@ -153,17 +220,17 @@ function modo() {
         alterna = 0;
 
     }
-
 }
-
 
 function volta(div_voltar) {
     document.getElementById(div_voltar).style.display = "none";
+    elem_container_cronometro.style.display = "none";
+    elem_container_temporizador.style.display = "none";
     div_bloco.style.display = "block";
 }
 
 function mostraAlarmes() {
-    var div_alarmes = document.getElementById('div-alarmes')
+    var div_alarmes = elem_div_alarmes
     if (div_alarmes.style.display == "block") {
         div_alarmes.style.display = "none";
     } else {
@@ -172,13 +239,8 @@ function mostraAlarmes() {
 }
 
 document.getElementById("puxa-alarmes").addEventListener("click", function () {
-    var divMovel = document.getElementById("div-alarmes");
-    var divMovel2 = document.getElementById("puxa-alarmes");
-    // var divMovel3 = document.getElementById("puxa-teste");
+    elem_div_alarmes.style.display = "block";
+    elem_div_alarmes.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
 
-    divMovel.style.display = "block";
-    divMovel.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
-    divMovel2.classList.toggle("move-esquerda");
-    // divMovel3.classList.toggle("move-esquerda");
-
+    elem_puxa_alarmes.classList.toggle("move-esquerda");
 });

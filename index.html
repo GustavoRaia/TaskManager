@@ -16,141 +16,149 @@
 
 <body id="body" class="cor1">
 
-    <header id="header" class="bloco cor2 sombra1">
-        <div class="span-tempo" id="relogio-header">sdfsdf</div>
-        <div id="info">
-            <!-- <div class="card-header" onclick="zera()"><img src="./imagem/casa.png"></div> -->
-            <!-- <div class="card-header"><img src="./imagem/calendario.png"></div> -->
-            <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
-            </div>
-            <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png"></div>
+<header id="header" class="bloco cor2 sombra1">
+    <div class="span-tempo" id="relogio-header" onclick="mostra(id)"></div>
+    <div id="info">
+        <!-- <div class="card-header" onclick="zera()"><img src="./imagem/casa.png"></div> -->
+        <!-- <div class="card-header"><img src="./imagem/calendario.png"></div> -->
+        <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
         </div>
-    </header>
+        <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png"></div>
+    </div>
+</header>
 
-    <div class="span-tempo" id="div-relogio"></div>
-    <div id="div-container"></div>
+<div class="span-tempo" id="div-relogio" onclick="mostra(id)"></div>
 
-    <div id="bloco-principal" class="bloco cor2 sombra2 borda2">
-        <div id="titulo">
-            Escolha uma opção
-        </div>
-
-        <div class="opcao borda2 btn-despertador" onclick="despertador()">
-            <img src="./imagem/despertador.png" />
-        </div>
-
-        <div class="opcao borda2 btn-temporizador" onclick="temporizador()">
-            <img src="./imagem/relogio.png " />
-        </div>
-
-        <div class="opcao borda2 btn-cronometro" onclick="cronometro()">
-            <img src="./imagem/cronometro.png" />
-        </div>
-
-        <div id="txt-despertador">
-            Despertador
-        </div>
-        <div id="txt-temporizador">
-            Temporizador
-        </div>
-        <div id="txt-cronometro">
-            Cronômetro
-        </div>
-
+<div id="bloco-principal" class="bloco cor2 sombra2 borda2">
+    <div id="titulo">
+        Escolha uma opção
     </div>
 
-    <div id="div-despertador" class="bloco cor2 sombra2 borda3">
-        <div class="header-div-opcao">
-            <div onclick="volta('div-despertador')" class="btn-voltar">
-                <img src="./imagem/voltar.png">
-            </div>
-            <div class="img-direita-superior">
-                <img src="./imagem/despertador.png">
-            </div>
-        </div>
-
-        <form action="">
-            <input type="time" id="input-despertador" class="cor4 sombra4 borda2" name="input-despertador" required>
-            <input type="text" id="input-titulo-despertador" class="cor4 sombra4 borda2" name="input-titulo-despertador"
-                placeholder="Título" maxlength="50" required>
-
-            <div class="botoes-func-container" id="botoes-func-container-despertador">
-                <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func sombra2 cor4 borda4">
-            </div>
-        </form>
-
+    <div class="opcao borda2 btn-despertador" onclick="despertador()">
+        <img src="./imagem/despertador.png" />
     </div>
 
-    <div id="div-temporizador" class="bloco cor2 sombra2 borda3">
-        <div class="header-div-opcao">
-            <div onclick="volta('div-temporizador')" class="btn-voltar">
-                <img src="./imagem/voltar.png">
-            </div>
-            <div class="img-direita-superior">
-                <img src="./imagem/relogio.png">
-            </div>
-        </div>
+    <div class="opcao borda2 btn-temporizador" onclick="temporizador()">
+        <img src="./imagem/relogio.png " />
+    </div>
 
-        <span id="span-temporizador" class="span-tempo"></span>
-        <div id="div-inputs-temporizador">
+    <div class="opcao borda2 btn-cronometro" onclick="cronometro()">
+        <img src="./imagem/cronometro.png" />
+    </div>
+
+    <div id="txt-despertador">
+        Despertador
+    </div>
+    <div id="txt-temporizador">
+        Temporizador
+    </div>
+    <div id="txt-cronometro">
+        Cronômetro
+    </div>
+
+</div>
+
+<div id="div-despertador" class="bloco cor2 sombra2 borda3">
+    <div class="header-div-opcao">
+        <div onclick="volta('div-despertador')" class="btn-voltar">
+            <img src="./imagem/voltar.png">
+        </div>
+        <div class="img-direita-superior">
+            <img src="./imagem/despertador.png">
+        </div>
+    </div>
+
+    <form action="">
+        <input type="time" id="input-despertador" class="cor4 sombra4 borda2" name="input-despertador" required>
+        <input type="text" id="input-titulo-despertador" class="cor4 sombra4 borda2" name="input-titulo-despertador"
+            placeholder="Título" maxlength="50" required>
+
+        <div class="botoes-func-container" id="botoes-func-container-despertador">
+            <input type="submit" name="despertador" id="adicionar-despertador" class="btn-func sombra2 cor4 borda4">
+        </div>
+    </form>
+
+</div>
+
+<div id="div-temporizador" class="bloco cor2 sombra2 borda3">
+    <div class="header-div-opcao">
+        <div onclick="volta('div-temporizador')" class="btn-voltar">
+            <img src="./imagem/voltar.png">
+        </div>
+        <div class="img-direita-superior">
+            <img src="./imagem/relogio.png">
+        </div>
+    </div>
+</div>
+<div id="container-temporizador">
+    <span id="span-temporizador" class="span-tempo" onclick="mostra(id)"></span>
+    <div id="div-inputs-temporizador">
+        <div id="empurra">
             <input id="horas-temporizador" class="input-temporizador sombra2 borda3" type="number" max="23" min="0"
                 maxlength="2" placeholder="h" required>
             <input id="minutos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="0"
                 maxlength="2" placeholder="m" required>
             <input id="segundos-temporizador" class="input-temporizador sombra2 borda3" type="number" max="59" min="1"
-                maxlength="2" placeholder="s" required>
-            <div id="confirmar-valor" class="sombra2 borda3">Confirmar</div>
+                maxlength="2" placeholder="s" required> 
         </div>
 
-        <div class="botoes-func-container" id="botoes-func-container-temporizador">
-            <div id="iniciar_temporizador" class="btn-func sombra2 borda4">Iniciar</div>
-            <div id="pausar_temporizador" class="btn-func sombra2 borda4">Parar</div>
-            <div id="zerar_temporizador" class="btn-func sombra2 borda4">Zerar</div>
-        </div>
+        <div id="confirmar-valor" class="sombra2 borda3">Confirmar</div>
     </div>
 
-    <div id="div-cronometro" class="bloco cor2 sombra2 borda3">
-        <div class="header-div-opcao">
-            <div onclick="volta('div-cronometro')" class="btn-voltar">
-                <img src="./imagem/voltar.png">
-            </div>
-            <div class="img-direita-superior">
-                <img src="./imagem/cronometro.png">
-            </div>
-        </div>
+    <div class="botoes-func-container" id="botoes-func-container-temporizador">
+        <div id="iniciar_temporizador" class="btn-func sombra2 borda4">Iniciar</div>
+        <div id="pausar_temporizador" class="btn-func sombra2 borda4">Parar</div>
+        <div id="zerar_temporizador" class="btn-func sombra2 borda4">Zerar</div>
+    </div>
+</div>
 
-        <div id="span-cronometro" class="span-tempo">
-            <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
+<div id="div-cronometro" class="bloco cor2 sombra2 borda3">
+    <div class="header-div-opcao">
+        <div onclick="volta('div-cronometro')" class="btn-voltar">
+            <img src="./imagem/voltar.png">
         </div>
-
-        <div class="botoes-func-container" id="botoes-func-container-cronometro">
-            <div id="iniciar_cronometro" class="btn-func sombra2 borda4">Iniciar</div>
-            <div id="pausar_cronometro" class="btn-func sombra2 borda4">Parar</div>
-            <div id="zerar_cronometro" class="btn-func sombra2 borda4">Zerar</div>
+        <div class="img-direita-superior">
+            <img src="./imagem/cronometro.png">
         </div>
     </div>
-
-    <div id="puxa-alarmes" class="etiqueta cor2 sombra1">
-        <div id="gira-puxa-alarmes">
-            Alarmes
-        </div>
-        <div id="gira-puxa-alarmes2">
-            <img src="./imagem/alarme.png">
-        </div>
+</div>
+<div id="container-cronometro">
+    <div id="span-cronometro" class="span-tempo" onclick="mostra(id)">
+        <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
     </div>
 
-    <div id="div-alarmes" class="bloco cor2 sombra1" onload="exibeInfo()">
-        <ul id="listaAlarmes"></ul>
-        <div id="adicionar-alarme" class="borda2" onclick="btnAdicionarAlarme()">
-            <img src="./imagem/botao-adicionar.png">
-        </div>
+    <div class="botoes-func-container" id="botoes-func-container-cronometro">
+        <div id="iniciar_cronometro" class="btn-func sombra2 borda4">Iniciar</div>
+        <div id="pausar_cronometro" class="btn-func sombra2 borda4">Parar</div>
+        <div id="zerar_cronometro" class="btn-func sombra2 borda4">Zerar</div>
+    </div>            
+</div>
+
+<div id="puxa-alarmes" class="etiqueta cor2 sombra1">
+    <div id="gira-puxa-alarmes">
+        Alarmes
     </div>
+    <div id="gira-puxa-alarmes2">
+        <img src="./imagem/alarme.png">
+    </div>
+</div>
 
-    <audio id="audio" preload="auto" autoplay="false">
-        <source src="./audio/mixkit-marimba-ringtone-1359.wav" type="audio/mpeg">
-    </audio>
+<div id="div-alarmes" class="bloco cor2 sombra1" onload="exibeInfo()">
+    <ul id="listaAlarmes"></ul>
+    <div id="adicionar-alarme" class="borda2">
+        <img src="./imagem/botao-adicionar.png">
+    </div>
+</div>
 
-    <div id="span-alarme" class="cor1 sombra4 borda2"></div>
+<audio id="audio-alarme" preload="auto" autoplay="false">
+    <source src="./audio/Loud_Alarm_Clock_Buzzer-Muk1984-493547174.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="audio-temporizador" preload="auto" autoplay="false">
+    <source src="./audio/mixkit-marimba-ringtone-1359.wav" type="audio/mpeg">
+</audio>
+
+<div id="span-alarme" class="cor1 sombra4 borda2"></div>
 
 </body>
 

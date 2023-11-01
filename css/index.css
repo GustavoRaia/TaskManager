@@ -206,6 +206,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: inline-block;
 }
 
+
 .opcaoTexto {
     margin-top: 35%;
     font-weight: bold;
@@ -215,7 +216,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: 1px solid transparent;
     width: 3.7vw;
     background-color: rgba(70, 71, 80, 0.238);
-    /* color: white; */
     font: 'Nunito';
     font-size: 40pt;
     text-align: center;
@@ -227,6 +227,15 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #zerar_temporizador,
 #pausar_temporizador {
     display: none;
+}
+
+#container-temporizador {
+    position: absolute;
+    margin-top: 37.5vh;
+    display: none;
+}
+#empurra {
+    margin-left: 5.53vw;
 }
 
 #confirmar-valor {
@@ -294,6 +303,12 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 /* CSS Div Cronômetro */
 
+#container-cronometro {
+    position: absolute;
+    margin-top: 37.5vh;
+    display: none;
+}
+
 #span-smh,
 #span-smh2,
 #span-temporizador {
@@ -309,6 +324,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 #span-temporizador {
     display: none;
+    margin-left: 2.65vw;
 }
 
 .botoes-func-container {
@@ -392,7 +408,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-top: 1.5vh;
 }
 
-
+#pausar_cronometro,
+#zerar_cronometro {
+    display: none;
+}
 
 /* CSS Alarmes */
 

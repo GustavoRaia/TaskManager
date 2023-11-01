@@ -45,28 +45,31 @@ function atualizarCronometroMilissegundos() {
 let cronometro_display;
 let cronometroMilissegundos;
 
-const iniciarButton = document.getElementById('iniciar_cronometro'); // Pega o valor da div do botão de 'Iniciar Cronômetro'.
-const pausarButton = document.getElementById('pausar_cronometro'); // Pega o valor da div do botão de 'Pausar Cronômetro'.
-const zerarButton = document.getElementById('zerar_cronometro'); // Pega o valor da div do botão de 'Zerar Cronômetro'.
+const iniciarButtonC = document.getElementById('iniciar_cronometro'); // Pega o valor da div do botão de 'Iniciar Cronômetro'.
+const pausarButtonC = document.getElementById('pausar_cronometro'); // Pega o valor da div do botão de 'Pausar Cronômetro'.
+const zerarButtonC = document.getElementById('zerar_cronometro'); // Pega o valor da div do botão de 'Zerar Cronômetro'.
 
 // Função ativada ao clicar no botão 'Iniciar'
-iniciarButton.addEventListener('click', function () {
+iniciarButtonC.addEventListener('click', function () {
     if (!cronometro_display) { // Verifica se o cronômetro está em execução.
         cronometro_display = setInterval(iniciar_cronometro, 1000); // Atualiza a função a cada segundo.
         cronometroMilissegundos = setInterval(atualizarCronometroMilissegundos, 10); // Atualiza a função a cada 10 milissegundos.
-        iniciarButton.disabled = true; // Desativa a possibilidade do botção ser clicado novamente.
+        iniciarButtonC.disabled = true; // Desativa a possibilidade do botção ser clicado novamente.
+
+        pausarButtonC.style.display = "block";
+        zerarButtonC.style.display = "block";
     }
 });
 
 // Função ativada ao clicar no botão 'Pausar'.
-pausarButton.addEventListener('click', function () {
+pausarButtonC.addEventListener('click', function () {
     formataCronometro(); // Chama a função que zera o cronômetro.
 
-    iniciarButton.disabled = false; // Botão de iniciar o cronômetro pode ser clicado novamente.
+    iniciarButtonC.disabled = false; // Botão de iniciar o cronômetro pode ser clicado novamente.
 });
 
 // Função ativada ao clicar no botão 'Zerar'
-zerarButton.addEventListener('click', function () {
+zerarButtonC.addEventListener('click', function () {
     formataCronometro(); // Chama a função que zera o cronômetro.
 
     milissegundos = 0; // Zera o valor REAL de milissegundos.
@@ -78,7 +81,10 @@ zerarButton.addEventListener('click', function () {
 
     milissegundosElement.innerHTML = '00'; // Volta o valor VISÍVEL de milissegundos para 0.
 
-    iniciarButton.disabled = false; // Botão de iniciar o cronômetro pode ser clicado novamente.
+    iniciarButtonC.disabled = false; // Botão de iniciar o cronômetro pode ser clicado novamente.
+    
+    pausarButtonC.style.display = "none";
+    zerarButtonC.style.display = "none";
 });
 
 function formataCronometro() {

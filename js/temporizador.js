@@ -8,8 +8,8 @@ const pegarValor = document.getElementById('confirmar-valor'); // Pega o valor d
 
 const inputsHorarios = document.getElementById('div-inputs-temporizador'); // Pega o valor da div do horário do temporizador.
 
-var audio = document.getElementById('audio'); // Pega o valor do elemento áudio do HTML.
-audio.pause(); // Pausa o áudio.
+var audio_temporizador = document.getElementById('audio-temporizador'); // Pega o valor do elemento áudio do HTML.
+// audio_temporizador.pause(); // Pausa o áudio.
 
 // Função para formatar tempo (horas, minutos e segundos).
 function formatarTempoT(h, m, s) {
@@ -24,7 +24,7 @@ function iniciar_temporizadorr() {
   var segundosT = sup[6] + sup[7]; // Valor dos segundos são as duas últimas casas da variável.
 
   if (horasT == 0 && minutosT == 0 && segundosT == 0) { // Verifica se o temporizador chegou ao valor final.
-    audio.play(); // Toca o áudio quando o temporizador estiver zerado.
+    audio_temporizador.play(); // Toca o áudio quando o temporizador estiver zerado.
     zerarButtonT.style.backgroundColor = "red";
     zerarButtonT.style.animation = "pulse 1s infinite";
 
@@ -97,8 +97,8 @@ pausarButtonT.addEventListener('click', function () {
   clearInterval(temporizador_display); // Pausa a execução.
   temporizador_display = null; // A execução do temporizador passa a ser 'null'.
   iniciarButtonT.disabled = false; // Ativa o botão de iniciar contagem, que funcionará para "reiniciar" a contagem de onde foi parado.
-  audio.pause();
-  audio.currentTime = 0;
+  audio_temporizador.pause();
+  audio_temporizador.currentTime = 0;
 });
 
 // Função para resetar o valor da contagem
@@ -117,8 +117,8 @@ zerarButtonT.addEventListener('click', function () {
   temporizadorElement.style.display = "none"; // Display da contagem do temporizador desaparece
   inputsHorarios.style.display = "block"; // Display de definir os horários (h, m, s) volta a aparecer.
 
-  audio.pause(); // Para a execução do áudio.
-  audio.currentTime = 0; // Reinicia o valor do áudio para o início
+  audio_temporizador.pause(); // Para a execução do áudio.
+  audio_temporizador.currentTime = 0; // Reinicia o valor do áudio para o início
 
   temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
   zerarButtonT.style.backgroundColor = "";

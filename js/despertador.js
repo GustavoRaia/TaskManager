@@ -5,7 +5,7 @@ var vezes_clicado = 0; // Guarda o número de vezes que um botão foi clicado, p
 const validarFormulario = document.getElementById('adicionar-despertador'); // Pega o valor da div de adicionar formulário.
 const btnAdicionarAlarme = document.getElementById('adicionar-alarme'); // Pega o valor da div de adicionar alarmes do canto direito da tela 'aba alarmes'.
 
-var audio = document.getElementById('audio');
+var audio_alarme = document.getElementById('audio-alarme');
 var bloco_span = document.getElementById('span-alarme');
 var valor_despertador = document.getElementById('input-despertador');
 var valor_titulo_despertador = document.getElementById('input-titulo-despertador');
@@ -46,6 +46,9 @@ btnAdicionarAlarme.addEventListener('click', function() {
     document.getElementById('div-temporizador').style.display = "none"; // Os outros blovos ficam invisíveis,
     document.getElementById('div-cronometro').style.display = "none";
     document.getElementById('bloco-principal').style.display = "none";
+
+    document.getElementById('container-temporizador').style.display = "none";
+    document.getElementById('container-cronometro').style.display = "none";        
 });
 
 function excluirAlarme(valor) {
@@ -102,13 +105,13 @@ function verificaAlarme() {
                     bloco_span.appendChild(botao_span_alarme); // Insere na div pai.
                 }
 
-                audio.play(); // Inicia o áudio do alarme.
+                audio_alarme.play(); // Inicia o áudio do alarme.
                 vezes_clicado++; // Incrementa a quantidade de vezes clicado.
 
                 setTimeout(function () {
-                    audio.pause();  // Para a execução do áudio.
+                    audio_alarme.pause();  // Para a execução do áudio.
                     bloco_span.style.display = "none"; // O bloco do alarme tocado fica invisível.
-                    audio.currentTime = 0; // Reinicia o valor do audio.
+                    audio_alarme.currentTime = 0; // Reinicia o valor do audio.
                     vezes_clicado = 0; // Quantidade de vezes clicado para 'parar' no bloco do alarme volta a ser zero. 
                     bloco_span.textContent = ""; // Zera o elemento de texto.
                 }, 20000); // Executa a função a cada 20 segundos.
@@ -121,7 +124,7 @@ function verificaAlarme() {
 setInterval(verificaAlarme, 1000); // Executa a função a cada segundo.
 
 function para_alarme() {
-    audio.pause(); // Pausa o áudio que toca o alarme
+    audio_alarme.pause(); // Pausa o áudio que toca o alarme
     bloco_span.style.display = "none"; // A div que contém o alarme passa a ficar invisível
 }
 
