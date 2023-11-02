@@ -13,6 +13,12 @@
     color: white;
 }
 
+div [id]:hover,
+header [id]:hover,
+img:hover {
+    cursor: pointer;
+}
+
 /* Definindo cores das divs (background-color) */
 
 .cor1 {
@@ -430,8 +436,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .etiqueta {
     position: absolute;
-    width: 1.6vw;
-    height: 10.5vh;
+    width: 30px;
+    padding-bottom: 8px;
     margin-left: 97.4vw;
     transition: transform 1s;
     border-top-left-radius: 10px;
@@ -444,7 +450,8 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     z-index: 1;
 }
 #puxa-alarmes img {
-    width: 90%;
+    width: 85%;
+    padding-top: 1px;
 }
 #gira-puxa-alarmes {
     transform: rotate(-90deg);
@@ -456,7 +463,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: 0.4vw;
 }
 
-#puxa-teste {
+/* #puxa-teste {
     margin-top: 24vh;
     z-index: 0;
 }
@@ -471,9 +478,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     transform: rotate(-90deg);
     margin-top: 0.7vh;
     margin-left: 0.4vw;
-}
-
-
+} */
 
 #div-alarmes::-webkit-scrollbar {
     width: 1vw;

@@ -180,6 +180,12 @@ function voltaPadrao(elem1, elem2) {
 // Muda os displays ao evento de clicar no botão de despertador
 function despertador() {
     div_bloco.style.display = "none";
+    elem_div_temporizador.style.display = "none";
+    elem_div_cronometro.style.display = "none";
+    elem_container_temporizador.style.display = "none";
+    elem_container_cronometro.style.display = "none";
+
+
     elem_div_despertador.style.display = "block";
 }
 
