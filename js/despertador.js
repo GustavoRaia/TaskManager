@@ -18,7 +18,9 @@ validarFormulario.addEventListener('click', function() {
             
             if (document.getElementById('input-despertador').value == alarmes_ativos[i].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
                 window.alert("Não é possível cadastrar alarmes com o mesmo horário."); // Mensagem de erro caso o valor inserido já esteja cadastrado (2 alarmes com o mesmo horário).
-                limpaInputD(); // Chama função para limpar o valor dos inputs.
+                // limpaInputD(); // Chama função para limpar o valor dos inputs.
+
+                valor_despertador.value = ''; // Limpa o valor do input de horário do despertador.
 
                 return false; // Retorna falso para não cadastrar o alarme com erro.
             }
@@ -39,16 +41,6 @@ validarFormulario.addEventListener('click', function() {
     }
 
     cadastrarAlarme(); // Se não ocorrer nenhum erro, a função de cadastar alarme é chamada.
-});
-
-btnAdicionarAlarme.addEventListener('click', function() {
-    document.getElementById('div-despertador').style.display = "block"; // Bloco de Adicionar despertador fica visível,
-    document.getElementById('div-temporizador').style.display = "none"; // Os outros blovos ficam invisíveis,
-    document.getElementById('div-cronometro').style.display = "none";
-    document.getElementById('bloco-principal').style.display = "none";
-
-    document.getElementById('container-temporizador').style.display = "none";
-    document.getElementById('container-cronometro').style.display = "none";        
 });
 
 function excluirAlarme(valor) {

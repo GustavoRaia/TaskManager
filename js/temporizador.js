@@ -120,7 +120,7 @@ zerarButtonT.addEventListener('click', function () {
   audio_temporizador.pause(); // Para a execução do áudio.
   audio_temporizador.currentTime = 0; // Reinicia o valor do áudio para o início
 
-  temporizadorElement.style.color = "white" // Cor dos números do temporizador volta a ser branco.
+  temporizadorElement.style.color = "" // Cor dos números do temporizador volta a ser branco.
   zerarButtonT.style.backgroundColor = "";
   zerarButtonT.style.animation = "";
 

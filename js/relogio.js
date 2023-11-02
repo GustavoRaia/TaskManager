@@ -86,6 +86,11 @@ function mostra(elem_tempo) {
                 elem_span_temporizador.style.marginLeft = "6vw";
                 
                 elem_container_temporizador.style.display = "block";
+
+                document.getElementById('horas-temporizador').style.width = "5.3vw";
+                document.getElementById('minutos-temporizador').style.width = "5.3vw";
+                document.getElementById('segundos-temporizador').style.width = "5.3vw";
+                document.getElementById('confirmar-valor').style.marginLeft = "7.5vw";
                 
                 modo_temporizador++;
             } else if (modo_temporizador == 1) {
@@ -98,6 +103,11 @@ function mostra(elem_tempo) {
                 elem_span_temporizador.style.marginLeft = "";
                 elem_botoes_temporizador.style.marginLeft = "";
                 elem_span_temporizador.style.fontSize = "";
+
+                document.getElementById('horas-temporizador').style.width = "";
+                document.getElementById('minutos-temporizador').style.width = "";
+                document.getElementById('segundos-temporizador').style.width = "";
+                document.getElementById('confirmar-valor').style.marginLeft = "";
 
                 elem_puxa_alarmes.style.display = "block";
                 elem_div_alarmes.style.display = "block";
