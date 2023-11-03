@@ -18,8 +18,6 @@ validarFormulario.addEventListener('click', function() {
             
             if (document.getElementById('input-despertador').value == alarmes_ativos[i].horario_alarme) { // Verifica se o valor do input já está contido no array de alarmes cadastrados.
                 window.alert("Não é possível cadastrar alarmes com o mesmo horário."); // Mensagem de erro caso o valor inserido já esteja cadastrado (2 alarmes com o mesmo horário).
-                // limpaInputD(); // Chama função para limpar o valor dos inputs.
-
                 valor_despertador.value = ''; // Limpa o valor do input de horário do despertador.
 
                 return false; // Retorna falso para não cadastrar o alarme com erro.

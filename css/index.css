@@ -9,6 +9,7 @@
 }
 
 * {
+    font-family: 'Nunito';
     user-select: none;
     color: white;
 }
@@ -79,7 +80,6 @@ img:hover {
 
 #body {
     width: 100%;
-    font-family: 'Nunito';
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -222,7 +222,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: 1px solid transparent;
     width: 3.7vw;
     background-color: rgba(70, 71, 80, 0.238);
-    font: 'Nunito';
     font-size: 40pt;
     text-align: center;
     padding-top: 0.4vh;
@@ -388,7 +387,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border: 1px solid transparent;
     font-size: 25pt;
     text-align: center;
-    font-family: 'Nunito';
 }
 
 #input-despertador:hover,
@@ -409,7 +407,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 #adicionar-despertador {
     font-size: 19pt;
     border: 1px solid transparent;
-    font-family: 'Nunito';
     padding-bottom: 1.2vh;
     margin-top: 1.5vh;
 }
@@ -435,7 +432,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .etiqueta {
-    position: absolute;
+    position: fixed;
     width: 30px;
     padding-bottom: 8px;
     margin-left: 97.4vw;
