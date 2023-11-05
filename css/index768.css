@@ -54,7 +54,7 @@
 #div-temporizador,
 #div-cronometro {
     margin-top: 15vh;
-    height: 30vh;
+    height: 35vh;
     width: 60%;
 }
 
@@ -117,15 +117,13 @@
 /* CSS Despertador */
 
 #input-despertador {
-    width: 15vw;
-    height: 8vh;
-    border: 1px solid transparent;
-    font-size: 25pt;
-    text-align: center;
+    margin-top: -1vh;
+    width: 25vw;
+    font-size: 15pt;
 }
 
 #input-titulo-despertador {
-    width: 15vw;
+    width: 35vw;
     margin-top: 3vh;
     padding-top: 0.3vh;
     border: 1px solid transparent;
@@ -136,55 +134,12 @@
 #adicionar-despertador {
     font-size: 17pt;
     padding-bottom: 0.6vh;
-    margin-top: 1vh;
 }
 
 #pausar_cronometro,
 #zerar_cronometro {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

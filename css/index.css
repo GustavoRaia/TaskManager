@@ -442,40 +442,38 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
-#puxa-alarmes {
+#puxa-div {
     margin-top: 12vh;
     z-index: 1;
 }
-#puxa-alarmes img {
+
+#puxa-div img,
+#puxa-div-alarmes img,
+#puxa-div-todo img {
     width: 85%;
     padding-top: 1px;
 }
-#gira-puxa-alarmes {
-    transform: rotate(-90deg);
-    margin-top: 4.5vh;
-}
-#gira-puxa-alarmes2 {
-    transform: rotate(-90deg);
-    margin-top: 0.7vh;
-    margin-left: 0.4vw;
+
+#puxa-div-alarmes {
+    padding-top: 46px;
+    margin-top: 16.5vh;
+    z-index: 1;
 }
 
-/* #puxa-teste {
-    margin-top: 24vh;
-    z-index: 0;
+#puxa-div-todo {
+    padding-top: 24px;
+    margin-top: 27.9vh;
+    z-index: 1;
 }
-#puxa-teste img {
-    width: 80%;
-}
-#gira-puxa-teste {
-    transform: rotate(-90deg);
-    margin-top: 4.5vh;
-}
-#gira-puxa-teste2 {
+
+.gira-puxa-div-img {
     transform: rotate(-90deg);
     margin-top: 0.7vh;
     margin-left: 0.4vw;
-} */
+}
+.gira-puxa-div-txt {
+    transform: rotate(-90deg);
+}
 
 #div-alarmes::-webkit-scrollbar {
     width: 1vw;

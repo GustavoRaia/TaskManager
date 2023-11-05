@@ -19,7 +19,9 @@ var elem_span_milissegundos = document.getElementById('span-milissegundos');
 var elem_botoes_cronometro = document.getElementById('botoes-func-container-cronometro');
 var elem_botoes_temporizador = document.getElementById('botoes-func-container-temporizador');
 
-var elem_puxa_alarmes = document.getElementById('puxa-alarmes'); // Pega o valor do id da div de puxar a observação da lista de alarmes.
+var elem_puxa_alarmes = document.getElementById('puxa-div'); // Pega o valor do id da div de puxar a observação da lista de alarmes.
+var elem_puxa_div_alarmes = document.getElementById('puxa-div-alarmes');
+var elem_puxa_div_todo = document.getElementById('puxa-div-todo');
 var elem_div_alarmes = document.getElementById('div-alarmes');
 
 // Funções ======================================
@@ -58,6 +60,8 @@ function mostra(elem_tempo) {
             div_bloco.style.display = "block";
             
             elem_puxa_alarmes.style.display = "block";
+            elem_puxa_div_alarmes.style.display = "block";
+            elem_puxa_div_todo.style.display = "block";
             elem_div_alarmes.style.display = "block";
 
             elem_relogio.style.display = "none";
@@ -110,6 +114,8 @@ function mostra(elem_tempo) {
                 document.getElementById('confirmar-valor').style.marginLeft = "";
 
                 elem_puxa_alarmes.style.display = "block";
+                elem_puxa_div_alarmes.style.display = "block";
+                elem_puxa_div_todo.style.display = "block";
                 elem_div_alarmes.style.display = "block";
 
                 modo_temporizador--;
@@ -147,6 +153,8 @@ function mostra(elem_tempo) {
                 elem_span_milissegundos.style.fontSize = "";
 
                 elem_puxa_alarmes.style.display = "block";
+                elem_puxa_div_alarmes.style.display = "block";
+                elem_puxa_div_todo.style.display = "block";
                 elem_div_alarmes.style.display = "block";
 
                 modo_cronometro--;
@@ -166,6 +174,8 @@ function limpaTudo() {
     elem_container_temporizador.style.display = "none";
 
     elem_puxa_alarmes.style.display = "none";
+    elem_puxa_div_alarmes.style.display = "none";
+    elem_puxa_div_todo.style.display = "none";
     elem_div_alarmes.style.display = "none";
 }
 
@@ -254,9 +264,12 @@ function mostraAlarmes() {
     }
 }
 
-document.getElementById("puxa-alarmes").addEventListener("click", function () {
+document.getElementById("puxa-div").addEventListener("click", function () {
     elem_div_alarmes.style.display = "block";
-    elem_div_alarmes.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
 
+    elem_div_alarmes.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
     elem_puxa_alarmes.classList.toggle("move-esquerda");
+    elem_puxa_div_alarmes.classList.toggle("move-esquerda");
+    elem_puxa_div_todo.classList.toggle("move-esquerda");
+    
 });
