@@ -22,9 +22,11 @@ var elem_botoes_temporizador = document.getElementById('botoes-func-container-te
 var elem_puxa_alarmes = document.getElementById('puxa-div'); // Pega o valor do id da div de puxar a observação da lista de alarmes.
 var elem_puxa_div_alarmes = document.getElementById('puxa-div-alarmes');
 var elem_puxa_div_todo = document.getElementById('puxa-div-todo');
-var elem_div_alarmes = document.getElementById('div-alarmes');
+var elem_div_alarmes = document.getElementById('div-lateral');
 
 // Funções ======================================
+
+
 
 // Função de formatar e atualizar relógio
 function atualizarRelogio() {
@@ -48,6 +50,8 @@ atualizarRelogio();
 
 var modo_temporizador = 0;
 var modo_cronometro = 0;
+
+
 
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra(elem_tempo) {
@@ -163,6 +167,9 @@ function mostra(elem_tempo) {
     }
 }
 
+
+
+// Função para apagar o display de tudo.
 function limpaTudo() {
     div_header.style.display = "none";
     div_bloco.style.display = "none";
@@ -179,6 +186,9 @@ function limpaTudo() {
     elem_div_alarmes.style.display = "none";
 }
 
+
+
+// Função para voltar a tela normal.
 function voltaPadrao(elem1, elem2) {
     document.getElementById(elem1).style.display = "block";
     document.getElementById(elem2).style.display = "block";
@@ -187,7 +197,9 @@ function voltaPadrao(elem1, elem2) {
     div_header.style.display = "flex";
 }
 
-// Muda os displays ao evento de clicar no botão de despertador
+
+
+// Muda os displays ao evento de clicar no botão de despertador.
 function despertador() {
     div_bloco.style.display = "none";
     elem_div_temporizador.style.display = "none";
@@ -199,77 +211,19 @@ function despertador() {
     elem_div_despertador.style.display = "block";
 }
 
+
+// Muda os displays ao evento de clicar no botão de temporizador.
 function temporizador() {
     div_bloco.style.display = "none";
     elem_div_temporizador.style.display = "block";
     elem_container_temporizador.style.display = "block";
 }
 
+
+
+// Muda os displays ao evento de clicar no botão de cronômetro.
 function cronometro() {
     div_bloco.style.display = "none";
     elem_div_cronometro.style.display = "block";
     elem_container_cronometro.style.display = "block";
 }
-
-// CRIAR OUTRO ARQUIVO JS PARA AS FUNÇÕES ABAIXO
-// -------------------------------------------------
-
-var alterna = 0;
-
-// Função de Modo Claro/Escuro
-function modo() {
-
-    const classes = ['cor1', 'cor2', 'cor4'];
-    const novasCores = ['#49515a05', '#49515a40', '#49515a20']; // Cores correspondentes às classes
-    const coresVolta = ['#0e101b', '#1215284e', '#0e101b64']; // Cores correspondentes às classes
-
-
-    if(alterna == 0) {
-        for (let i = 0; i < classes.length; i++) {
-            const elementos = document.querySelectorAll('.' + classes[i]);
-
-            elementos.forEach(function (elemento) {
-                elemento.style.backgroundColor = novasCores[i];
-            });
-        }
-        document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/forma-de-meia-lua.png");
-        alterna = 1;
-    } else if (alterna == 1) {
-        for (let i = 0; i < classes.length; i++) {
-            const elementos2 = document.querySelectorAll('.' + classes[i]);
-
-            elementos2.forEach(function (elemento) {
-                elemento.style.backgroundColor = coresVolta[i];
-            });
-        }
-        document.querySelector('#modo-claro-escuro img').setAttribute('src', "./imagem/brilho-do-sol.png");
-        alterna = 0;
-
-    }
-}
-
-function volta(div_voltar) {
-    document.getElementById(div_voltar).style.display = "none";
-    elem_container_cronometro.style.display = "none";
-    elem_container_temporizador.style.display = "none";
-    div_bloco.style.display = "block";
-}
-
-function mostraAlarmes() {
-    var div_alarmes = elem_div_alarmes
-    if (div_alarmes.style.display == "block") {
-        div_alarmes.style.display = "none";
-    } else {
-        div_alarmes.style.display = "block";
-    }
-}
-
-document.getElementById("puxa-div").addEventListener("click", function () {
-    elem_div_alarmes.style.display = "block";
-
-    elem_div_alarmes.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
-    elem_puxa_alarmes.classList.toggle("move-esquerda");
-    elem_puxa_div_alarmes.classList.toggle("move-esquerda");
-    elem_puxa_div_todo.classList.toggle("move-esquerda");
-    
-});

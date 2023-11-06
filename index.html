@@ -13,6 +13,7 @@
     <script src="./js/despertador.js" defer></script>
     <script src="./js/cronometro.js" defer></script>
     <script src="./js/temporizador.js" defer></script>
+    <script src="./js/extra.js" defer></script>
 
     <link rel="icon" type="image/png" href="./imagem/relogio-de-parede.png" contenteditable="">
     <title>Task Manager</title>
@@ -23,10 +24,7 @@
 <header id="header" class="bloco cor2 sombra1">
     <div class="span-tempo" id="relogio-header" onclick="mostra(id)"></div>
     <div id="info">
-        <!-- <div class="card-header" onclick="zera()"><img src="./imagem/casa.png"></div> -->
-        <!-- <div class="card-header"><img src="./imagem/calendario.png"></div> -->
-        <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
-        </div>
+        <div class="card-header" id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png"></div>
         <div class="card-header" id="invisivel"><img src="./imagem/lata-de-lixo.png"></div>
     </div>
 </header>
@@ -138,11 +136,10 @@
     </div>            
 </div>
 
-<div id="puxa-div" class="etiqueta cor2 sombra1">
-    <div class="gira-puxa-div-img">
-        <img src="./imagem/forma-de-meia-lua.png">
-    </div>
+<div id="puxa-div" class="etiqueta cor2 sombra1" onclick="mudaSeta()">
+    <img src="./imagem/simbolo-de-setas-duplas-para-a-esquerda.png">
 </div>
+
 <div id="puxa-div-alarmes" class="etiqueta cor2 sombra1">
     <div class="gira-puxa-div-txt">
         Alarmes
@@ -160,10 +157,19 @@
     </div>
 </div>
 
-<div id="div-alarmes" class="bloco cor2 sombra1" onload="exibeInfo()">
-    <ul id="listaAlarmes"></ul>
-    <div id="adicionar-alarme" class="borda2" onclick="despertador()">
-        <img src="./imagem/botao-adicionar.png">
+<div id="div-lateral" class="bloco cor2 sombra1">
+
+    <div id="div-alarmes" onload="exibeInfo()">
+        <ul id="listaAlarmes"></ul>
+        <div id="adicionar-alarme" class="borda2" onclick="despertador()">
+            <img src="./imagem/botao-adicionar.png">
+        </div>
+    </div>
+
+    <div id="div-alarmes3">
+        <div id="socha">
+            <p>Funcionalidade Indisponível</p>
+        </div>
     </div>
 </div>
 
