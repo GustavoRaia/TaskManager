@@ -36,52 +36,17 @@ function modo() {
 
 function volta(div_voltar) {
     document.getElementById(div_voltar).style.display = "none";
-    elem_container_cronometro.style.display = "none";
-    elem_container_temporizador.style.display = "none";
-    div_bloco.style.display = "block";
+    document.getElementById('container-cronometro').style.display = "none";
+    document.getElementById('container-temporizador').style.display = "none";
+    // document.getElementById('bloco-principal').style.display = "block";
+    // Adicionar Futuramente o que vai aparecer na Tela Inicial da Página
 }
 
 function mostraAlarmes() {
-    var div_alarmes = elem_div_alarmes
+    var div_alarmes = document.getElementById('div-principal');
     if (div_alarmes.style.display == "block") {
         div_alarmes.style.display = "none";
     } else {
         div_alarmes.style.display = "block";
-    }
-}
-
-// ==============================================
-
-document.getElementById("puxa-div").addEventListener("click", function () {
-    elem_div_alarmes.style.display = "block";
-
-    elem_div_alarmes.classList.toggle("move-esquerda"); // Adiciona ou remove a classe para mover a div
-    elem_puxa_alarmes.classList.toggle("move-esquerda");
-    elem_puxa_div_alarmes.classList.toggle("move-esquerda");
-    elem_puxa_div_todo.classList.toggle("move-esquerda");
-    
-});
-
-document.getElementById("puxa-div-alarmes").addEventListener("click", function () {
-    document.getElementById('div-alarmes3').style.display = "none";
-    document.getElementById('div-alarmes').style.display = "block";
-});
-
-document.getElementById("puxa-div-todo").addEventListener("click", function () {
-    document.getElementById('div-alarmes').style.display = "none";
-    document.getElementById('div-alarmes3').style.display = "block";
-});
-
-// ==============================================
-
-var mudaSrcSeta = 0
-
-function mudaSeta() {
-    if(mudaSrcSeta == 0) {
-        document.querySelector('#puxa-div img').setAttribute('src', "./imagem/simbolo-de-setas-duplas-para-a-direita-para-avancar.png");
-        mudaSrcSeta = 1;
-    } else if (mudaSrcSeta == 1) {
-        document.querySelector('#puxa-div img').setAttribute('src', "./imagem/simbolo-de-setas-duplas-para-a-esquerda.png");
-        mudaSrcSeta = 0;
     }
 }

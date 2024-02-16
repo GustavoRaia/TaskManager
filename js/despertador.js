@@ -51,7 +51,7 @@ function excluirAlarme(valor) {
             document.getElementById("alarme-" + valor).remove(); // Remove o item com o valor passado como parametro.
 
             if (alarmes_ativos.length < 11) { // Verifica se existem menos de 10 alarmes cadastrados.
-                btnAdicionarAlarme.style.display = "block"; // Se for, a div de adição de alarmes na aba lateral volta a ficar visível.
+                btnAdicionarAlarme.style.display = "flex"; // Se for, a div de adição de alarmes na aba lateral volta a ficar visível.
             }
 
             num_alarme--; // Decrementa o valor atual do alarme (para uma possível nova adição).
@@ -126,7 +126,7 @@ function cadastrarAlarme() {
     })
 
     var novoAlarme = document.createElement('div'); // Cria um novo elemento para um alarme cadastrado.
-    novoAlarme.innerHTML = "<div class='alarme cor1 sombra4 borda3' id='alarme-" + num_alarme + "'>" + // Cria uma div com classes para estilo (descritas no arquivo CSS).
+    novoAlarme.innerHTML = "<div class='alarme mx-0 mt-4 mb-4 p-2 px-3 bg-dark sombra4 borda3' id='alarme-" + num_alarme + "'>" + // Cria uma div com classes para estilo (descritas no arquivo CSS).
         document.getElementById('input-despertador').value + "<br/> <div id='span-titulo-alarme'>" + // Adiciona o horário do Alarme ao cartão.
         document.getElementById('input-titulo-despertador').value + "</div>" + // Adiciona o Título/Descrição do alarme ao cartão.
         "<img onclick='excluirAlarme(" + num_alarme + ")' class='img-lata-lixo lixo" + num_alarme++ + "' src='./imagem/lata-de-lixo.png' alt=''>" + // Adiciona um evento de botão caso o ícone de lixo seja pressionado.

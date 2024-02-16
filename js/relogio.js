@@ -19,14 +19,9 @@ var elem_span_milissegundos = document.getElementById('span-milissegundos');
 var elem_botoes_cronometro = document.getElementById('botoes-func-container-cronometro');
 var elem_botoes_temporizador = document.getElementById('botoes-func-container-temporizador');
 
-var elem_puxa_alarmes = document.getElementById('puxa-div'); // Pega o valor do id da div de puxar a observação da lista de alarmes.
-var elem_puxa_div_alarmes = document.getElementById('puxa-div-alarmes');
-var elem_puxa_div_todo = document.getElementById('puxa-div-todo');
-var elem_div_alarmes = document.getElementById('div-lateral');
+var elem_div_alarmes = document.getElementById('div-principal');
 
 // Funções ======================================
-
-
 
 // Função de formatar e atualizar relógio
 function atualizarRelogio() {
@@ -36,10 +31,10 @@ function atualizarRelogio() {
     const segundos = agora.getSeconds().toString().padStart(2, '0');
 
     const relogio = `${horas}:${minutos}:${segundos}`;
-    const dia = agora.getDay().toString();
-    const mes = agora.getMonth().toString();
-    const ano = agora.getFullYear().toString();
-    const data = `${dia}/${mes}/${ano}`
+    // const dia = agora.getDay().toString();
+    // const mes = agora.getMonth().toString();
+    // const ano = agora.getFullYear().toString();
+    // const data = `${dia}/${mes}/${ano}`
 
     elem_relogio.textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div de tela inicial.
     document.getElementById('relogio-header').textContent = relogio; // Atribui o valor de relógio (hora atual) para o a div presente na header.
@@ -51,21 +46,15 @@ atualizarRelogio();
 var modo_temporizador = 0;
 var modo_cronometro = 0;
 
-
-
 // Função que mostra as primeiras divs do site ao clicar no relógio inicial.
 function mostra(elem_tempo) {
 
     switch (elem_tempo) {
         case "div-relogio": // Se o relógio do inicio da aplicação for clicada
 
-            div_header.style.display = "block";
             div_header.style.display = "flex";
-            div_bloco.style.display = "block";
+            div_bloco.style.display = "flex";
             
-            elem_puxa_alarmes.style.display = "block";
-            elem_puxa_div_alarmes.style.display = "block";
-            elem_puxa_div_todo.style.display = "block";
             elem_div_alarmes.style.display = "block";
 
             elem_relogio.style.display = "none";
@@ -117,9 +106,6 @@ function mostra(elem_tempo) {
                 document.getElementById('segundos-temporizador').style.width = "";
                 document.getElementById('confirmar-valor').style.marginLeft = "";
 
-                elem_puxa_alarmes.style.display = "block";
-                elem_puxa_div_alarmes.style.display = "block";
-                elem_puxa_div_todo.style.display = "block";
                 elem_div_alarmes.style.display = "block";
 
                 modo_temporizador--;
@@ -156,9 +142,6 @@ function mostra(elem_tempo) {
                 elem_span_smh.style.fontSize = "";
                 elem_span_milissegundos.style.fontSize = "";
 
-                elem_puxa_alarmes.style.display = "block";
-                elem_puxa_div_alarmes.style.display = "block";
-                elem_puxa_div_todo.style.display = "block";
                 elem_div_alarmes.style.display = "block";
 
                 modo_cronometro--;
@@ -166,8 +149,6 @@ function mostra(elem_tempo) {
             break;
     }
 }
-
-
 
 // Função para apagar o display de tudo.
 function limpaTudo() {
@@ -180,50 +161,62 @@ function limpaTudo() {
     elem_container_cronometro.style.display = "none";
     elem_container_temporizador.style.display = "none";
 
-    elem_puxa_alarmes.style.display = "none";
-    elem_puxa_div_alarmes.style.display = "none";
-    elem_puxa_div_todo.style.display = "none";
     elem_div_alarmes.style.display = "none";
 }
-
-
 
 // Função para voltar a tela normal.
 function voltaPadrao(elem1, elem2) {
     document.getElementById(elem1).style.display = "block";
     document.getElementById(elem2).style.display = "block";
 
-    div_header.style.display = "block";
     div_header.style.display = "flex";
 }
 
-
+// ==============================================
 
 // Muda os displays ao evento de clicar no botão de despertador.
 function despertador() {
-    div_bloco.style.display = "none";
+    // div_bloco.style.display = "none";
     elem_div_temporizador.style.display = "none";
     elem_div_cronometro.style.display = "none";
     elem_container_temporizador.style.display = "none";
     elem_container_cronometro.style.display = "none";
 
-
     elem_div_despertador.style.display = "block";
 }
 
-
 // Muda os displays ao evento de clicar no botão de temporizador.
 function temporizador() {
-    div_bloco.style.display = "none";
+    // div_bloco.style.display = "none";
+    elem_div_cronometro.style.display = "none";
+    elem_container_cronometro.style.display = "none";
+    elem_div_despertador.style.display = "none";
+
     elem_div_temporizador.style.display = "block";
     elem_container_temporizador.style.display = "block";
 }
 
-
-
 // Muda os displays ao evento de clicar no botão de cronômetro.
 function cronometro() {
-    div_bloco.style.display = "none";
+    // div_bloco.style.display = "none";
+    elem_div_temporizador.style.display = "none";
+    elem_container_temporizador.style.display = "none";
+    elem_div_cronometro.style.display = "none";
+    elem_div_despertador.style.display = "none";
+
     elem_div_cronometro.style.display = "block";
     elem_container_cronometro.style.display = "block";
 }
+
+// ==============================================
+
+// Função que Alterna a tela das Funcionalidades da Div Lateral do site.
+function divAlarmes(div_aparece) {
+    document.getElementById('bloco-principal').style.display = "none";
+    document.getElementById('div-alarmes').style.display = "none";
+    document.getElementById('div-alarmes3').style.display = "none";
+    document.getElementById('div-alarmes4').style.display = "none";
+
+    document.getElementById(div_aparece).style.display = "block"
+}
+

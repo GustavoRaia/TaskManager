@@ -1,0 +1,205 @@
+/* CSS Div Lateral */
+
+/* Bloco da Div Lateral */
+#div-principal {
+    width: 23vw;
+    height: 70%;
+    transition: 1s;
+    /* overflow: auto; */
+    display: none;
+}
+
+/* 
+    Bloco com as opções de interface
+        - Index
+        - Alarmes
+        - ToDo List
+        - Configurações
+*/
+.index {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5vh;
+}
+.index > div {
+    width: 2.5vw;
+    margin: 4%;
+    display: flex;
+    justify-content: center;
+}
+.index > div > img {
+    width: 40px;
+    padding: 15%;
+}
+*.index :hover {
+    transform: scale(1.10);
+}
+
+/* 
+    Bloco com as opções de relógio 
+        - Alarme/Despertador
+        - Timer/Temporizador
+        - Cronômetro
+*/
+#bloco-principal {
+    margin: auto;
+    width: clamp(20vw, 50%, 10vw);
+    text-align: center;
+    font-weight: bold;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+    height: 47vh;
+    /* border: 1px solid black; */
+}
+#bloco-principal::-webkit-scrollbar {
+    width: 1vw;
+}
+#bloco-principal::-webkit-scrollbar-thumb {
+    background-color: #49515a47;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 2px;
+}
+#bloco-principal > div {
+    margin: auto;
+    margin-top: 7%;
+    width: 85%;
+    font-size: 16pt;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+#bloco-principal > div img {
+    width: 25%;
+    padding: 1em;
+}
+
+/* CSS Alarmes */
+
+#div-alarmes {
+    display: none;
+}
+
+/* Div que contém todos os Alarmes cadastrados em forma de lista (vertical) */
+#listaAlarmes {
+    height: 35vh;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: auto;
+    transition: all 0.4s ease-in-out;
+}
+#listaAlarmes::-webkit-scrollbar {
+    width: 1vw;
+}
+#listaAlarmes::-webkit-scrollbar-thumb {
+    background-color: #49515a47;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 2px;
+}
+
+/* Div do Alarme Cadastrado (Contém titulo, horário e ícone de lata de lixo) */
+.alarme {
+    width: 17vw;
+    font-size: 24pt;
+    display: flex;
+    flex-direction: column;
+}
+.img-lata-lixo {
+    width: 30px;
+    margin-left: 14vw;
+}
+#span-titulo-alarme {
+    width: 80%;
+    font-size: 12pt;
+    overflow-wrap: break-word;
+}
+
+#adicionar-alarme {
+    margin-bottom: 3vh;
+    margin: auto;
+    width: 17vw;
+    padding-bottom: 1.1vh;
+    border: 1px dashed rgba(255, 255, 255, 0.079);
+    background-color: rgba(0, 0, 0, 0.218);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#adicionar-alarme img {
+    width: 45px;
+    padding-top: 1.2vh;
+}
+.alarme:hover,
+#adicionar-alarme:hover,
+.img-lata-lixo:hover {
+    transform: scale(1.04);
+    transition-duration: 0.07s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#span-alarme {
+    text-align: center;
+    position: absolute;
+    width: 25%;
+    margin-top: 34vh;
+    display: none;
+    animation: pulse 1s infinite;
+}
+#horario-span-alarme {
+    font-size: 50pt;
+    margin-top: 2vh;
+}
+#titulo-span-alarme {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 13pt;
+    margin-top: 2vh;
+    overflow-wrap: break-word;
+}
+#botao-span-alarme {
+    font-size: 15pt;
+    margin: 0 auto;
+    margin-top: 3.5vh;
+    margin-bottom: 3vh;
+    padding-top: 1.3vh;
+    padding-bottom: 1vh;
+    width: 20%;
+    background-color: #ff0000;
+}
+#botao-span-alarme:hover {
+    transform: scale(1.04);
+}
+
+#div-alarmes3 {
+    display: none;
+}
+#socha {
+    text-align: center;
+    margin: 5%;
+    width: 18vw;
+    overflow-wrap: break-word;
+}
+
+#div-alarmes4 {
+    display: none;
+}
+#soch2 {
+    text-align: center;
+    margin: 5%;
+    width: 18vw;
+    overflow-wrap: break-word;
+}

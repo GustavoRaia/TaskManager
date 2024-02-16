@@ -1,0 +1,42 @@
+/* CSS Despertador */
+
+.accordion-item {
+    max-width: 17vw;
+    min-width: 17vw;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+.accordion-button {
+    border: 1px solid transparent;
+}
+
+#input-despertador {
+    width: 15vw;
+    border: 1px solid transparent;
+    font-size: 17pt;
+    text-align: center;
+}
+
+#input-despertador:hover,
+#input-titulo-despertador:hover {
+    transform: scale(1.04);
+    transition-duration: 0.2s;
+}
+
+#input-titulo-despertador {
+    width: 15vw;
+    border: 1px solid transparent;
+    font-size: 12pt;
+    text-align: center;
+}
+
+#adicionar-despertador {
+    font-size: 15pt;
+    border: 1px solid transparent;
+}
+
+#adicionar-despertador:hover {
+    background-color: rgba(70, 71, 80, 0.238);
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}

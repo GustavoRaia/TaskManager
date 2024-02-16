@@ -1,0 +1,40 @@
+/* CSS Header */
+
+#header {
+    width: 100%;
+    justify-content: space-evenly;
+    display: none;
+    margin-top: -1vh;
+    margin-left: -1vw;
+}
+
+#relogio-header {
+    font-size: 20pt;
+    margin-top: 1.2vh;
+}
+
+#info {
+    display: flex;
+    justify-content: center;
+    column-gap: 3vh;
+    margin-bottom: 0.2vh;
+}
+
+#info img {
+    width: 75%;
+}
+
+#info > div {
+    padding-top: 1%;
+    width: 50px;
+    margin-top: 10px;
+}
+
+#info > div :hover {
+    transform: scale(1.10);
+    transition-duration: 0.1s;
+}
+
+#invisivel {
+    display: none;
+}

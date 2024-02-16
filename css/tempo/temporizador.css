@@ -1,0 +1,40 @@
+/* CSS Temporizador */
+#iniciar_temporizador,
+#zerar_temporizador,
+#pausar_temporizador {
+    display: none;
+}
+#empurra {
+    display: flex;
+    justify-content: center;
+}
+.input-temporizador {
+    border: 1px solid transparent;
+    background-color: rgba(70, 71, 80, 0.238);
+    font-size: 20pt;
+    text-align: center;
+    padding-top: 0.4vh;
+    padding-bottom: 0.4vh;
+}
+#container-temporizador {
+    position: absolute;
+    margin-top: 37.5vh;
+    display: none;
+}
+
+#confirmar-valor {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 2vh;
+    font-size: 12pt;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+#confirmar-valor:hover {
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}
+#div-inputs-temporizador {
+    margin: 0 auto;
+    font-size: 50pt;
+}

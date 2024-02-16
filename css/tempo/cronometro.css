@@ -1,0 +1,51 @@
+/* CSS Div Cronômetro */
+
+#container-cronometro {
+    margin-top: 37.5vh;
+    display: none;
+    background-color: blue;
+}
+
+#span-smh,
+#span-smh2,
+#span-temporizador {
+    margin-left: 2vw;
+    font-size: 35pt;
+}
+
+#span-cronometro {
+    margin: 0 auto;
+    width: 15vw;
+}
+
+#span-temporizador {
+    display: none;
+    margin-left: 2.3vw;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* Tamanho original */
+    }
+
+    50% {
+        transform: scale(1.03);
+        /* Tamanho aumentado (pulso) */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Tamanho original */
+    }
+}
+
+#span-milissegundos,
+#span-milissegundos2 {
+    font-size: 15pt;
+}
+
+#pausar_cronometro,
+#zerar_cronometro {
+    display: none;
+}
