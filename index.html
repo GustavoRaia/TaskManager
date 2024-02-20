@@ -26,8 +26,7 @@
 
     <!-- JavaScript BootStrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-        defer></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" href="./imagem/relogio-de-parede.png" contenteditable="">
     <title>Task Manager</title>
@@ -46,29 +45,6 @@
 
     <div id="ruyter">
 
-        <!-- <div id="div-despertador" class="bloco bg-dark sombra2 borda3">
-            <div class="header-div-opcao">
-                <div onclick="volta('div-despertador')" class="btn-voltar">
-                    <img src="./imagem/voltar.png">
-                </div>
-                <div class="img-direita-superior">
-                    <img src="./imagem/despertador.png">
-                </div>
-            </div>
-        </div>
-
-        <div id="div-cronometro" class="bloco bg-dark sombra2 borda3">
-            <div class="header-div-opcao">
-                <div onclick="volta('div-cronometro')" class="btn-voltar">
-                    <img src="./imagem/voltar.png">
-                </div>
-                <div class="img-direita-superior">
-                    <img src="./imagem/cronometro.png">
-                </div>
-            </div>
-        </div> 
-        -->
-
         <div id="div-principal" class="bloco borda2 bg-dark sombra2">
 
             <div class="index">
@@ -86,23 +62,29 @@
                 </div>
             </div>
 
-            <div id="bloco-principal" class="bloco mt-4">
+            <!-- 
+                Bloco com as três opções de relógio.
+                    - Cronômetro.
+                    - Temporizador.
+                    - Despertador.
+            -->
+            <div id="bloco-principal" class="bloco borda3 cor1 mt-4">
 
-                <div class="accordion text-bg-dark mt-3" id="accordionExample">
+                <div class="accordion mt-3" id="accordionExample">
                     <div class="accordion-item text-bg-dark">
 
-                        <h2 class="accordion-header bg-dark">
+                        <h2 class="accordion-header text-bg-dark">
                             <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne">
-                                <img src="./imagem/despertador.png" />
-                                Despertador
+                                <img class="mx-1" src="./imagem/despertador.png" />
+                                 Despertador
                             </button>
                         </h2>
 
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse">
                             <div class="accordion-body">
-                                <form class="mb-4" action="">
+                                <form class="mb-4 form-despertador" action="">
                                     <input type="time" id="input-despertador" class="bg-dark mt-3 sombra4 borda2"
                                         name="input-despertador" required>
                                     <input type="text" id="input-titulo-despertador" class="bg-dark mt-3 sombra4 borda2"
@@ -118,19 +100,19 @@
                     </div>
                 </div>
 
-                <div class="accordion text-bg-dark my-4" id="accordionExample2">
+                <div class="accordion my-4" id="accordionExample2">
                     <div class="accordion-item text-bg-dark">
 
                         <h2 class="accordion-header bg-dark">
                             <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseTwo">
-                                <img src="./imagem/relogio.png " />
-                                Temporizador
+                                <img class="mx-1" src="./imagem/relogio.png " />
+                                 Temporizador
                             </button>
                         </h2>
 
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
                                 <span id="span-temporizador" class="span-tempo" onclick="mostra(id)"></span>
                                 <div id="div-inputs-temporizador">
@@ -156,19 +138,19 @@
                     </div>
                 </div>
 
-                <div class="accordion text-bg-dark my-4" id="accordionExample3">
+                <div class="accordion my-4" id="accordionExample3">
                     <div class="accordion-item text-bg-dark">
 
                         <h2 class="accordion-header bg-dark">
                             <button class="accordion-button text-bg-dark" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseThree">
-                                <img src="./imagem/cronometro.png " />
-                                Cronômetro
+                                <img class="mx-1" src="./imagem/cronometro.png " />
+                                 Cronômetro
                             </button>
                         </h2>
 
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
                                 <div id="span-cronometro" class="span-tempo" onclick="mostra(id)">
                                     <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
@@ -184,16 +166,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="borda2 sombra2" onclick="temporizador()">
-                    <img src="./imagem/relogio.png " />
-                    Temporizador
-                </div>
-
-                <div class="borda2 sombra2" onclick="cronometro()">
-                    <img src="./imagem/cronometro.png" />
-                    Cronômetro
-                </div> -->
-
             </div>
 
             <div id="div-alarmes" class="mt-4 mb-5" onload="exibeInfo()">
@@ -201,7 +173,7 @@
                 <div id="adicionar-alarme" class="borda2" onclick="despertador()">
                     <img src="./imagem/botao-adicionar.png">
                 </div>
-                <ul id="listaAlarmes" class="cor1 mt-4 mx-4"></ul>
+                <ul id="listaAlarmes" class="cor1 borda3 mt-4 mx-4"></ul>
             </div>
 
             <div id="div-alarmes3">
@@ -222,44 +194,6 @@
 
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <audio id="audio-alarme" preload="auto" autoplay="false">
         <source src="./audio/Loud_Alarm_Clock_Buzzer-Muk1984-493547174.mp3" type="audio/mpeg">
     </audio>
@@ -268,7 +202,6 @@
     </audio>
     <div id="span-alarme" class="cor1 sombra4 borda2"></div>
     <div class="span-tempo" id="div-relogio" onclick="mostra(id)"></div>
-
 
 </body>
 

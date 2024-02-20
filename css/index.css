@@ -99,25 +99,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
 }
 
-.span-tempo:hover {
-    color: blueviolet;
-
-    #span-smh,
-    #span-milissegundos {
-        color: blueviolet;
-        transform: scale(1.05);
-        transition-duration: 0.5s;
-    }
-
-    transform: scale(1.05);
-    transition-duration: 0.5s;
-    cursor: pointer;
-}
-
 .botoes-func-container {
     margin: 0 auto;
     margin-top: 10%;
-    width: 50%;
     display: flex;
     justify-content: center;
 }
@@ -155,11 +139,19 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .btn-func {
-    font-size: 19pt;
+    font-size: 15pt;
     padding-top: 4%;
     padding-left: 4%;
     padding-right: 4%;
     padding-bottom: 3.5%;
+}
+
+@media screen and (max-width:600px) {
+
+    .btn-func {
+        font-size: 12pt;
+    }
+
 }
 
 .btn-func:hover {

@@ -9,18 +9,29 @@
 #span-smh,
 #span-smh2,
 #span-temporizador {
-    margin-left: 2vw;
+    margin-left: 1rem;
     font-size: 35pt;
+}
+
+
+
+@media screen and (max-width:500px) {
+
+    #span-smh,
+    #span-smh2,
+    #span-temporizador {
+        font-size: 25pt;
+    }
+
 }
 
 #span-cronometro {
     margin: 0 auto;
-    width: 15vw;
 }
 
 #span-temporizador {
     display: none;
-    margin-left: 2.3vw;
+    margin-left: 13%;
 }
 
 @keyframes pulse {
@@ -48,4 +59,19 @@
 #pausar_cronometro,
 #zerar_cronometro {
     display: none;
+}
+
+.span-tempo:hover {
+    color: blueviolet;
+
+    #span-smh,
+    #span-milissegundos {
+        color: blueviolet;
+        transform: scale(1.05);
+        transition-duration: 0.5s;
+    }
+
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+    cursor: pointer;
 }

@@ -2,7 +2,7 @@
 
 /* Bloco da Div Lateral */
 #div-principal {
-    width: 23vw;
+    width: 27em;
     height: 70%;
     transition: 1s;
     /* overflow: auto; */
@@ -22,7 +22,6 @@
     margin-top: 2.5vh;
 }
 .index > div {
-    width: 2.5vw;
     margin: 4%;
     display: flex;
     justify-content: center;
@@ -43,7 +42,7 @@
 */
 #bloco-principal {
     margin: auto;
-    width: clamp(20vw, 50%, 10vw);
+    width: 85%;
     text-align: center;
     font-weight: bold;
     display: none;
@@ -51,7 +50,7 @@
     justify-content: center;
     overflow: auto;
     height: 47vh;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 #bloco-principal::-webkit-scrollbar {
     width: 1vw;
@@ -72,8 +71,17 @@
 }
 #bloco-principal > div img {
     width: 25%;
-    padding: 1em;
+    padding: 0.1em;
 }
+
+@media screen and (max-width:500px) {
+
+    #bloco-principal > div img {
+        width: 20%;
+    }
+
+}
+
 
 /* CSS Alarmes */
 
@@ -85,7 +93,6 @@
 #listaAlarmes {
     height: 35vh;
     border: 1px solid black;
-    border-radius: 5px;
     overflow: auto;
     transition: all 0.4s ease-in-out;
 }
@@ -100,14 +107,15 @@
 
 /* Div do Alarme Cadastrado (Contém titulo, horário e ícone de lata de lixo) */
 .alarme {
-    width: 17vw;
+    width: 90%;
     font-size: 24pt;
     display: flex;
     flex-direction: column;
 }
 .img-lata-lixo {
     width: 30px;
-    margin-left: 14vw;
+    margin-left: 85%;
+    margin-bottom: 5%;
 }
 #span-titulo-alarme {
     width: 80%;
@@ -118,7 +126,7 @@
 #adicionar-alarme {
     margin-bottom: 3vh;
     margin: auto;
-    width: 17vw;
+    width: 17em;
     padding-bottom: 1.1vh;
     border: 1px dashed rgba(255, 255, 255, 0.079);
     background-color: rgba(0, 0, 0, 0.218);

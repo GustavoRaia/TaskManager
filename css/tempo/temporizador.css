@@ -16,6 +16,15 @@
     padding-top: 0.4vh;
     padding-bottom: 0.4vh;
 }
+
+@media screen and (max-width:500px) {
+
+    .input-temporizador {
+        font-size: 15pt;
+    }
+
+}
+
 #container-temporizador {
     position: absolute;
     margin-top: 37.5vh;

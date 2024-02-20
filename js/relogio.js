@@ -53,7 +53,7 @@ function mostra(elem_tempo) {
         case "div-relogio": // Se o relógio do inicio da aplicação for clicada
 
             div_header.style.display = "flex";
-            div_bloco.style.display = "flex";
+            div_bloco.style.display = "block";
             
             elem_div_alarmes.style.display = "block";
 
