@@ -6,7 +6,8 @@ const pausarButtonT = document.getElementById('pausar_temporizador'); // Pega o 
 const zerarButtonT = document.getElementById('zerar_temporizador'); // Pega o valor da div do botão de zerar temporizador.
 const pegarValor = document.getElementById('confirmar-valor'); // Pega o valor da div do botão de confirmar valor de tempo.
 
-const inputsHorarios = document.getElementById('div-inputs-temporizador'); // Pega o valor da div do horário do temporizador.
+const inputsHorarios = document.getElementById('div-botoes-temporizador'); // Pega o valor da div do horário do temporizador.
+// const inputsHorarios = document.getElementById('div-inputs-temporizador'); // Pega o valor da div do horário do temporizador.
 
 var audio_temporizador = document.getElementById('audio-temporizador'); // Pega o valor do elemento áudio do HTML.
 // audio_temporizador.pause(); // Pausa o áudio.

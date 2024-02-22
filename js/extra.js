@@ -5,7 +5,7 @@ function modo() {
 
     const classes = ['cor1', 'cor2', 'cor4'];
     const novasCores = ['#49515a05', '#49515a40', '#49515a20']; // Cores correspondentes às classes
-    const coresVolta = ['#0e101b', '#1215284e', '#0e101b64']; // Cores correspondentes às classes
+    const coresVolta = ['#161618fa', '#1215284e', '#0e101b64']; // Cores correspondentes às classes
 
 
     if(alterna == 0) {

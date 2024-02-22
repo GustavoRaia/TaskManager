@@ -1,5 +1,6 @@
 /* CSS Header */
 
+/* Header da Página */
 #header {
     width: 100%;
     justify-content: space-evenly;
@@ -7,7 +8,7 @@
     margin-top: -1vh;
     margin-left: -1vw;
 }
-
+/* Relógio da Header */
 #relogio-header {
     font-size: 20pt;
     margin-top: 1.2vh;
@@ -34,7 +35,7 @@
     transform: scale(1.10);
     transition-duration: 0.1s;
 }
-
+/* Gambiarra */
 #invisivel {
     display: none;
 }

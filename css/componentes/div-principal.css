@@ -1,6 +1,6 @@
-/* CSS Div Lateral */
+/* CSS Div Principal */
 
-/* Bloco da Div Lateral */
+/* Bloco da Div Principal */
 #div-principal {
     width: 27em;
     height: 70%;
@@ -21,17 +21,32 @@
     justify-content: center;
     margin-top: 2.5vh;
 }
+/* 4 Divs dos Ícones Contidas no Index */
 .index > div {
     margin: 4%;
     display: flex;
     justify-content: center;
 }
+/* Ícones das Divs do Index */
 .index > div > img {
     width: 40px;
     padding: 15%;
 }
+/* Evento de Mouse */
 *.index :hover {
     transform: scale(1.10);
+}
+
+/* Responsividade para celulares com Tela menor que 360px */
+@media screen and (max-width:360px) {
+
+    .index {
+        width: 50px;
+        flex-wrap: inherit;
+        margin: auto;
+        margin-top: 2.5vh;
+    }
+
 }
 
 /* 
@@ -52,28 +67,44 @@
     height: 47vh;
     border: 1px solid black;
 }
+/* Scroll do Bloco Principal (Temporizador, Cronômetro e Despertador) */
 #bloco-principal::-webkit-scrollbar {
     width: 1vw;
 }
+/* Fundo do Scroll do Bloco Principal (Temporizador, Cronômetro e Despertador) */
 #bloco-principal::-webkit-scrollbar-thumb {
     background-color: #49515a47;
     box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 2px;
 }
+/* Divs do Bloco Principal */
 #bloco-principal > div {
     margin: auto;
-    margin-top: 7%;
     width: 85%;
     font-size: 16pt;
     text-align: left;
     display: flex;
     align-items: center;
 }
+/* Imagem das Divs do Bloco Principal */
 #bloco-principal > div img {
     width: 25%;
     padding: 0.1em;
 }
+/* Div que Contém as 3 Opções Principais (Temporizador, Cronômetro e Despertador) */
+.accordion-item {
+    /* max-width: 17vw; */
+    /* min-width: 17vw; */
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+}
+/* Div da Opção */
+.accordion-button {
+    font-size: 18pt;
+    border: 1px solid transparent;
+}
 
+/* Responsividade para Celulares com menos de 500px */
 @media screen and (max-width:500px) {
 
     #bloco-principal > div img {
@@ -85,26 +116,26 @@
 
 /* CSS Alarmes */
 
+/* Div que Contém a Lista de Alarmes Cadastrados */
 #div-alarmes {
     display: none;
 }
-
 /* Div que contém todos os Alarmes cadastrados em forma de lista (vertical) */
 #listaAlarmes {
     height: 35vh;
     border: 1px solid black;
     overflow: auto;
-    transition: all 0.4s ease-in-out;
 }
+/* Scroll da Div de Alarmes */
 #listaAlarmes::-webkit-scrollbar {
     width: 1vw;
 }
+/* Fundo do Scroll da Div de Alarmes */
 #listaAlarmes::-webkit-scrollbar-thumb {
     background-color: #49515a47;
     box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 2px;
 }
-
 /* Div do Alarme Cadastrado (Contém titulo, horário e ícone de lata de lixo) */
 .alarme {
     width: 90%;
@@ -112,17 +143,23 @@
     display: flex;
     flex-direction: column;
 }
+/* Ícone da Lata de Lixo da Div de Alarme */
 .img-lata-lixo {
     width: 30px;
     margin-left: 85%;
     margin-bottom: 5%;
 }
+/* Div que Contém o Texto com o Título/Descrição do Alarme */
 #span-titulo-alarme {
     width: 80%;
     font-size: 12pt;
     overflow-wrap: break-word;
 }
 
+
+/* CSS de Adicionar os Alarmes */
+
+/* Div de Adicionar Alarme acima da Lista de Alarmes */
 #adicionar-alarme {
     margin-bottom: 3vh;
     margin: auto;
@@ -135,10 +172,12 @@
     justify-content: center;
     align-items: center;
 }
+/* Imagem da Div de Adicionar Alarmes (Ícone de "+") */
 #adicionar-alarme img {
     width: 45px;
     padding-top: 1.2vh;
 }
+/* Evento de Mouse nas Divs de Alarme,  */
 .alarme:hover,
 #adicionar-alarme:hover,
 .img-lata-lixo:hover {
@@ -147,18 +186,9 @@
 }
 
 
+/* CSS Span Alarme (Div que Aparece quando o Alarme está tocando) */
 
-
-
-
-
-
-
-
-
-
-
-
+/* Div Principal do Span */
 #span-alarme {
     text-align: center;
     position: absolute;
@@ -167,10 +197,12 @@
     display: none;
     animation: pulse 1s infinite;
 }
+/* Div que Contém o Horário da Div */
 #horario-span-alarme {
     font-size: 50pt;
     margin-top: 2vh;
 }
+/* Div que Contém o Título/Descrição do Alarme */
 #titulo-span-alarme {
     width: 80%;
     margin: 0 auto;
@@ -178,6 +210,7 @@
     margin-top: 2vh;
     overflow-wrap: break-word;
 }
+/* Botão para Fechar o Span */
 #botao-span-alarme {
     font-size: 15pt;
     margin: 0 auto;
@@ -188,26 +221,77 @@
     width: 20%;
     background-color: #ff0000;
 }
+/* Evento de Mouse para o Botão de Cancelamento do Alarme */
 #botao-span-alarme:hover {
     transform: scale(1.04);
 }
 
-#div-alarmes3 {
-    display: none;
-}
-#socha {
-    text-align: center;
-    margin: 5%;
-    width: 18vw;
-    overflow-wrap: break-word;
-}
 
+/*  */
+
+#div-alarmes3,
 #div-alarmes4 {
     display: none;
 }
-#soch2 {
+#to-do-list {
     text-align: center;
-    margin: 5%;
-    width: 18vw;
+    margin: auto;
+    width: 85%;
+    height: 47vh;
     overflow-wrap: break-word;
+    border: 1px solid black;
+    overflow: auto;
+}
+#to-do-list > div {
+    height: 5vh;
+    width: 85%;
+    border: solid gray 1px;
+}
+#to-do-list > div:hover {
+    transform: scale(1.05);
+    transition: 0.15s;
+}
+#to-do-list::-webkit-scrollbar {
+    width: 20px;
+}
+#to-do-list::-webkit-scrollbar-thumb {
+    background-color: #49515a47;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 2px;
+}
+
+
+/*  */
+
+#lista-configs {
+    text-align: center;
+    margin: auto;
+    width: 85%;
+    height: 47vh;
+    overflow-wrap: break-word;
+    border: 1px solid black;
+    overflow: auto;
+}
+#lista-configs > button {
+    width: 85%;
+    border: solid gray 1px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#lista-configs > button:hover {
+    transform: scale(1.05);
+    transition: 0.15s;
+}
+#lista-configs > button > div {
+    border: 1px solid white;
+}
+#lista-configs::-webkit-scrollbar {
+    width: 20px;
+}
+#lista-configs::-webkit-scrollbar-thumb {
+    background-color: #49515a47;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    border-radius: 2px;
 }

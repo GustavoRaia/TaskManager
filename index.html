@@ -26,7 +26,8 @@
 
     <!-- JavaScript BootStrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 
     <link rel="icon" type="image/png" href="./imagem/relogio-de-parede.png" contenteditable="">
     <title>Task Manager</title>
@@ -43,7 +44,7 @@
         </div>
     </header>
 
-    <div id="ruyter">
+    <div id="corpo">
 
         <div id="div-principal" class="bloco borda2 bg-dark sombra2">
 
@@ -78,7 +79,7 @@
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne">
                                 <img class="mx-1" src="./imagem/despertador.png" />
-                                 Despertador
+                                Despertador
                             </button>
                         </h2>
 
@@ -108,20 +109,20 @@
                                 data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseTwo">
                                 <img class="mx-1" src="./imagem/relogio.png " />
-                                 Temporizador
+                                Temporizador
                             </button>
                         </h2>
 
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
                                 <span id="span-temporizador" class="span-tempo" onclick="mostra(id)"></span>
-                                <div id="div-inputs-temporizador">
-                                    <div id="empurra">
-                                        <input id="horas-temporizador" class="input-temporizador mx-2 sombra2 borda3"
+                                <div id="div-botoes-temporizador">
+                                    <div id="div-inputs-temporizador">
+                                        <input id="horas-temporizador" class="mx-2 sombra2 borda3"
                                             type="number" max="23" min="0" maxlength="2" placeholder="h" required>
-                                        <input id="minutos-temporizador" class="input-temporizador mx-2 sombra2 borda3"
+                                        <input id="minutos-temporizador" class="mx-2 sombra2 borda3"
                                             type="number" max="59" min="0" maxlength="2" placeholder="m" required>
-                                        <input id="segundos-temporizador" class="input-temporizador mx-2 sombra2 borda3"
+                                        <input id="segundos-temporizador" class="mx-2 sombra2 borda3"
                                             type="number" max="59" min="1" maxlength="2" placeholder="s" required>
                                     </div>
 
@@ -146,7 +147,7 @@
                                 data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseThree">
                                 <img class="mx-1" src="./imagem/cronometro.png " />
-                                 Cronômetro
+                                Cronômetro
                             </button>
                         </h2>
 
@@ -177,16 +178,40 @@
             </div>
 
             <div id="div-alarmes3">
-                <div id="socha">
+                <div id="to-do-list" class="bloco borda3 cor1 mt-4 py-4">
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
+                    <p>ToDo List</p>
+                    <p>Funcionalidade Indisponível</p>
                     <p>ToDo List</p>
                     <p>Funcionalidade Indisponível</p>
                 </div>
             </div>
 
             <div id="div-alarmes4">
-                <div id="soch2">
-                    <p>Configurações</p>
-                    <p>Funcionalidade Indisponível</p>
+                <div id="lista-configs" class="bloco borda3 cor1 mt-4 py-3">
+                    <button class="btn btn-dark my-3">
+                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
+                        <div class="rounded-3 px-2 py-1 my-1">...</div>
+                    </button>
+                    <button class="btn btn-dark my-3">
+                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
+                        <div class="rounded-3 px-2 py-1 my-1">...</div>
+                    </button>
+                    <button class="btn btn-dark my-3">
+                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
+                        <div class="rounded-3 px-2 py-1 my-1">...</div>
+                    </button>
                 </div>
             </div>
 

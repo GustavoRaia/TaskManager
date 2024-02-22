@@ -23,8 +23,7 @@ img:hover {
 /* Definindo cores das divs (background-color) */
 
 .cor1 {
-    /* background-color: #0e101b; */
-    background-color: #161618;
+    background-color: #161618fa;
 }
 
 .cor2 {
@@ -78,12 +77,22 @@ img:hover {
 
 /* CSS Body */
 
+/* Corpo da Página (Inclui Tudo) */
 #body {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     overflow-x: hidden;
+}
+
+/*  */
+#corpo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70vw;
+    height: 90vh;
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -106,10 +115,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     justify-content: center;
 }
 
-/* 
-    CSS Relógio 
-    (Relógio que aparece no inicio do programa)
-*/
+/* CSS Relógio (Relógio que aparece no inicio do programa) */
 #div-relogio {
     position: absolute;
     font-size: 50pt;
@@ -196,10 +202,20 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     margin-left: -5.5vw;
 }
 
-#ruyter {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 70vw;
-    height: 90vh;
+/* Efeito de Pulso Presente nos Botões de Parar ou no Span de Alarme (quando está tocando) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* Tamanho original */
+    }
+
+    50% {
+        transform: scale(1.03);
+        /* Tamanho aumentado (pulso) */
+    }
+
+    100% {
+        transform: scale(1);
+        /* Tamanho original */
+    }
 }

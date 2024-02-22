@@ -1,22 +1,11 @@
 /* CSS Despertador */
 
-.accordion-item {
-    /* max-width: 17vw; */
-    /* min-width: 17vw; */
-    border: 1px solid transparent;
-    box-shadow: 0 0 5px rgb(0, 0, 0);
-}
-
-.accordion-button {
-    font-size: 18pt;
-    border: 1px solid transparent;
-}
-
+/* Formulário com as Informações do Despertador */
 .form-despertador {
     display: flex;
     flex-direction: column;
 }
-
+/* Input do Valor do Horário do Alarme */
 #input-despertador {
     width: 10em;
     border: 1px solid transparent;
@@ -24,7 +13,7 @@
     text-align: center;
     margin: auto;
 }
-
+/* Input do Valor do Título/Descrição do Alarme */
 #input-titulo-despertador {
     width: 14em;
     border: 1px solid transparent;
@@ -32,7 +21,25 @@
     text-align: center;
     margin: auto;
 }
+/* Evento de Mouse dos Inputs de Valor do Despertador (Horário e Título) */
+#input-despertador:hover,
+#input-titulo-despertador:hover {
+    transform: scale(1.04);
+    transition-duration: 0.2s;
+}
+/* Botão de Adicionar o Despertador (Horário e Título) */
+#adicionar-despertador {
+    font-size: 15pt;
+    border: 1px solid transparent;
+}
+/* Evento de Mouse do Botão de Adicionar Despertador */
+#adicionar-despertador:hover {
+    background-color: rgba(70, 71, 80, 0.238);
+    transform: scale(1.05);
+    transition-duration: 0.1s;
+}
 
+/* Responsividade para Celulares com Menos de 500px de Largura */
 @media screen and (max-width:500px) {
 
     .accordion-button {
@@ -47,21 +54,4 @@
         width: 10em;
     }
 
-}
-
-#input-despertador:hover,
-#input-titulo-despertador:hover {
-    transform: scale(1.04);
-    transition-duration: 0.2s;
-}
-
-#adicionar-despertador {
-    font-size: 15pt;
-    border: 1px solid transparent;
-}
-
-#adicionar-despertador:hover {
-    background-color: rgba(70, 71, 80, 0.238);
-    transform: scale(1.05);
-    transition-duration: 0.1s;
 }

@@ -1,20 +1,13 @@
 /* CSS Div Cronômetro */
 
-#container-cronometro {
-    margin-top: 37.5vh;
-    display: none;
-    background-color: blue;
-}
-
+/* Spans do Valor do Cronômetro em Andamento */
 #span-smh,
 #span-smh2,
 #span-temporizador {
     margin-left: 1rem;
     font-size: 35pt;
 }
-
-
-
+/* Responsividade para Celulares com menos de 500px */
 @media screen and (max-width:500px) {
 
     #span-smh,
@@ -24,43 +17,21 @@
     }
 
 }
-
+/* Valores de Tempo da Div de Cronômetro */
 #span-cronometro {
     margin: 0 auto;
 }
-
-#span-temporizador {
-    display: none;
-    margin-left: 13%;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        /* Tamanho original */
-    }
-
-    50% {
-        transform: scale(1.03);
-        /* Tamanho aumentado (pulso) */
-    }
-
-    100% {
-        transform: scale(1);
-        /* Tamanho original */
-    }
-}
-
+/* Spans dos Milssegundos (números menores '00') do Cronômetro */
 #span-milissegundos,
 #span-milissegundos2 {
     font-size: 15pt;
 }
-
+/* Botões de Pausa e Reset do Cronômetro */
 #pausar_cronometro,
 #zerar_cronometro {
     display: none;
 }
-
+/* Evento de Mouse (:hover) para Divs de Tempo (Horários ou de Tempo → Temporizador e Cronômetro) */
 .span-tempo:hover {
     color: blueviolet;
 
