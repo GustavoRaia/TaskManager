@@ -8,9 +8,9 @@ var div_bloco = document.getElementById('bloco-principal'); // Pega o valor do i
 var elem_container_temporizador = document.getElementById('container-temporizador');
 var elem_container_cronometro = document.getElementById('container-cronometro');
 
-var elem_div_despertador = document.getElementById('div-despertador');
-var elem_div_temporizador = document.getElementById('div-temporizador');
-var elem_div_cronometro = document.getElementById('div-cronometro');
+// var elem_div_despertador = document.getElementById('div-despertador');
+// var elem_div_temporizador = document.getElementById('div-temporizador');
+// var elem_div_cronometro = document.getElementById('div-cronometro');
 
 var elem_span_temporizador = document.getElementById('span-temporizador');
 var elem_span_smh = document.getElementById('span-smh');
@@ -162,6 +162,8 @@ function limpaTudo() {
     elem_container_temporizador.style.display = "none";
 
     elem_div_alarmes.style.display = "none";
+
+    // document.querySelectorAll('#body div').style.display = "none";
 }
 
 // Função para voltar a tela normal.

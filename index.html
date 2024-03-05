@@ -38,8 +38,8 @@
     <header id="header" class="bloco bg-dark sombra1 py-2">
         <div class="span-tempo" id="relogio-header" onclick="mostra(id)"></div>
         <div id="info">
-            <div id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
-            </div>
+            <!-- <div id="modo-claro-escuro" onclick="modo()"><img src="./imagem/brilho-do-sol.png">
+            </div> -->
             <div id="invisivel"><img src="./imagem/lata-de-lixo.png"></div>
         </div>
     </header>
@@ -48,18 +48,18 @@
 
         <div id="div-principal" class="bloco borda2 bg-dark sombra2">
 
-            <div class="index">
-                <div class="sombra2 borda3" onclick="divAlarmes('bloco-principal')">
-                    <img src="./imagem/casa.png">
+            <div class="index mt-4 p-1 mx-auto d-flex flex-wrap justify-content-center">
+                <div class="sombra2 borda3 mx-3 mb-2" onclick="divAlarmes('bloco-principal')">
+                    <img class="p-2" src="./imagem/casa.png">
                 </div>
-                <div class="sombra2 borda3" onclick="divAlarmes('div-alarmes')">
-                    <img src="./imagem/alarme.png">
+                <div class="sombra2 borda3 mx-3 mb-2" onclick="divAlarmes('div-alarmes')">
+                    <img class="p-2" src="./imagem/alarme.png">
                 </div>
-                <div class="sombra2 borda3" onclick="divAlarmes('div-alarmes3')">
-                    <img src="./imagem/calendario.png">
+                <div class="sombra2 borda3 mx-3 mb-2" onclick="divAlarmes('div-alarmes3')">
+                    <img class="p-2" src="./imagem/calendario.png">
                 </div>
-                <div class="sombra2 borda3" onclick="divAlarmes('div-alarmes4')">
-                    <img src="./imagem/contexto.png" alt="">
+                <div class="sombra2 borda3 mx-3 mb-2" onclick="divAlarmes('div-alarmes4')">
+                    <img class="p-2" src="./imagem/contexto.png" alt="">
                 </div>
             </div>
 
@@ -69,7 +69,7 @@
                     - Temporizador.
                     - Despertador.
             -->
-            <div id="bloco-principal" class="bloco borda3 cor1 mt-4">
+            <div id="bloco-principal" class="bloco borda3 cor1 mt-3">
 
                 <div class="accordion mt-3" id="accordionExample">
                     <div class="accordion-item text-bg-dark">
@@ -115,24 +115,26 @@
 
                         <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
-                                <span id="span-temporizador" class="span-tempo" onclick="mostra(id)"></span>
+                                <span id="span-temporizador" class="span-tempo w-75 mx-auto"
+                                    onclick="mostra(id)"></span>
                                 <div id="div-botoes-temporizador">
                                     <div id="div-inputs-temporizador">
-                                        <input id="horas-temporizador" class="mx-2 sombra2 borda3"
-                                            type="number" max="23" min="0" maxlength="2" placeholder="h" required>
-                                        <input id="minutos-temporizador" class="mx-2 sombra2 borda3"
-                                            type="number" max="59" min="0" maxlength="2" placeholder="m" required>
-                                        <input id="segundos-temporizador" class="mx-2 sombra2 borda3"
-                                            type="number" max="59" min="1" maxlength="2" placeholder="s" required>
+                                        <input id="horas-temporizador" class="mx-2 sombra2 borda3" type="number"
+                                            max="23" min="0" maxlength="2" placeholder="h" required>
+                                        <input id="minutos-temporizador" class="mx-2 sombra2 borda3" type="number"
+                                            max="59" min="0" maxlength="2" placeholder="m" required>
+                                        <input id="segundos-temporizador" class="mx-2 sombra2 borda3" type="number"
+                                            max="59" min="1" maxlength="2" placeholder="s" required>
                                     </div>
 
-                                    <div id="confirmar-valor" class="sombra2 borda3 mt-4 col-md-6">Confirmar</div>
+                                    <div id="confirmar-valor" class="sombra2 borda3 mt-4 w-50 py-1 mx-auto">Confirmar
+                                    </div>
                                 </div>
 
                                 <div class="botoes-func-container" id="botoes-func-container-temporizador">
-                                    <div id="iniciar_temporizador" class="btn-func mx-2 sombra2 borda4">Iniciar</div>
-                                    <div id="pausar_temporizador" class="btn-func mx-2 sombra2 borda4">Parar</div>
-                                    <div id="zerar_temporizador" class="btn-func mx-2 sombra2 borda4">Zerar</div>
+                                    <div id="iniciar_temporizador" class="mx-2 sombra2 borda4">Iniciar</div>
+                                    <div id="pausar_temporizador" class="mx-2 sombra2 borda4">Parar</div>
+                                    <div id="zerar_temporizador" class="mx-2 sombra2 borda4">Zerar</div>
                                 </div>
                             </div>
                         </div>
@@ -153,14 +155,14 @@
 
                         <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
                             <div class="accordion-body my-3">
-                                <div id="span-cronometro" class="span-tempo" onclick="mostra(id)">
+                                <div id="span-cronometro" class="span-tempo w-75 mx-auto" onclick="mostra(id)">
                                     <span id="span-smh">00:00:00</span><span id="span-milissegundos">00</span>
                                 </div>
 
                                 <div class="botoes-func-container" id="botoes-func-container-temporizador">
-                                    <div id="iniciar_cronometro" class="btn-func mx-2 sombra2 borda4">Iniciar</div>
-                                    <div id="pausar_cronometro" class="btn-func mx-2 sombra2 borda4">Parar</div>
-                                    <div id="zerar_cronometro" class="btn-func mx-2 sombra2 borda4">Zerar</div>
+                                    <div id="iniciar_cronometro" class="mx-2 sombra2 borda4">Iniciar</div>
+                                    <div id="pausar_cronometro" class="mx-2 sombra2 borda4">Parar</div>
+                                    <div id="zerar_cronometro" class="mx-2 sombra2 borda4">Zerar</div>
                                 </div>
                             </div>
                         </div>
@@ -169,30 +171,33 @@
 
             </div>
 
-            <div id="div-alarmes" class="mt-4 mb-5" onload="exibeInfo()">
-                <h4 style="text-align: center;">Adicionar Alarmes</h4>
-                <div id="adicionar-alarme" class="borda2" onclick="despertador()">
-                    <img src="./imagem/botao-adicionar.png">
-                </div>
+            <div id="div-alarmes" class="mt-3 mb-5" onload="exibeInfo()">
+                <h4 style="text-align: center;">Alarmes Ativos</h4>
+                <!-- <div id="adicionar-alarme" class="borda2 w-75 mx-auto" onclick="despertador()">
+                    <img class="py-2" src="./imagem/botao-adicionar.png">
+                </div> -->
                 <ul id="listaAlarmes" class="cor1 borda3 mt-4 mx-4"></ul>
             </div>
 
             <div id="div-alarmes3">
-                <div id="to-do-list" class="bloco borda3 cor1 mt-4 py-4">
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
-                    <p>ToDo List</p>
-                    <p>Funcionalidade Indisponível</p>
+
+                <div class="mt-1 mx-auto d-flex self flex-row col-md-10 p-2">
+                    <!-- <div class="border border-white">
+                        <div class="border border-warning p-4">
+                            <img width="25" src="./imagem/alarme.png" alt="">
+                        </div>
+                    </div> -->
+                    <div class="mx-auto">
+                        <div class="m-3">
+                            <input class="bg-dark sombra4 borda2" type="text" placeholder="Titulo" id="input-titulo-check">
+                        </div>
+                        <div>
+                            <div class="btn border border-white text-bg-dark m-4 d-grid mx-auto col-md-5">Adicionar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="to-do-list" class="bloco borda3 cor1 py-4">
                     <p>ToDo List</p>
                     <p>Funcionalidade Indisponível</p>
                 </div>
@@ -200,18 +205,35 @@
 
             <div id="div-alarmes4">
                 <div id="lista-configs" class="bloco borda3 cor1 mt-4 py-3">
-                    <button class="btn btn-dark my-3">
-                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
-                        <div class="rounded-3 px-2 py-1 my-1">...</div>
-                    </button>
-                    <button class="btn btn-dark my-3">
-                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
-                        <div class="rounded-3 px-2 py-1 my-1">...</div>
-                    </button>
-                    <button class="btn btn-dark my-3">
-                        <div class="rounded-3 px-2 py-1 my-1">Ruyter Poubel</div>
-                        <div class="rounded-3 px-2 py-1 my-1">...</div>
-                    </button>
+                    <div class="border border-light-subtle p-2 rounded-2 my-3 bg-dark">
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">Outros Projetos</div>
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">
+                            <a href="https://github.com/GustavoRaia" target="_blank"><img width="25"
+                                    src="./imagem/github.png"></a>
+                        </div>
+                    </div>
+                    <div class="border border-light-subtle p-2 rounded-2 my-3 bg-dark">
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">Mudar Alarme</div>
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">...</div>
+                    </div>
+                    <div class="border border-light-subtle p-2 rounded-2 my-3 bg-dark">
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">Mudar Modo</div>
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">
+                            <div id="modo-claro-escuro" onclick="modo()"><img width="25"
+                                    src="./imagem/brilho-do-sol.png"></div>
+                        </div>
+                    </div>
+                    <div class="btn border border-light-subtle p-2 rounded-2 my-3">
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">Tempo Desenvolvendo</div>
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">80h</div>
+                    </div>
+                    <div class="btn border border-light-subtle p-2 rounded-2 my-3">
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">Easter Egg</div>
+                        <div class="rounded-3 px-2 py-1 mx-2 my-1">
+                            <a href="https://vgt-developments.vercel.app" target="_blank"
+                                style="text-decoration: none;">M</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

@@ -20,14 +20,12 @@
     padding-top: 0.4vh;
     padding-bottom: 0.4vh;
 }
+
 /* Div de Confirmar Valor de Tempo do Temporizador */
 #confirmar-valor {
-    margin: 0 auto;
     text-align: center;
     margin-top: 2vh;
     font-size: 12pt;
-    padding-top: 3px;
-    padding-bottom: 3px;
 }
 /* Evento de Mouse do Botão de Confirmação */
 #confirmar-valor:hover {
@@ -36,20 +34,18 @@
 }
 /* Div que Contém tanto a Div de Inputs quanto o Botão de Confirmação */
 #div-botoes-temporizador {
-    margin: 0 auto;
     font-size: 50pt;
 }
 /* Valor do Tempo Atual em Contagem Regressiva */
 #span-temporizador {
     display: none;
-    margin-left: 13%;
 }
 
 /* Responsividade para celulares com menos de 500px de largura */
 @media screen and (max-width:500px) {
 
     /* Inputs de Valor do Temporizador (HH:mm:ss) */
-    #div-inputs-temporizador > div {
+    #div-inputs-temporizador > input {
         font-size: 15pt;
     }
 

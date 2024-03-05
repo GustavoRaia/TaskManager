@@ -14,6 +14,7 @@
     color: white;
 }
 
+/* Evento de mouse em todas as Imagens e Elementos da Header (Muda o Cursor para um Ponteiro) */
 /* div [id]:hover, */
 header [id]:hover,
 img:hover {
@@ -94,16 +95,16 @@ img:hover {
     width: 70vw;
     height: 90vh;
 }
-
+/* Seletor de Número de Inputs de Tipo "number" (Ícones de Setas) */
 input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
+/* Inputs de tipo "number" */
 input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
 }
-
+/* Seletor de Data no Input Tipo "time" (Ícone de Calendário) */
 input[type="time"]::-webkit-calendar-picker-indicator {
     display: none;
 }
@@ -144,7 +145,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-weight: bold;
 }
 
-.btn-func {
+.botoes-func-container > div {
     font-size: 15pt;
     padding-top: 4%;
     padding-left: 4%;
@@ -154,13 +155,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 @media screen and (max-width:600px) {
 
-    .btn-func {
+    .botoes-func-container > div {
         font-size: 12pt;
     }
 
 }
 
-.btn-func:hover {
+.botoes-func-container > div :hover {
     background-color: rgba(70, 71, 80, 0.238);
     transform: scale(1.05);
     transition-duration: 0.1s;
@@ -174,32 +175,6 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     height: 45vh;
     width: 30%;
     display: none;
-}
-
-.header-div-opcao {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.5vh;
-}
-
-.btn-voltar {
-    width: 2vw;
-    margin: 5%;
-}
-
-.btn-voltar:hover {
-    transform: scale(1.10);
-    transition-duration: 0.1s;
-}
-
-.btn-voltar img {
-    width: 2vw;
-}
-
-.img-direita-superior img {
-    width: 2.8vw;
-    margin-top: 2vh;
-    margin-left: -5.5vw;
 }
 
 /* Efeito de Pulso Presente nos Botões de Parar ou no Span de Alarme (quando está tocando) */

@@ -2,7 +2,9 @@
 
 /* Bloco da Div Principal */
 #div-principal {
-    width: 27em;
+    /* min-width: 12em;
+    max-width: 27em; */
+    width: clamp(15em, 100%, 27em);
     height: 70%;
     transition: 1s;
     /* overflow: auto; */
@@ -16,38 +18,36 @@
         - ToDo List
         - Configurações
 */
-.index {
+/* .index {
     display: flex;
     justify-content: center;
-    margin-top: 2.5vh;
-}
+} */
 /* 4 Divs dos Ícones Contidas no Index */
-.index > div {
-    margin: 4%;
+/* .index > div {
     display: flex;
     justify-content: center;
-}
+} */
 /* Ícones das Divs do Index */
 .index > div > img {
     width: 40px;
-    padding: 15%;
 }
 /* Evento de Mouse */
-*.index :hover {
+/* *.index :hover {
     transform: scale(1.10);
-}
+} */
 
 /* Responsividade para celulares com Tela menor que 360px */
-@media screen and (max-width:360px) {
+/* @media screen and (max-width: 420px) {
 
     .index {
-        width: 50px;
-        flex-wrap: inherit;
-        margin: auto;
-        margin-top: 2.5vh;
+        flex-direction: column;
     }
 
-}
+    .index > div {
+        background-color: blue;
+    }
+
+} */
 
 /* 
     Bloco com as opções de relógio 
@@ -122,7 +122,7 @@
 }
 /* Div que contém todos os Alarmes cadastrados em forma de lista (vertical) */
 #listaAlarmes {
-    height: 35vh;
+    height: 45vh;
     border: 1px solid black;
     overflow: auto;
 }
@@ -161,10 +161,6 @@
 
 /* Div de Adicionar Alarme acima da Lista de Alarmes */
 #adicionar-alarme {
-    margin-bottom: 3vh;
-    margin: auto;
-    width: 17em;
-    padding-bottom: 1.1vh;
     border: 1px dashed rgba(255, 255, 255, 0.079);
     background-color: rgba(0, 0, 0, 0.218);
 
@@ -237,7 +233,7 @@
     text-align: center;
     margin: auto;
     width: 85%;
-    height: 47vh;
+    height: 37vh;
     overflow-wrap: break-word;
     border: 1px solid black;
     overflow: auto;
@@ -262,7 +258,6 @@
 
 
 /*  */
-
 #lista-configs {
     text-align: center;
     margin: auto;
@@ -272,19 +267,20 @@
     border: 1px solid black;
     overflow: auto;
 }
-#lista-configs > button {
+#lista-configs > div {
     width: 85%;
-    border: solid gray 1px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#lista-configs > button:hover {
-    transform: scale(1.05);
+#lista-configs > div > div:nth-child(2):hover {
+    transform: scale(1.10);
     transition: 0.15s;
+    background-color: #faebd721;
+    cursor: pointer;
 }
-#lista-configs > button > div {
+#lista-configs > div > div {
     border: 1px solid white;
 }
 #lista-configs::-webkit-scrollbar {
@@ -294,4 +290,16 @@
     background-color: #49515a47;
     box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 2px;
+}
+
+@media screen and (max-width: 400px) {
+
+    #lista-configs > div {
+        flex-direction: column;
+    }
+
+    #lista-configs::-webkit-scrollbar {
+        width: 10px;
+    }
+    
 }

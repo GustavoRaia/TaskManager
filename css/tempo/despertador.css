@@ -14,7 +14,7 @@
     margin: auto;
 }
 /* Input do Valor do Título/Descrição do Alarme */
-#input-titulo-despertador {
+#input-titulo-despertador, #input-titulo-check {
     width: 14em;
     border: 1px solid transparent;
     font-size: 12pt;
@@ -37,6 +37,10 @@
     background-color: rgba(70, 71, 80, 0.238);
     transform: scale(1.05);
     transition-duration: 0.1s;
+}
+/* Evento de Mouse do Botão de Cancelar o Despertador */
+#botao-span-alarme:hover {
+    cursor: pointer;
 }
 
 /* Responsividade para Celulares com Menos de 500px de Largura */
