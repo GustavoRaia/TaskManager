@@ -33,11 +33,11 @@
     border: 1px solid transparent;
 }
 /* Evento de Mouse do Botão de Adicionar Despertador */
-#adicionar-despertador:hover {
+#adicionar-despertador:hover, #adicionar-check:hover {
     background-color: rgba(70, 71, 80, 0.238);
     transform: scale(1.05);
-    transition-duration: 0.1s;
-}
+    transition: 0.3s;
+}   
 /* Evento de Mouse do Botão de Cancelar o Despertador */
 #botao-span-alarme:hover {
     cursor: pointer;
@@ -58,8 +58,4 @@
         width: 10em;
     }
 
-}
-
-#to-do-list > div {
-    border: 1px solid transparent;
 }

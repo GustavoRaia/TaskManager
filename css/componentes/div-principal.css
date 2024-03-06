@@ -232,28 +232,32 @@
 #to-do-list {
     text-align: center;
     margin: auto;
-    width: 85%;
+    width: 90%;
     height: 37vh;
     overflow-wrap: break-word;
     border: 1px solid black;
     overflow: auto;
+    row-gap: 2vh;
 }
 #to-do-list > div {
-    height: 5vh;
     width: 85%;
-    border: solid gray 1px;
 }
 #to-do-list > div:hover {
     transform: scale(1.05);
     transition: 0.15s;
 }
 #to-do-list::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 #to-do-list::-webkit-scrollbar-thumb {
     background-color: #49515a47;
     box-shadow: 0 0 5px rgb(0, 0, 0);
     border-radius: 2px;
+}
+.check {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
 }
 
 

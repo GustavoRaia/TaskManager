@@ -4,7 +4,7 @@
 #span-smh,
 #span-smh2,
 #span-temporizador {
-    font-size: 35pt;
+    font-size: 32pt;
 }
 /* Responsividade para Celulares com menos de 500px */
 @media screen and (max-width:500px) {
@@ -12,7 +12,7 @@
     #span-smh,
     #span-smh2,
     #span-temporizador {
-        font-size: 25pt;
+        font-size: 23pt;
     }
 
 }
@@ -23,7 +23,7 @@
 /* Spans dos Milssegundos (números menores '00') do Cronômetro */
 #span-milissegundos,
 #span-milissegundos2 {
-    font-size: 15pt;
+    font-size: 10pt;
 }
 /* Botões de Pausa e Reset do Cronômetro */
 #pausar_cronometro,
@@ -43,5 +43,11 @@
 
     transform: scale(1.05);
     transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+.botoes-func-container > div:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
     cursor: pointer;
 }
